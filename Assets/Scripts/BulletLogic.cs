@@ -5,8 +5,8 @@ using UnityEngine;
 public class BulletLogic : MonoBehaviour
 {
     [SerializeField] private GameObject bulletDecal;
-    private float bulletVelocity = 500f;
-    private float timeToDestroy = 3f;
+    readonly private float bulletVelocity = 500f;
+    readonly private float timeToDestroy = 3f;
 
     public Vector3 Target { get; set; }
     public bool Hit { get; set; }

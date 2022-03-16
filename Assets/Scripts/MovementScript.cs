@@ -7,18 +7,26 @@ public class MovementScript : MonoBehaviour
 {
     private Rigidbody rb;
     [SerializeField] private float speed = 5;
-    [SerializeField] private float rotationSpeed = 5f;
+    
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform barrelLocation;
     [SerializeField] private Transform bulletParent;
     [SerializeField] float BulletDistance = 100f;
+    
     [SerializeField] private PlayerInput playerInput;
-    [SerializeField] private float gravity = 9.81f;
+    public Vector2 inputDirecion;                       //input direction
+    [SerializeField] private Vector3 _movementDirection;
+
+    public Vector3 move;                                //current movement direction
+
+    [SerializeField] private float _rotationSpeed = 6;
+    private Vector3 _targetRotation;
+    private Vector3 _turretRotation;
+
     private Transform cameraTransform;
-    public Vector2 direction;
+
     private InputAction shootAction;
     [SerializeField]private Animator animator;
-    Vector3 move;
     void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -30,17 +38,36 @@ public class MovementScript : MonoBehaviour
 
     void Update()
     {
-        //movement
-        move = new Vector3(direction.x, 0, direction.y);
-        move = move.x * cameraTransform.right.normalized + move.z * cameraTransform.forward.normalized;
-        move.y = 0;
-        
+        //movement 
+        HandleMovement();
+
+
+
+        //rotation
+        _targetRotation = new Vector3(0, inputDirecion.x, 0);
+        _targetRotation.y *= _rotationSpeed;
+        //Debug.Log(_targetRotation);
+
+
+
+
+
+
+        //rb.MoveRotation(Quaternion.Euler(_rotation));
         //rb.velocity = move;
         rb.MovePosition(transform.position + 2.8f * Time.deltaTime * move);
         
         //movementAnimation
-        animator.SetFloat("MovementSpeed", direction.y);
+        animator.SetFloat("MovementSpeed", inputDirecion.y);
     }
+
+    private void HandleMovement()
+    {
+        move = new Vector3(inputDirecion.x, 0, inputDirecion.y);
+        move = move.x * cameraTransform.right.normalized + move.z * cameraTransform.forward.normalized;
+        move.y = 0;
+    }
+
     private void OnEnable()
     {
         shootAction.performed += _ => ShootWeapon();
@@ -49,10 +76,18 @@ public class MovementScript : MonoBehaviour
     {
         shootAction.performed -= _ => ShootWeapon();
     }
+    public void Look(InputAction.CallbackContext context)
+    {
+        inputDirecion = speed * context.ReadValue<Vector2>();
+        //Debug.Log(context);
+        //transform.rotation = Quaternion.Lerp(transform.rotation, CharacterRotation(), rotationSpeed * Time.deltaTime);
+    }
     //movement input
     public void Movement(InputAction.CallbackContext context)
     {
-        direction = speed * context.ReadValue<Vector2>();
+        inputDirecion = speed * context.ReadValue<Vector2>();
+        //Debug.Log(context);
+        //transform.rotation = Quaternion.Lerp(transform.rotation, CharacterRotation(), rotationSpeed * Time.deltaTime);
     }
     public Quaternion CharacterRotation()
     {

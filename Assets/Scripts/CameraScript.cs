@@ -7,25 +7,29 @@ public class CameraScript : MonoBehaviour
 {
     // Start is called before the first frame update
     private Vector3 cameraRotation;
-    private Transform transformA;
     [SerializeField] private float sensitivity = 5;
-    void Start()
-    {
-        //transform = GetComponent<Transform>();
-    }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(cameraRotation);
-        Debug.Log(transform.rotation);
+        Debug.Log(cameraRotation);
+        if (cameraRotation.x >= 70)
+            cameraRotation.x = 70;
+        if (cameraRotation.x <= -70)
+            cameraRotation.x = -70;
+        if (cameraRotation.y >= 180)
+            cameraRotation.y -= 360;
+        if (cameraRotation.y <= -180)
+            cameraRotation.y += 360;
+        cameraRotation.z = 0;
+        //Debug.Log(cameraRotation);
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + cameraRotation);
+        //Debug.Log(transform.rotation);
     }
     public void CharacterRotation(InputAction.CallbackContext context)
     {
         Vector2 playerrotation = context.ReadValue<Vector2>().normalized;
-        
-        cameraRotation = new Vector3(-playerrotation.y, playerrotation.x, 0);
-        //Debug.Log(cameraRotation);
-        cameraRotation *= sensitivity*Time.deltaTime;
+        //Debug.Log(playerrotation);
+        cameraRotation = new Vector3(-playerrotation.y* sensitivity * Time.deltaTime*50, playerrotation.x* sensitivity * Time.deltaTime*50, 0);
     }
 }

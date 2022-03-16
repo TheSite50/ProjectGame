@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -100,3 +100,5 @@ public class ScriptBackup : MonoBehaviour
 * movedirection+camerarotation but update when moving
 * ??? a/d rotate counterclockwise/clockwise and w and s move in rotated direction
 */
+
+

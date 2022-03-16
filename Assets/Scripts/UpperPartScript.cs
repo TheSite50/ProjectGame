@@ -11,7 +11,6 @@ public class UpperPartScript : MonoBehaviour
     [SerializeField] private Transform bulletParent;
     [SerializeField] float BulletDistance = 500f;
     [SerializeField] private PlayerInput playerInput;
-    [SerializeField] private float gravity = 9.81f;
     private Transform cameraTransform;
     private InputAction shootAction;
     [SerializeField] private Animator animator;
@@ -26,6 +25,7 @@ public class UpperPartScript : MonoBehaviour
         //rotation
         Quaternion targetRotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        //Debug.Log(targetRotation);
     }
     private void OnEnable()
     {
