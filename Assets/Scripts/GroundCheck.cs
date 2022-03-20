@@ -12,6 +12,7 @@ public class GroundCheck : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
+
         isGrounded = false;
     }
 }

@@ -38,22 +38,22 @@ public class CrabAI : MonoBehaviour
     private void ConstructBehaviourTree()
     {
 
-        RangeNode chasingRangeNode = new RangeNode(distance, playerTransform, this.gameObject.transform);//zasiêg poœcigu
-        RangeNode attackRangeNode = new RangeNode(attackDistance, playerTransform, this.gameObject.transform);
-        AttackNode attackNode = new AttackNode(playerTransform, agent, this);
-        ChaseNode chaseNode = new ChaseNode(playerTransform, agent, this); //poœcig
+        RangeNode chasingRangeNode = new RangeNode(distance, playerTransform, this.gameObject.transform);  //Okreœla wymagany zasiêg do poœcigu
+        RangeNode attackRangeNode = new RangeNode(attackDistance, playerTransform, this.gameObject.transform); // Okreœla ymagany zasiêg do ataku
+        AttackNode attackNode = new AttackNode(playerTransform, agent, this); // Rozpoczyna atak
+        ChaseNode chaseNode = new ChaseNode(playerTransform, agent, this);  // Rozpoczyna poœcig
 
 
-        Sequencer attackSequencer = new Sequencer(new List<Node> { attackRangeNode, attackNode });
-        Sequencer chaseSequencer = new Sequencer(new List<Node> { chasingRangeNode, chaseNode });
+        Sequencer attackSequencer = new Sequencer(new List<Node> { attackRangeNode, attackNode }); //Przygotowuje sequencer ataku
+        Sequencer chaseSequencer = new Sequencer(new List<Node> { chasingRangeNode, chaseNode }); //Przygotowuje sequencer poœcigu
         //Selector mainSelector = new Selector(new List<Node> { chasingRangeNode, waitNode });
-        topNode = new Selector(new List<Node> { attackSequencer, chaseSequencer });
+        topNode = new Selector(new List<Node> { attackSequencer, chaseSequencer }); //Tworzy g³ównego node'a
         //animator.GetComponent<Animator>().SetTrigger("");
     }
 
     // Update is called once per frame
     void Update()
     {
-        topNode.Evaluate();
+        topNode.Evaluate(); //Oddelegowuje zachowanie do odpowiedniego node'a 
     }
 }

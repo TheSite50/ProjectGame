@@ -10,16 +10,16 @@ public class RangeNode : Node
 
     public RangeNode(float range, Transform target,Transform origin)
     {
-        this.range = range;
-        this.target = target;
-        this.origin = origin;
+        this.range = range;//Zasiêg
+        this.target = target;//Cel
+        this.origin = origin;//Aktualna pozycja
     }
 
     public override NodeState Evaluate()
     {
         origin.gameObject.transform.LookAt(target);
-        float distance = Vector3.Distance(target.position, origin.position);
-        return distance <= range ? NodeState.SUCCESS : NodeState.FAILING;
+        float distance = Vector3.Distance(target.position, origin.position); //Okreœla dystans
+        return distance <= range ? NodeState.SUCCESS : NodeState.FAILING; //Jeœli cel jest w zasiêgu, sukces
     }
 
 }
