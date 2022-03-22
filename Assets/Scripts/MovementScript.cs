@@ -22,6 +22,7 @@ public class MovementScript : MonoBehaviour
     [SerializeField] private float _rotationSpeed = 6;
     private Vector3 _targetRotation;
     private Vector3 _turretRotation;
+    RaycastHit desiredTarget;
 
     private Transform cameraTransform;
 
@@ -44,21 +45,13 @@ public class MovementScript : MonoBehaviour
 
 
         //rotation
-        _targetRotation = new Vector3(0, inputDirecion.x, 0);
-        _targetRotation.y *= _rotationSpeed;
+        //_targetRotation = new Vector3(0, inputDirecion.x, 0);
+        //_targetRotation.y *= _rotationSpeed;
         //Debug.Log(_targetRotation);
-
-
-
-
-
-
-        //rb.MoveRotation(Quaternion.Euler(_rotation));
-        //rb.velocity = move;
         rb.MovePosition(transform.position + 2.8f * Time.deltaTime * move);
         
         //movementAnimation
-        animator.SetFloat("MovementSpeed", inputDirecion.y);
+        animator.SetFloat("MovementSpeed", Mathf.Abs(inputDirecion.y));
     }
 
     private void HandleMovement()
@@ -68,19 +61,9 @@ public class MovementScript : MonoBehaviour
         move.y = 0;
     }
 
-    private void OnEnable()
-    {
-        shootAction.performed += _ => ShootWeapon();
-    }
-    private void OnDisable()
-    {
-        shootAction.performed -= _ => ShootWeapon();
-    }
     public void Look(InputAction.CallbackContext context)
     {
         inputDirecion = speed * context.ReadValue<Vector2>();
-        //Debug.Log(context);
-        //transform.rotation = Quaternion.Lerp(transform.rotation, CharacterRotation(), rotationSpeed * Time.deltaTime);
     }
     //movement input
     public void Movement(InputAction.CallbackContext context)
@@ -98,22 +81,42 @@ public class MovementScript : MonoBehaviour
     {
         return transform.Find("GroundCheck").GetComponent<GroundCheck>().isGrounded;
     }
-    public void ShootWeapon() {
-        GameObject bullet = Instantiate(bulletPrefab, barrelLocation.position, Quaternion.identity, bulletParent);
-        BulletLogic bulletLogic = bullet.GetComponent<BulletLogic>();
-        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit desiredTarget, Mathf.Infinity))
-        {
-            
-            bulletLogic.Target = desiredTarget.point;
-            bulletLogic.Hit = true;
-        }
-        else
-        {
-            bulletLogic.Target = cameraTransform.position + cameraTransform.forward * BulletDistance;
-            bulletLogic.Hit = false;
-        }
+
+    void DragCrosshair() 
+    {
+        //desiredTarget.point
+    }
+    /*
+private void OnEnable()
+{
+    shootAction.performed += _ => ShootWeapon();
+}
+private void OnDisable()
+{
+    shootAction.performed -= _ => ShootWeapon();
+}
+*/
+    /*
+public void ShootWeapon() {
+    GameObject bullet = Instantiate(bulletPrefab, barrelLocation.position, Quaternion.identity, bulletParent);
+    BulletLogic bulletLogic = bullet.GetComponent<BulletLogic>();
+    //Debug.DrawRay(cameraTransform.position, cameraTransform.forward,Color.red, 10f);
+    if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out desiredTarget, Mathf.Infinity))
+    {
+
+        bulletLogic.Target = desiredTarget.point;
+        bulletLogic.Hit = true;
+    }
+    else
+    {
+        bulletLogic.Target = cameraTransform.position + cameraTransform.forward * BulletDistance;
+        bulletLogic.Hit = false;
     }
 }
+
+*/
+}
+
 /*2 osobne obiekty 1 do ca³oœci 1 do górnej czêœci 1 do dolnej
  * górna rotuje za myszk¹
  * dolna zale¿nie od sterowania

@@ -14,6 +14,8 @@ public class UpperPartScript : MonoBehaviour
     private Transform cameraTransform;
     private InputAction shootAction;
     [SerializeField] private Animator animator;
+    Quaternion _turretRotation;//gdzie jest celownik
+    public Vector3 hitLocation;
     void Awake()
     {
         cameraTransform = Camera.main.transform;
@@ -22,9 +24,13 @@ public class UpperPartScript : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(hitLocation);
         //rotation
-        Quaternion targetRotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        Quaternion targetRotation = Quaternion.Euler(cameraTransform.eulerAngles.x, cameraTransform.eulerAngles.y, 0);
+        _turretRotation = Quaternion.Lerp(_turretRotation,targetRotation, rotationSpeed * Time.deltaTime);
+        transform.rotation = _turretRotation;
+        //transform.LookAt(_turretRotation.eulerAngles);
+        //transform.rotation = Quaternion.(transform.rotation, _turretRotation, rotationSpeed * Time.deltaTime);
         //Debug.Log(targetRotation);
     }
     private void OnEnable()
@@ -41,9 +47,8 @@ public class UpperPartScript : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefab, barrelLocation.position, Quaternion.identity, bulletParent);
         BulletLogic bulletLogic = bullet.GetComponent<BulletLogic>();
-        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit desiredTarget, Mathf.Infinity))
+        if (Physics.Raycast(barrelLocation.position, transform.forward, out RaycastHit desiredTarget, Mathf.Infinity))//strzela przed siebie dodac rotacje do minigunów by obraca³y siê w strone kursora,dodac kursor pokazujacy gdzie dokladnie teraz poleci pocisk
         {
-
             bulletLogic.Target = desiredTarget.point;
             bulletLogic.Hit = true;
         }

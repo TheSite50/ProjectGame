@@ -12,18 +12,15 @@ public class CameraScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(cameraRotation);
-        if (cameraRotation.x >= 70)
-            cameraRotation.x = 70;
-        if (cameraRotation.x <= -70)
-            cameraRotation.x = -70;
+        //Debug.Log(cameraRotation);
+        cameraRotation.x = Mathf.Clamp(cameraRotation.x, -70f, 70f);
         if (cameraRotation.y >= 180)
             cameraRotation.y -= 360;
         if (cameraRotation.y <= -180)
             cameraRotation.y += 360;
         cameraRotation.z = 0;
         //Debug.Log(cameraRotation);
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + cameraRotation);
+        transform.rotation = Quaternion.Euler(Vector3.Lerp(transform.rotation.eulerAngles, transform.rotation.eulerAngles + cameraRotation, 0.5f));
         //Debug.Log(transform.rotation);
     }
     public void CharacterRotation(InputAction.CallbackContext context)
