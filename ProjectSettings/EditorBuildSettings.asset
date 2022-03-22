@@ -6,13 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Test/Import Folder/Scene/MainMenu.unity
+    path: Assets/MyComponent/Import Folder/Scene/MainMenu.unity
     guid: 2eaf50869e9b50d45811593834944ae5
   - enabled: 1
-    path: Assets/Test/Import Folder/Scene/StartMap.unity
+    path: Assets/MyComponent/Import Folder/Scene/StartMap.unity
     guid: 6b82391fb6acd8a41a0acc70b06e013a
   - enabled: 1
-    path: Assets/Test/Import Folder/Scene/DesertMap.unity
-    guid: 315cab360778dd64fba0b6cdada21772
+    path: Assets/MyComponent/Import Folder/Scene/DesertMap.unity
+    guid: f06c9b40032de6e43aa156c4504abf01
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 771d8c4bef032684eae348b48519bfd2, type: 2}
