@@ -5,6 +5,6 @@ using UnityEngine.AI;
 
 public interface IAction 
 {
-    IEnumerator Actions(GameObject player, NavMeshAgent enemy, float vectorDistance, float minDistance, float farDistance, IEnemyAction enemyAction,Animator animator);
+    IEnumerator Actions(GameObject player,GameObject enemy,IEnemyAction enemyAction,  float vectorDistance, float minDistance, float farDistance );
     public void StateAction(ActionState enemyState, IEnemyAction enemyAction);
 }

@@ -29,9 +29,5 @@ public class ArmoryMenageButton : MonoBehaviour
         mapMenu.gameObject.SetActive(true);
         this.gameObject.SetActive(false);
     }
-    public void GoToMainMenu()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
 
 }

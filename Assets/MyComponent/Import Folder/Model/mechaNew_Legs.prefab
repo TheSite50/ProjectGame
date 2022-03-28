@@ -86,7 +86,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129658547918045877}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.08, z: -1.01}
+  m_LocalPosition: {x: 0, y: 5.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8182373913899028145}
@@ -663,6 +663,9 @@ GameObject:
   - component: {fileID: 8846882850472956937}
   - component: {fileID: 8846882850472956936}
   - component: {fileID: 7650261805852368090}
+  - component: {fileID: 1213253943610004033}
+  - component: {fileID: 5387171863293045086}
+  - component: {fileID: 5833954838246716615}
   m_Layer: 7
   m_Name: mechaNew_Legs
   m_TagString: Untagged
@@ -816,3 +819,42 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &1213253943610004033
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8846882850472956939}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 6.7, z: 2}
+  m_Center: {x: 2.29, y: 2.6, z: 0}
+--- !u!65 &5387171863293045086
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8846882850472956939}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 6.7, z: 2}
+  m_Center: {x: -2.29, y: 2.6, z: 0}
+--- !u!65 &5833954838246716615
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8846882850472956939}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.6, y: 2, z: 2}
+  m_Center: {x: 0, y: 5, z: 0}

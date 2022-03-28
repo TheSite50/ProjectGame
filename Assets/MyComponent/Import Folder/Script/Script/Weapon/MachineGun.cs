@@ -20,6 +20,11 @@ public class MachineGun : MonoBehaviour, IWeapon
         }
     }
 
+    public (float, float) GetAmunation()
+    {
+        throw new System.NotImplementedException();
+    }
+
     public GameObject[] WeaponMuzzle()
     {
         return new GameObject[] { weaponMuzzle };

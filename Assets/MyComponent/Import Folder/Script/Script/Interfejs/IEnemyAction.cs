@@ -6,7 +6,7 @@ public interface IEnemyAction
 {
     //ActionState StateAction(ActionState enemyAction);
     void SetState(ActionState actionState);
-
+    void SetPlayer(GameObject player);
 }
 
 public enum ActionState

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 836127590165975250}
   - component: {fileID: 58921936458041961}
+  - component: {fileID: 1356837816354830588}
   m_Layer: 7
   m_Name: mechaNew_Torso
   m_TagString: Untagged
@@ -50,6 +51,19 @@ MonoBehaviour:
   tabConectField:
   - {fileID: 869261667553010057}
   - {fileID: 869261667458817162}
+--- !u!65 &1356837816354830588
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58921936458041960}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 4, z: 4}
+  m_Center: {x: 0, y: 3, z: 1}
 --- !u!1 &680830988528517236
 GameObject:
   m_ObjectHideFlags: 0

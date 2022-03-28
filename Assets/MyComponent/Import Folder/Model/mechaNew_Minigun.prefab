@@ -313,7 +313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7169456410413033226}
   m_Layer: 7
-  m_Name: L_Muzzle
+  m_Name: R_Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -343,7 +343,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7169456411538355820}
   m_Layer: 7
-  m_Name: R_Muzzle
+  m_Name: L_Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -405,6 +405,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7274931757884810989}
   - component: {fileID: 8051995569471552584}
+  - component: {fileID: 1734312314188372090}
+  - component: {fileID: 7228024114642524769}
+  - component: {fileID: 3824061804496841819}
   m_Layer: 7
   m_Name: mechaNew_Minigun
   m_TagString: Untagged
@@ -442,6 +445,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02a287200c2200f498d5ae760469d8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 4061264666868077410, guid: bad2708718e380642a9580dc0d3c66b8, type: 3}
-  weaponMuzzleLeft: {fileID: 7169456410413033225}
-  weaponMuzzleRight: {fileID: 7169456411538355819}
+  bullet: {fileID: 8317034742612643490, guid: 947f87e96704a96499c697c8d06c3f62, type: 3}
+  weaponMuzzleLeft: {fileID: 7169456411538355819}
+  weaponMuzzleRight: {fileID: 7169456410413033225}
+--- !u!114 &1734312314188372090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8051995569471552599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990c409bf53f55b439b79328d263707f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammunationInMagazine: 100
+  magazineNumber: 2
+--- !u!65 &7228024114642524769
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8051995569471552599}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 2, z: 3}
+  m_Center: {x: 4.5, y: 0, z: 1}
+--- !u!65 &3824061804496841819
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8051995569471552599}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 2, z: 3}
+  m_Center: {x: -4.5, y: 0, z: 1}
