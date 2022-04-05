@@ -25,8 +25,8 @@ public class CameraScript : MonoBehaviour
     }
     public void CharacterRotation(InputAction.CallbackContext context)
     {
-        Vector2 playerrotation = context.ReadValue<Vector2>().normalized;
-        //Debug.Log(playerrotation);
+        Vector2 playerrotation = context.ReadValue<Vector2>();
+       // Debug.Log(playerrotation);
         cameraRotation = new Vector3(-playerrotation.y* sensitivity * Time.deltaTime*50, playerrotation.x* sensitivity * Time.deltaTime*50, 0);
     }
 }
