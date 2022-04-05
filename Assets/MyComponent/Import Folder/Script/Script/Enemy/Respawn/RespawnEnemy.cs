@@ -23,8 +23,8 @@ public class RespawnEnemy : MonoBehaviour
             
             spawnLocationX = Random.Range(this.gameObject.transform.position.x - 1000, this.gameObject.transform.position.x + 1000);
             spawnLocationZ = Random.Range(this.gameObject.transform.position.z - 1000, this.gameObject.transform.position.z + 1000);
-            GameObject spwanedEnemy=Instantiate<GameObject>(enemy, new Vector3(spawnLocationX, this.gameObject.transform.position.y, spawnLocationZ),this.gameObject.transform.rotation);
-            spwanedEnemy.GetComponent<IEnemyAction>().SetPlayer(player);
+            GameObject spwanedEnemy= Instantiate<GameObject>(enemy, new Vector3(spawnLocationX, this.gameObject.transform.position.y, spawnLocationZ),this.gameObject.transform.rotation);
+            spwanedEnemy.GetComponent<EnemyAction>().SetPlayer(player);
             yield return null;
             spawnEnemy++;
         }

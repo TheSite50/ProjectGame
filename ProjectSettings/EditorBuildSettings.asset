@@ -12,10 +12,13 @@ EditorBuildSettings:
     path: Assets/MyComponent/Import Folder/Scene/StartMap.unity
     guid: 6b82391fb6acd8a41a0acc70b06e013a
   - enabled: 1
+    path: Assets/MyComponent/Import Folder/Scene/LoadLevel.unity
+    guid: 8886de4e2bc75224abeef3fbc4ef560a
+  - enabled: 1
     path: Assets/MyComponent/Import Folder/Scene/DesertMap.unity
-    guid: f06c9b40032de6e43aa156c4504abf01
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+    guid: a2a2465d99412304eaac6133fbf8beb6
+  - enabled: 1
+    path: Assets/MyComponent/Import Folder/Scene/FirstBossArena.unity
+    guid: 407ffd1bf62d2bd4b963715f2a888677
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 771d8c4bef032684eae348b48519bfd2, type: 2}

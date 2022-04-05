@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
+
 
 public class Player : MonoBehaviour
 {
@@ -20,7 +20,6 @@ public class Player : MonoBehaviour
     [SerializeField] private float mouseSpeed = 10f;
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private GameObject viewPoint;
-    [SerializeField] private PlayerInput inputSystem;
     //[SerializeField]private GameObject leftWeaponMuzzle;
     //[SerializeField]private GameObject rightWeaponMuzzle;
     //[SerializeField] private GameObject verticalRotation;
@@ -70,31 +69,31 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerMovement.ActorMovement(this.gameObject, horizontalRotation.transform.rotation ,  Camera.main, playerSpeed, playerAnimator, isOnGround);
+        playerMovement.ActorMovement(this.gameObject, horizontalRotation.transform.rotation, Camera.main, playerSpeed, playerAnimator, isOnGround);
         playerRotation.PlayerRotation(verticalRotation, horizontalRotation, Camera.main, mouseSpeed);
         playerRotation.WeaponRotation(leftWeapon, rightWeapon, Camera.main);   
-        if (Mouse.current.leftButton.isPressed)
+        if (Input.GetKey(KeyCode.Mouse0))
         {
             StartCoroutine(ShootLeftWeapeon());
-            if (Mouse.current.rightButton.isPressed)
+            if (Input.GetKey(KeyCode.Mouse1))
             {
                 StartCoroutine(ShootRightWeapeon());
             }
         }
 
-        if (Mouse.current.rightButton.isPressed)
+        if (Input.GetKey(KeyCode.Mouse1))
         {
             StartCoroutine(ShootRightWeapeon());
-            if (Mouse.current.leftButton.isPressed)
+            if (Input.GetKey(KeyCode.Mouse0))
             {
                 StartCoroutine(ShootLeftWeapeon());
             }
         }
-        if (Keyboard.current.spaceKey.isPressed)
+        if (Input.GetKey(KeyCode.Mouse2))
         {
             StartCoroutine(UseAccesory());
         }
-        if (Keyboard.current.rKey.isPressed)
+        if (Input.GetKeyDown(KeyCode.R))
         {
             leftWeapon.GetComponent<WeaponParameter>().SetAmmunation(leftWeapon.GetComponent<WeaponParameter>().GetAmmunation().Item2 == 0 ? leftWeapon.GetComponent<WeaponParameter>().GetAmmunation().Item1 : 100, leftWeapon.GetComponent<WeaponParameter>().GetAmmunation().Item2 == 0 ? 0 : leftWeapon.GetComponent<WeaponParameter>().GetAmmunation().Item2 - 1);
         }
@@ -102,7 +101,7 @@ public class Player : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        isOnGround = Physics.CheckSphere(this.gameObject.transform.position, 6, 110, QueryTriggerInteraction.Ignore);//ground detect settings
+        isOnGround = Physics.CheckSphere(this.gameObject.transform.position, 20, 110, QueryTriggerInteraction.Ignore);//ground detect settings
 
     }
 

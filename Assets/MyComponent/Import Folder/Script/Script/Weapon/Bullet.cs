@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.layer == 8)
         {
-            //collision.gameObject.GetComponent<CrabStats>().getDamage(damage);
+            collision.gameObject.GetComponent<CrabStats>().getDamage(damage);
         }
         Destroy(this.gameObject);
     }
