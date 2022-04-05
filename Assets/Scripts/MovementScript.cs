@@ -7,7 +7,7 @@ public class MovementScript : MonoBehaviour
 {
     private Rigidbody rb;
     [SerializeField] private float speed = 5;
-    
+    [SerializeField] private GameObject _groundCheck;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform barrelLocation;
     [SerializeField] private Transform bulletParent;
@@ -28,6 +28,10 @@ public class MovementScript : MonoBehaviour
 
     private InputAction shootAction;
     [SerializeField]private Animator animator;
+    [SerializeField]private float _sprintSpeed = 1f;
+    [SerializeField] private float dashTime;
+    [SerializeField] private float dashSpeed;
+
     void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -48,17 +52,29 @@ public class MovementScript : MonoBehaviour
         //_targetRotation = new Vector3(0, inputDirecion.x, 0);
         //_targetRotation.y *= _rotationSpeed;
         //Debug.Log(_targetRotation);
-        rb.MovePosition(transform.position + 2.8f * Time.deltaTime * move);
+        
         
         //movementAnimation
         animator.SetFloat("MovementSpeed", Mathf.Abs(inputDirecion.y));
+
+        animator.SetBool("IsMoving", MovementChecker());
     }
 
     private void HandleMovement()
     {
         move = new Vector3(inputDirecion.x, 0, inputDirecion.y);
         move = move.x * cameraTransform.right.normalized + move.z * cameraTransform.forward.normalized;
+        move *= _sprintSpeed;
         move.y = 0;
+        rb.MovePosition(transform.position + 2.8f * Time.deltaTime * move);
+    }
+    public void HandleSprint(InputAction.CallbackContext context) 
+    {
+        _sprintSpeed *= 2f;
+    }
+    bool MovementChecker() 
+    {
+        return move != Vector3.zero;
     }
 
     public void Look(InputAction.CallbackContext context)
@@ -79,12 +95,26 @@ public class MovementScript : MonoBehaviour
     
     private bool IsGrounded()
     {
-        return transform.Find("GroundCheck").GetComponent<GroundCheck>().isGrounded;
+        return _groundCheck.GetComponent<GroundCheck>().isGrounded;//transform.Find("GroundCheck").GetComponent<GroundCheck>().isGrounded;
     }
 
     void DragCrosshair() 
     {
         //desiredTarget.point
+    }
+    public void Dash(InputAction.CallbackContext context)
+    {
+        StartCoroutine(Dash());
+    }
+    IEnumerator Dash()
+    {
+        float startTime = Time.time;
+        Debug.Log(move);
+        while (Time.time < startTime + dashTime)
+        {
+            rb.MovePosition(move * dashSpeed * Time.deltaTime);
+            yield return null;
+        }
     }
     /*
 private void OnEnable()
