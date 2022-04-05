@@ -93,11 +93,11 @@ public class UpperPartScript : MonoBehaviour
 
     IEnumerator ShootBurstCoroutine()
     {
-        Debug.Log("test2");
+        //Debug.Log("test2");
         lastBulletShootTime = Time.realtimeSinceStartup;
         for (int bulletNr = 0; bulletNr < 5; bulletNr++)
         {
-            Debug.Log("test3");
+            //Debug.Log("test3");
             ShootWeapon();
             yield return new WaitForSeconds(0.03f);
         }

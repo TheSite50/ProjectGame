@@ -109,7 +109,7 @@ public class MovementScript : MonoBehaviour
     IEnumerator Dash()
     {
         float startTime = Time.time;
-        Debug.Log(move);
+        Debug.Log(Time.time < startTime + dashTime);
         while (Time.time < startTime + dashTime)
         {
             rb.MovePosition(move * dashSpeed * Time.deltaTime);

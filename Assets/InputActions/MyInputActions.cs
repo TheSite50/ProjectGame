@@ -65,6 +65,14 @@ public class @MyInputActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Dash"",
+                    ""type"": ""Button"",
+                    ""id"": ""7f4dc6a0-8a2d-4294-80f8-54981d2f5ee6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -296,6 +304,17 @@ public class @MyInputActions : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""22623d56-6389-49da-b63b-cc9b9c405e40"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -879,6 +898,7 @@ public class @MyInputActions : IInputActionCollection, IDisposable
         m_Player_Rotation = m_Player.FindAction("Rotation", throwIfNotFound: true);
         m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
+        m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -946,6 +966,7 @@ public class @MyInputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Rotation;
     private readonly InputAction m_Player_Aim;
     private readonly InputAction m_Player_Sprint;
+    private readonly InputAction m_Player_Dash;
     public struct PlayerActions
     {
         private @MyInputActions m_Wrapper;
@@ -956,6 +977,7 @@ public class @MyInputActions : IInputActionCollection, IDisposable
         public InputAction @Rotation => m_Wrapper.m_Player_Rotation;
         public InputAction @Aim => m_Wrapper.m_Player_Aim;
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
+        public InputAction @Dash => m_Wrapper.m_Player_Dash;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -983,6 +1005,9 @@ public class @MyInputActions : IInputActionCollection, IDisposable
                 @Sprint.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprint;
                 @Sprint.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprint;
                 @Sprint.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprint;
+                @Dash.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
+                @Dash.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
+                @Dash.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1005,6 +1030,9 @@ public class @MyInputActions : IInputActionCollection, IDisposable
                 @Sprint.started += instance.OnSprint;
                 @Sprint.performed += instance.OnSprint;
                 @Sprint.canceled += instance.OnSprint;
+                @Dash.started += instance.OnDash;
+                @Dash.performed += instance.OnDash;
+                @Dash.canceled += instance.OnDash;
             }
         }
     }
@@ -1167,6 +1195,7 @@ public class @MyInputActions : IInputActionCollection, IDisposable
         void OnRotation(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
+        void OnDash(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
