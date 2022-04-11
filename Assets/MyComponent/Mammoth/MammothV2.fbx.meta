@@ -22,9 +22,6 @@ ModelImporter:
       74: -1559071518392153964
     second: Armature|Cube.001Action
   - first:
-      74: -982115091633673366
-    second: Armature|Death
-  - first:
       74: 149426543297858465
     second: Armature|Fire_Attack
   - first:
@@ -33,9 +30,6 @@ ModelImporter:
   - first:
       74: 5891674213321544006
     second: Armature|Near_Attack
-  - first:
-      74: 2920023865792766560
-    second: Armature|PlaneAction
   externalObjects: {}
   materials:
     materialImportMode: 2

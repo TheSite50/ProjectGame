@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class ArmoryMenageButton : MonoBehaviour
 {
     [SerializeField] private GameObject[] slots;
-    [SerializeField] private GameObject mapMenu;
+    //[SerializeField] private GameObject mapMenu;
 
     // Start is called before the first frame update
     public void GoToMap()
@@ -16,7 +16,7 @@ public class ArmoryMenageButton : MonoBehaviour
         {
             if (slot.transform.childCount > 0)
             {
-
+                SceneManager.LoadScene(2);
             }
             else
             {
@@ -26,8 +26,8 @@ public class ArmoryMenageButton : MonoBehaviour
 
         }
         //SceneManager.LoadScene("DesertMap");
-        mapMenu.gameObject.SetActive(true);
-        this.gameObject.SetActive(false);
+        //mapMenu.gameObject.SetActive(true);
+        //this.gameObject.SetActive(false);
     }
 
 }

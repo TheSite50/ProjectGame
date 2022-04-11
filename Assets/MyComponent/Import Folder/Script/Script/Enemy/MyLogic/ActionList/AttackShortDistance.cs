@@ -14,35 +14,21 @@ public class AttackShortDistance : IAction
     }
 
 
-    public IEnumerator Actions(GameObject player, GameObject enemy, EnemyAction enemyAction)
+    public void Actions(GameObject player, GameObject enemy, EnemyProperties enemyAction)
     {
 
         if (Vector3.Distance(player.transform.position, enemy.GetComponent<NavMeshAgent>().transform.position) <= distanceLowAttack &&attack==true)
         {
+            enemy.GetComponent<NavMeshAgent>().isStopped = true;
             //Bliski Atak
-            enemy.GetComponent<Animator>().SetBool("Attack",true);
-            enemy.GetComponent<Animator>().SetBool("FarAttack", false);
-            
             enemy.gameObject.transform.LookAt(new Vector3(player.transform.position.x,enemy.transform.position.y,player.transform.position.z));
             StateAction(ActionState.actionRunning, enemyAction);
             attack = false;
         }
-        //else if(Vector3.Distance(player.transform.position, enemy.transform.position) >  - 100f&& Vector3.Distance(player.transform.position, enemy.transform.position)<= enemyAction.GetDistance().Item3 && attack == true)
-        //{
-        //    //Daleki Atak
-        //    enemy.GetComponent<Animator>().SetBool("Attack", false);
-        //    enemy.GetComponent<Animator>().SetBool("FarAttack", true);
-        //    
-        //    enemy.transform.LookAt(new Vector3(player.transform.position.x, enemy.transform.position.y, player.transform.position.z));
-        //    StateAction(ActionState.actionRunning, enemyAction);
-        //    attack = false;
-        //}
         else if (attack==false)
         {
             //Koniec Atak
-            enemy.GetComponent<Animator>().SetBool("Attack", false);
-            enemy.GetComponent<Animator>().SetBool("FarAttack", false);
-            enemy.GetComponent<NavMeshAgent>().isStopped = true;
+            enemy.GetComponent<NavMeshAgent>().isStopped = false;
             StateAction(ActionState.actionComplete, enemyAction);
             attack = true;
         }
@@ -50,14 +36,11 @@ public class AttackShortDistance : IAction
         {
             //B³¹d
             attack = true;
-            enemy.GetComponent<Animator>().SetBool("Attack", false);
-            enemy.GetComponent<Animator>().SetBool("FarAttack", false);
             StateAction(ActionState.actionFail, enemyAction);
         }
-        yield return null;
     }
 
-    public void StateAction(ActionState enemyState, EnemyAction enemy)
+    public void StateAction(ActionState enemyState, EnemyProperties enemy)
     {
         enemy.SetState(enemyState);
     }

@@ -461,7 +461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammunationInMagazine: 100
-  magazineNumber: 2
+  magazineNumber: 100
 --- !u!65 &7228024114642524769
 BoxCollider:
   m_ObjectHideFlags: 0

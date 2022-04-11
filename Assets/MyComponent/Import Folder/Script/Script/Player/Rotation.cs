@@ -11,7 +11,7 @@ public class Rotation : ScriptableObject
     {
         horizontalRotation += Input.GetAxis("Mouse X") * mouseSpeed;
         verticalRotationSupportValue -= Input.GetAxis("Mouse Y") * mouseSpeed;
-        verticalRotation = Mathf.Clamp(verticalRotationSupportValue, -50, 30);
+        verticalRotation = Mathf.Clamp(verticalRotationSupportValue, -50, 50);
         objectVerticalRotation.transform.rotation = Quaternion.Lerp(objectVerticalRotation.transform.rotation, Quaternion.Euler(verticalRotation, horizontalRotation, objectVerticalRotation.transform.rotation.z), mouseSpeed * Time.deltaTime);
         objectHorizontalRotation.transform.rotation = Quaternion.Lerp(objectHorizontalRotation.transform.rotation, Quaternion.Euler(objectHorizontalRotation.transform.rotation.x, horizontalRotation, objectHorizontalRotation.transform.rotation.z), mouseSpeed * Time.deltaTime);
 

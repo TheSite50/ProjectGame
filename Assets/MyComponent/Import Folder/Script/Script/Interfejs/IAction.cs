@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface IAction
 {
-    IEnumerator Actions(GameObject player, GameObject enemy, EnemyAction enemyAction);
-    public void StateAction(ActionState enemyState, EnemyAction enemyAction);
+    void Actions(GameObject player, GameObject enemy, EnemyProperties enemyAction);
+    public void StateAction(ActionState enemyState, EnemyProperties enemyAction);
 }

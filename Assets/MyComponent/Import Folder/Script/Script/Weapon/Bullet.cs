@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour,IDamage
 {
-    private int damage=100;
+    private float damage = 10f;
     private float destroyTime=0;
     void Update()
     {
@@ -22,10 +22,11 @@ public class Bullet : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == 8)
-        {
-            collision.gameObject.GetComponent<CrabStats>().getDamage(damage);
-        }
         Destroy(this.gameObject);
+    }
+
+    public float GetDamage()
+    {
+        return this.damage;
     }
 }

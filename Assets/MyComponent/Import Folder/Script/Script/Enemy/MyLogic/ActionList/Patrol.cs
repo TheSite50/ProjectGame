@@ -13,7 +13,7 @@ public class Patrol : IAction
         this.distanceDetection = distanceDetection;
     }
     
-    public IEnumerator Actions(GameObject player, GameObject enemy, EnemyAction enemyAction)
+    public void Actions(GameObject player, GameObject enemy, EnemyProperties enemyAction)
     {
        if (patrol == false)
        {
@@ -24,7 +24,6 @@ public class Patrol : IAction
        if (Vector3.Distance(player.transform.position, enemy.transform.position) > distanceDetection)
        {
            //Patroluj
-           enemy.GetComponent<Animator>().SetBool("Walk", true);
            enemy.GetComponent<NavMeshAgent>().isStopped = false;
            if (Mathf.Ceil(enemy.transform.position.x)== Mathf.Ceil(destination.x)&& Mathf.Ceil(enemy.transform.position.z) == Mathf.Ceil(destination.z))
            {
@@ -36,20 +35,19 @@ public class Patrol : IAction
        else if (Vector3.Distance(player.transform.position, enemy.transform.position) <= distanceDetection)
        {
             //Przerwij Patrol
-           enemy.GetComponent<Animator>().SetBool("Walk", true);
            enemy.GetComponent<NavMeshAgent>().isStopped = false;
            StateAction(ActionState.actionComplete, enemyAction);
        }
        else
-        {
+       {
             //B³¹d
             enemy.GetComponent<NavMeshAgent>().isStopped = false;
-           StateAction(ActionState.actionFail, enemyAction);
+            StateAction(ActionState.actionFail, enemyAction);
        }
-        yield return null;
+       
     }
 
-    public void StateAction(ActionState enemyState, EnemyAction enemyAction)
+    public void StateAction(ActionState enemyState, EnemyProperties enemyAction)
     {
         enemyAction.SetState(enemyState);
     }

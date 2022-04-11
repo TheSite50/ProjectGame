@@ -2,25 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-public class Boar :  EnemyAction
+
+public class Boar : EnemyProperties
 {
+    
     [SerializeField] private ParticleSystem toxicProjectile;
-    [SerializeField] private float distanceDetection;
-    [SerializeField] private float distanceLowAttack;
-    [SerializeField] private float distanceFarAttack;
-    [SerializeField] private GameObject muzzle;
-    private List<IAction> listEnemyAction;
+    [SerializeField] private ParticleSystem explosionProjectile;
+    [SerializeField] private ParticleSystem chargeProjectile;
+    private List<IAction> listEnemyActionOnGround;
+    private List<IAction> listEnemyActionInAir;
     private bool isOnGround = false;
-    private int numberAction = 0;
+    private int numberActionOnGround = 0;
+    private int numberActionInAir = 0;
     private ActionState actionState;
-    private GameObject player;
+    
+
+    private bool iFly = false; 
     private void Awake()
     {
-        listEnemyAction = new List<IAction>();
-        listEnemyAction.Add(new Patrol(distanceDetection));
-        listEnemyAction.Add(new GoToPlayer(distanceDetection,distanceLowAttack,distanceFarAttack));
-        listEnemyAction.Add(new AttackLongDistance(distanceFarAttack));
-        listEnemyAction.Add(new AttackShortDistance(distanceLowAttack));
+        listEnemyActionOnGround = new List<IAction>();
+        listEnemyActionOnGround.Add(new Patrol(distanceDetection));
+        listEnemyActionOnGround.Add(new GoToPlayer(distanceDetection,distanceLowAttack,distanceFarAttack));
+        listEnemyActionOnGround.Add(new AttackLongDistance(distanceFarAttack));
+        listEnemyActionOnGround.Add(new RunToPlayer(distanceDetection, distanceLowAttack, distanceFarAttack));
+        listEnemyActionOnGround.Add(new AttackShortDistance(distanceLowAttack));
+
+
+        listEnemyActionInAir = new List<IAction>();
+        listEnemyActionInAir.Add(new Fly(distanceDetection, distanceFarAttack));
+        listEnemyActionInAir.Add(new FlyAttack(distanceFarAttack));
+        listEnemyActionInAir.Add(new Landing(distanceDetection, distanceFarAttack));
     }
     // Start is called before the first frame update
     void Start()
@@ -31,39 +42,75 @@ public class Boar :  EnemyAction
     // Update is called once per frame
     void Update()
     {
-        //idŸ do gracza
-        //atakuj gracza
-        //u¿yj umiejêtnoœci
-        //zmieñ rodzej ataku
+        sliderHp.value = this.GetHp() / 100f;
+
+        
         if (isOnGround == true)
         {
+            
+            iFly = false;
             GetComponent<NavMeshAgent>().enabled = true; 
         }
         else
         {
             GetComponent<NavMeshAgent>().enabled = false;
         }
-
-        if (player != null&&isOnGround==true)
+        //idŸ do gracza
+        //atakuj gracza
+        //u¿yj umiejêtnoœci
+        //zmieñ rodzej ataku
+        
+        
+        if(this.GetHp()<=70f&& this.GetHp() >= 50f)
         {
-            StartCoroutine(listEnemyAction[numberAction].Actions(player, this.gameObject, this));
+            
+            iFly = true;
+            
+            GetComponent<NavMeshAgent>().enabled = false;
+        }
+        else if(this.GetHp() <= 50f)
+        {
+            numberActionInAir = 2;
+            
+        }
+        if(this.GetHp()<=0f)
+        {
+            Death();
+        }
+        if (player != null && isOnGround == true && iFly==false)
+        {
+            listEnemyActionOnGround[numberActionOnGround].Actions(player, this.gameObject, this);
             if (actionState == ActionState.actionComplete)
             {
-                StopCoroutine(listEnemyAction[numberAction].Actions(player, this.gameObject, this));
-                numberAction = numberAction < listEnemyAction.Count - 1 ? numberAction + 1 : listEnemyAction.Count - 1;
+                numberActionOnGround = numberActionOnGround < listEnemyActionOnGround.Count - 1 ? numberActionOnGround + 1 : listEnemyActionOnGround.Count - 1;
             }
             else if (actionState == ActionState.actionFail)
             {
-                StopCoroutine(listEnemyAction[numberAction].Actions(player, this.gameObject, this));
-                numberAction = 0;
+                numberActionOnGround = 0;
             }
             else
             {
-                StopCoroutine(listEnemyAction[numberAction].Actions(player, this.gameObject, this));
-                print("false");
             }
             muzzle.transform.LookAt(player.transform);
         }
+        else if(iFly == true)
+        {
+            listEnemyActionInAir[numberActionInAir].Actions(player, this.gameObject, this);
+            if (actionState == ActionState.actionComplete)
+            {
+                numberActionInAir = numberActionInAir < listEnemyActionInAir.Count - 1 ? numberActionInAir + 1 : listEnemyActionInAir.Count - 1;
+            }
+            else if (actionState == ActionState.actionFail)
+            {
+                numberActionInAir = 0;
+            }
+            else
+            {
+            }
+            muzzle.transform.LookAt(player.transform);
+        }
+        
+
 
         
     }
@@ -72,6 +119,14 @@ public class Boar :  EnemyAction
         isOnGround = Physics.CheckSphere(this.gameObject.transform.position, 9, 110, QueryTriggerInteraction.Ignore);//ground detect settings
         
     }
+
+    private void Death()
+    {
+        this.GetComponent<NavMeshAgent>().enabled = false;
+        Instantiate<ParticleSystem>(explosionProjectile, this.transform.position, this.transform.rotation);
+        Destroy(this.gameObject);
+    }
+
 
     public override void SetState(ActionState actionState)
     {
@@ -82,14 +137,22 @@ public class Boar :  EnemyAction
     {
         Instantiate<ParticleSystem>(toxicProjectile, muzzle.transform.position, muzzle.transform.rotation) ;
     }
-
+    public void ChargeAttack()
+    {
+        Instantiate<ParticleSystem>(chargeProjectile, this.transform);
+    }
     public override void SetPlayer(GameObject player)
     {
         this.player = player;
     }
 
-    public override (float,float,float) GetDistance()
+    public void GetEnemyState()
     {
-        return (distanceDetection, distanceLowAttack, distanceFarAttack);
-    }          
+
+    }
+
+    public override (bool isInFly, int onGround, int inAir) NumberAction()
+    {
+        return (isInFly: iFly, onGround: numberActionOnGround,inAir: numberActionInAir);
+    }
 }              
