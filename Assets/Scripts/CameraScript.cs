@@ -5,11 +5,10 @@ using UnityEngine.InputSystem;
 
 public class CameraScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
     private Vector3 cameraRotation;
     [SerializeField] private float sensitivity = 5;
 
-    // Update is called once per frame
     void Update()
     {
         //Debug.Log(cameraRotation);

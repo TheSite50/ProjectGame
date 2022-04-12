@@ -327,16 +327,17 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7882833162188811267, guid: 6d4b6cc643c41c449bd2a7dd3b482611, type: 3}
   barrelLocation: {fileID: 514072727}
   bulletParent: {fileID: 1733735709}
-  BulletDistance: 500
+  BulletDistance: 100
   playerInput: {fileID: 94143220}
   inputDirecion: {x: 0, y: 0}
   _movementDirection: {x: 0, y: 0, z: 0}
   move: {x: 0, y: 0, z: 0}
-  _rotationSpeed: 2
+  _rotationSpeed: 5
   animator: {fileID: 1760660372}
   _sprintSpeed: 1
   dashTime: 0
   dashSpeed: 0
+  movementSpeed: 2.8
 --- !u!65 &94143218
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -479,6 +480,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: d3bdef50-614c-47ff-8636-65a357ce5500
     m_ActionName: Player/Sprint[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7f4dc6a0-8a2d-4294-80f8-54981d2f5ee6
+    m_ActionName: Player/Dash[/Keyboard/z]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -1523,6 +1528,30 @@ PrefabInstance:
     - target: {fileID: 4518745923653144327, guid: bc6228b6df55fe7448ebccfdde98ded1, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518745923653144327, guid: bc6228b6df55fe7448ebccfdde98ded1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518745923653144327, guid: bc6228b6df55fe7448ebccfdde98ded1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518745923653144327, guid: bc6228b6df55fe7448ebccfdde98ded1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518745923653144327, guid: bc6228b6df55fe7448ebccfdde98ded1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518745923653144327, guid: bc6228b6df55fe7448ebccfdde98ded1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518745923653144327, guid: bc6228b6df55fe7448ebccfdde98ded1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5408254516208788309, guid: bc6228b6df55fe7448ebccfdde98ded1, type: 3}
       propertyPath: m_TagString
@@ -2710,7 +2739,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7882833162188811267, guid: 6d4b6cc643c41c449bd2a7dd3b482611, type: 3}
   barrelLocation: {fileID: 514072727}
   bulletParent: {fileID: 1733735709}
-  _weaponRange: 100
+  _weaponRange: 500
   playerInput: {fileID: 94143220}
   animator: {fileID: 0}
   _desiredShootLocation: {x: 0, y: 0, z: 0}

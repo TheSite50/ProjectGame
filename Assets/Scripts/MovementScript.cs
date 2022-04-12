@@ -20,24 +20,21 @@ public class MovementScript : MonoBehaviour
     public Vector3 move;                                //current movement direction
 
     [SerializeField] private float _rotationSpeed = 6;
-    private Vector3 _targetRotation;
-    private Vector3 _turretRotation;
-    RaycastHit desiredTarget;
 
     private Transform cameraTransform;
 
-    private InputAction shootAction;
+
     [SerializeField]private Animator animator;
     [SerializeField]private float _sprintSpeed = 1f;
     [SerializeField] private float dashTime;
     [SerializeField] private float dashSpeed;
+    [SerializeField] float movementSpeed = 2.8f;
 
     void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
         cameraTransform = Camera.main.transform;
-        shootAction = playerInput.actions["Fire"];
         
     }
 
@@ -55,26 +52,20 @@ public class MovementScript : MonoBehaviour
         
         
         //movementAnimation
-        animator.SetFloat("MovementSpeed", Mathf.Abs(inputDirecion.y));
 
-        animator.SetBool("IsMoving", MovementChecker());
+        animator.SetBool("IsMoving", move != Vector3.zero);
     }
 
     private void HandleMovement()
     {
         move = new Vector3(inputDirecion.x, 0, inputDirecion.y);
         move = move.x * cameraTransform.right.normalized + move.z * cameraTransform.forward.normalized;
-        move *= _sprintSpeed;
         move.y = 0;
-        rb.MovePosition(transform.position + 2.8f * Time.deltaTime * move);
+        rb.MovePosition(transform.position + movementSpeed * Time.deltaTime * move);
     }
     public void HandleSprint(InputAction.CallbackContext context) 
     {
-        _sprintSpeed *= 2f;
-    }
-    bool MovementChecker() 
-    {
-        return move != Vector3.zero;
+        
     }
 
     public void Look(InputAction.CallbackContext context)
@@ -88,20 +79,26 @@ public class MovementScript : MonoBehaviour
         //Debug.Log(context);
         //transform.rotation = Quaternion.Lerp(transform.rotation, CharacterRotation(), rotationSpeed * Time.deltaTime);
     }
+
     public Quaternion CharacterRotation()
     {
         return Quaternion.LookRotation(move);
     } 
+
+    void BottomPartRotation()
+    {
+        if (move != Vector3.zero) 
+        {
+            Quaternion desiredRotation = Quaternion.LookRotation(move, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, _rotationSpeed * Time.deltaTime);
+        }
+    }
     
     private bool IsGrounded()
     {
-        return _groundCheck.GetComponent<GroundCheck>().isGrounded;//transform.Find("GroundCheck").GetComponent<GroundCheck>().isGrounded;
+        return _groundCheck.GetComponent<GroundCheck>().isGrounded;
     }
 
-    void DragCrosshair() 
-    {
-        //desiredTarget.point
-    }
     public void Dash(InputAction.CallbackContext context)
     {
         StartCoroutine(Dash());

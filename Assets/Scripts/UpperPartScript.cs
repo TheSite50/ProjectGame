@@ -9,6 +9,7 @@ public class UpperPartScript : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform barrelLocation;
     [SerializeField] private Transform bulletParent;
+    private Vector3 _lookAtPoint;
     [SerializeField] float _weaponRange = 100f;
     [SerializeField] private PlayerInput playerInput;
     private Transform cameraTransform;
@@ -17,7 +18,7 @@ public class UpperPartScript : MonoBehaviour
     public Vector3 _desiredShootLocation;//gdzie jest celownik
     RaycastHit hitLocation;
     bool raycast;
-    //LayerMask layers = LayerMask.GetMask();
+
     void Awake()
     {
         cameraTransform = Camera.main.transform;
@@ -26,15 +27,31 @@ public class UpperPartScript : MonoBehaviour
 
     void Update()
     {
-        
-       
-        
-        //Debug.Log(transform.rotation.eulerAngles);
         HandleTurretRotation();
-        //_turretRotation = cameraTransform.localPosition;
-        //Debug.Log(_desiredShootLocation);
+        WhereIsShooting();
+        BarrelOffset();
+    }
+
+    void BarrelOffset() 
+    {
+        raycast = Physics.Raycast(cameraTransform.position, transform.forward, out RaycastHit lookLocation, Mathf.Infinity);
+        if (raycast)
+        {
+            _lookAtPoint = lookLocation.point;
+        }
+        else
+        {
+            _lookAtPoint = barrelLocation.position + barrelLocation.forward * _weaponRange;
+        }
+        barrelLocation.LookAt(lookLocation.transform);
+
+        Debug.DrawRay(barrelLocation.position, transform.forward*500, Color.red);
+        Debug.Log(barrelLocation.rotation);
+    }
+    private void WhereIsShooting()
+    {
         raycast = Physics.Raycast(barrelLocation.position, transform.forward, out hitLocation, Mathf.Infinity);
-        if (raycast)//strzela przed siebie dodac rotacje do minigunów by obraca³y siê w strone kursora,dodac kursor pokazujacy gdzie dokladnie teraz poleci pocisk
+        if (raycast)
         {
             _desiredShootLocation = hitLocation.point;
         }
@@ -42,9 +59,6 @@ public class UpperPartScript : MonoBehaviour
         {
             _desiredShootLocation = barrelLocation.position + barrelLocation.forward * _weaponRange;
         }
-
-        //_turretRotation = Quaternion.Euler(transform.rotation.eulerAngles - cameraTransform.position) ;
-        //Debug.Log(cameraTransform.localPosition);
     }
 
     private void HandleTurretRotation()
