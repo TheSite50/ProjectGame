@@ -42,17 +42,6 @@ public class MovementScript : MonoBehaviour
     {
         //movement 
         HandleMovement();
-
-
-
-        //rotation
-        //_targetRotation = new Vector3(0, inputDirecion.x, 0);
-        //_targetRotation.y *= _rotationSpeed;
-        //Debug.Log(_targetRotation);
-        
-        
-        //movementAnimation
-
         animator.SetBool("IsMoving", move != Vector3.zero);
     }
 
@@ -109,7 +98,7 @@ public class MovementScript : MonoBehaviour
         Debug.Log(Time.time < startTime + dashTime);
         while (Time.time < startTime + dashTime)
         {
-            rb.MovePosition(move * dashSpeed * Time.deltaTime);
+            rb.MovePosition(dashSpeed * Time.deltaTime * move);
             yield return null;
         }
     }

@@ -11,13 +11,11 @@ public class HudScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Physics.Raycast(barrelLocation.transform.position, transform.forward, out RaycastHit desiredTarget, Mathf.Infinity))
-        {
-            followCrosshair.transform.position = Camera.main.WorldToScreenPoint(player._desiredShootLocation);
-            
-            //Debug.Log(followCrosshair.transform.localScale);
-
-        }
+        UpdateCrosshairPosition();
+    }
+    void UpdateCrosshairPosition() 
+    {
+        followCrosshair.transform.position = Camera.main.WorldToScreenPoint(player.whereLookLocation);
     }
 }
 

@@ -12,14 +12,14 @@ public class CameraScript : MonoBehaviour
     void Update()
     {
         //Debug.Log(cameraRotation);
-        cameraRotation.x = Mathf.Clamp(cameraRotation.x, -70f, 70f);
+        cameraRotation.x = Mathf.Clamp(cameraRotation.x, -70f, 70f);//umieœcic ograniczenie w miejscu gdzie jest podawany obrót kameryt zamiast tutaj po tak to daje a to koryguje
         if (cameraRotation.y >= 180)
             cameraRotation.y -= 360;
         if (cameraRotation.y <= -180)
             cameraRotation.y += 360;
         cameraRotation.z = 0;
         //Debug.Log(cameraRotation);
-        transform.rotation = Quaternion.Euler(Vector3.Lerp(transform.rotation.eulerAngles, transform.rotation.eulerAngles + cameraRotation, 0.5f));
+        transform.rotation = Quaternion.Euler(Vector3.Lerp(transform.rotation.eulerAngles, transform.rotation.eulerAngles + cameraRotation, 0.1f));
         //Debug.Log(transform.rotation);
     }
     public void CharacterRotation(InputAction.CallbackContext context)
