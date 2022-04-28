@@ -9,6 +9,6 @@ public class LowerPartScript : MonoBehaviour
     [SerializeField]private float rotationSpeed = 10f;
     private void FixedUpdate()
     {
-        transform.forward = Vector3.Lerp(transform.forward, movementScript.move, rotationSpeed);
+       // transform.forward = Vector3.Lerp(transform.forward, movementScript.move, rotationSpeed);
     }
 }

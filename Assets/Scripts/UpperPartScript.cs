@@ -33,7 +33,7 @@ public class UpperPartScript : MonoBehaviour
         HandleTurretRotation();
 
         LookDirection();
-        Debug.Log(whereLookLocation);
+        //Debug.Log(whereLookLocation);
         
         
     }
@@ -117,18 +117,18 @@ public class UpperPartScript : MonoBehaviour
 
     void TryToShootNextBullet()
     {
-        Debug.Log(Time.realtimeSinceStartup);
+        
         if (Time.realtimeSinceStartup >= lastBulletShootTime + secondsBetweenBullets)
             StartCoroutine(ShootBurstCoroutine());
     }
 
     IEnumerator ShootBurstCoroutine()
     {
-        //Debug.Log("test2");
+        
         lastBulletShootTime = Time.realtimeSinceStartup;
         for (int bulletNr = 0; bulletNr < 5; bulletNr++)
         {
-            //Debug.Log("test3");
+            
             ShootWeapon();
             yield return new WaitForSeconds(0.03f);
         }
