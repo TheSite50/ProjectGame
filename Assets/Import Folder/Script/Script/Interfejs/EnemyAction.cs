@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class EnemyAction : MonoBehaviour
+public abstract class EnemyAction : EnemyControll
 {
     [Header("Enemy Action Parameter")] 
     [SerializeField] protected float distanceDetection;
@@ -14,8 +14,7 @@ public abstract class EnemyAction : MonoBehaviour
     protected GameObject player;
 
     //ActionState StateAction(ActionState enemyAction);
-    public abstract void SetState(ActionState actionState);
-    public abstract void SetPlayer(GameObject player);
+    
 
 }
 

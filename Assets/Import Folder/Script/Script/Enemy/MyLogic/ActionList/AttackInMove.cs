@@ -17,7 +17,7 @@ public class AttackInMove : IAction
     }
 
 
-    public void Actions(GameObject player, GameObject enemy, EnemyProperties enemyAction)
+    public void Actions(GameObject player, GameObject enemy, EnemyControll enemyAction)
     {
         if (Vector3.Distance(player.transform.position, enemy.GetComponent<NavMeshAgent>().transform.position) < distanceFarAttack &&
             Vector3.Distance(player.transform.position, enemy.GetComponent<NavMeshAgent>().transform.position) > distanceLowAttack )
@@ -41,7 +41,7 @@ public class AttackInMove : IAction
         }
     }
 
-    public void StateAction(ActionState enemyState, EnemyProperties enemyAction)
+    public void StateAction(ActionState enemyState, EnemyControll enemyAction)
     {
         enemyAction.SetState(enemyState);
     }

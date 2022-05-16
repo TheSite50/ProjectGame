@@ -12,7 +12,7 @@ public class Landing : IAction
         this.distanceDetection = distanceDetection;
         this.distanceFarAttack = distanceFarAttack;
     }
-    public void Actions(GameObject player, GameObject enemy, EnemyProperties enemyAction)
+    public void Actions(GameObject player, GameObject enemy, EnemyControll enemyAction)
     {
         enemy.GetComponent<Animator>().SetBool("FlyAttack", false);
         enemy.GetComponent<Animator>().SetBool("Fly", true);
@@ -25,7 +25,7 @@ public class Landing : IAction
         //if landing
     }
 
-    public void StateAction(ActionState enemyState, EnemyProperties enemyAction)
+    public void StateAction(ActionState enemyState, EnemyControll enemyAction)
     {
         enemyAction.SetState(enemyState);
     }

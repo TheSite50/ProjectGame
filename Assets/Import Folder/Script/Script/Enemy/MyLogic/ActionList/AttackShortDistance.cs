@@ -14,10 +14,10 @@ public class AttackShortDistance : IAction
     }
 
 
-    public void Actions(GameObject player, GameObject enemy, EnemyProperties enemyAction)
+    public void Actions(GameObject player, GameObject enemy, EnemyControll enemyAction)
     {
 
-        if (Vector3.Distance(player.transform.position, enemy.GetComponent<NavMeshAgent>().transform.position) <= distanceLowAttack &&attack==true)
+        if (Vector3.Distance(player.transform.position, enemy.GetComponent<NavMeshAgent>().transform.position) <= distanceLowAttack && attack==true)
         {
             enemy.GetComponent<NavMeshAgent>().isStopped = true;
             //Bliski Atak
@@ -40,7 +40,7 @@ public class AttackShortDistance : IAction
         }
     }
 
-    public void StateAction(ActionState enemyState, EnemyProperties enemy)
+    public void StateAction(ActionState enemyState, EnemyControll enemy)
     {
         enemy.SetState(enemyState);
     }

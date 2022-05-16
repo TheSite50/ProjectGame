@@ -15,7 +15,7 @@ public class GoToPlayer : IAction
         this.distanceLowAttack = distanceLowAttack;
         this.distanceFarAttack = distanceFarAttack;
     }
-    public void Actions(GameObject player, GameObject enemy, EnemyProperties enemyAction)
+    public void Actions(GameObject player, GameObject enemy, EnemyControll enemyAction)
     {
         if (Vector3.Distance(player.transform.position, enemy.transform.position) <= distanceDetection && Vector3.Distance(player.transform.position, enemy.transform.position)>distanceFarAttack)
         {
@@ -37,7 +37,7 @@ public class GoToPlayer : IAction
             StateAction(ActionState.actionFail, enemyAction);
         }
     }
-    public  void StateAction(ActionState enemyState, EnemyProperties enemyAction)
+    public  void StateAction(ActionState enemyState, EnemyControll enemyAction)
     {
         enemyAction.SetState(enemyState);
     }

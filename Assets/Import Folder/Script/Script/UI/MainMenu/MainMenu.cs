@@ -1,15 +1,23 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject saveGame;
     [SerializeField] private GameObject options;
     [SerializeField] private GameObject credits;
+   
     public void StartGame()
     {
-        SceneManager.LoadScene("StartMap");
+        mainMenu.SetActive(false);
+        saveGame.SetActive(true);
     }
+    //public void LoadSave()
+    //{
+    //    SceneManager.LoadScene(1);
+    //}
 
     public void Options()
     {

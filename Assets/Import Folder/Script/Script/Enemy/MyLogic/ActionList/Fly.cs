@@ -13,7 +13,7 @@ public class Fly : IAction
         this.distanceDetection = distanceDetection;
         this.distanceFarAttack = distanceFarAttack;
     }
-    public void Actions(GameObject player, GameObject enemy, EnemyProperties enemyAction)
+    public void Actions(GameObject player, GameObject enemy, EnemyControll enemyAction)
     {
         enemy.GetComponent<Rigidbody>().useGravity = false;
         enemy.GetComponent<Rigidbody>().isKinematic = true;
@@ -37,7 +37,7 @@ public class Fly : IAction
 
     }
 
-    public void StateAction(ActionState enemyState, EnemyProperties enemyAction)
+    public void StateAction(ActionState enemyState, EnemyControll enemyAction)
     {
         enemyAction.SetState(enemyState);
     }

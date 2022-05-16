@@ -10,7 +10,7 @@ public class GreenEssenceBuff : MonoBehaviour
     {
         if (other.gameObject.layer == 8)
         {
-            GameInformation.SetEssence(0, buffValue);
+            GameInformation.AddEssence(0, buffValue);
             Destroy(this.gameObject);
         }
     }

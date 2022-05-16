@@ -13,7 +13,7 @@ public class Patrol : IAction
         this.distanceDetection = distanceDetection;
     }
     
-    public void Actions(GameObject player, GameObject enemy, EnemyProperties enemyAction)
+    public void Actions(GameObject player, GameObject enemy, EnemyControll enemyAction)
     {
        if (patrol == false)
        {
@@ -47,7 +47,7 @@ public class Patrol : IAction
        
     }
 
-    public void StateAction(ActionState enemyState, EnemyProperties enemyAction)
+    public void StateAction(ActionState enemyState, EnemyControll enemyAction)
     {
         enemyAction.SetState(enemyState);
     }

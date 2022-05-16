@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 public class GetAndDragItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
@@ -90,4 +90,15 @@ public class GetAndDragItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
     {
         return leftWeapon;
     }
+    public void SetIsUnlock(bool setUnlock)
+    {
+        this.gameObject.transform.GetChild(0).gameObject.SetActive(!setUnlock);
+        this.GetComponent<Button>().enabled = !setUnlock;
+        isUnlock = setUnlock;
+    }
+    public bool GetIsUnlock()
+    {
+        return isUnlock;
+    }
+
 }

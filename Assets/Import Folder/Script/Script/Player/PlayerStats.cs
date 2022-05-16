@@ -13,9 +13,13 @@ public class PlayerStats : MonoBehaviour, IHp
     private WeaponParameter weaponAmmunationRight = null;
     private static GameObject player;
     [SerializeField] private Canvas gameOver;
-    private void Start()
+    private void Awake()
     {
         player = this.gameObject;
+    }
+    private void Start()
+    {
+        
         if (CreatePlayerInGame.GetWeaponLeft())
             weaponAmmunationLeft = CreatePlayerInGame.GetWeaponLeft().GetComponent<WeaponParameter>();
         else

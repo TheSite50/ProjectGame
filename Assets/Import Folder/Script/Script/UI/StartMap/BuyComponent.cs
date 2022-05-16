@@ -11,9 +11,13 @@ public class BuyComponent : MonoBehaviour
     {
         if(GameInformation.GetEssence().blueEssenceValue-price>=0)
         {
-            GameInformation.SetEssence(-price, 0);
+            GameInformation.AddEssence(-price, 0);
             this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
             this.GetComponent<Button>().enabled = false;
+            //if(this.gameObject.GetComponent<InformationAboutMe>())
+            //{
+            //    this.gameObject.GetComponent<InformationAboutMe>().SendIngormationAboutMe();
+            //}
         }
     }
 }

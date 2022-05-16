@@ -16,12 +16,13 @@ public class Boar : EnemyProperties
     private int numberActionOnGround = 0;
     private int numberActionInAir = 0;
     private ActionState actionState;
-
+    private NavMeshAgent navMesh;
     private bool ILive = true;
     private bool iFly = false; 
     private void Awake()
     {
         spawnBuff = this.GetComponent<RandomEnemySpawnBuff>();
+        navMesh = GetComponent<NavMeshAgent>();
         listEnemyActionOnGround = new List<IAction>();
         listEnemyActionOnGround.Add(new Patrol(distanceDetection));
         listEnemyActionOnGround.Add(new GoToPlayer(distanceDetection,distanceLowAttack,distanceFarAttack));
@@ -51,11 +52,11 @@ public class Boar : EnemyProperties
         {
             
             iFly = false;
-            GetComponent<NavMeshAgent>().enabled = true; 
+            navMesh.enabled = true; 
         }
         else
         {
-            GetComponent<NavMeshAgent>().enabled = false;
+            navMesh.enabled = false;
         }
         //idü do gracza
         //atakuj gracza
@@ -68,7 +69,7 @@ public class Boar : EnemyProperties
             
             iFly = true;
             
-            GetComponent<NavMeshAgent>().enabled = false;
+            navMesh.enabled = false;
         }
         else if(this.GetHp() <= 50f)
         {
