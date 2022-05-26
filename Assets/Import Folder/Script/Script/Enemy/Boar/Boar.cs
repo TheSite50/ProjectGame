@@ -9,6 +9,7 @@ public class Boar : EnemyProperties
     [SerializeField] private ParticleSystem toxicProjectile;
     [SerializeField] private ParticleSystem explosionProjectile;
     [SerializeField] private ParticleSystem chargeProjectile;
+    [SerializeField] private GameObject muzzle;
     private RandomEnemySpawnBuff spawnBuff;
     private List<IAction> listEnemyActionOnGround;
     private List<IAction> listEnemyActionInAir;
@@ -25,14 +26,14 @@ public class Boar : EnemyProperties
         navMesh = GetComponent<NavMeshAgent>();
         listEnemyActionOnGround = new List<IAction>();
         listEnemyActionOnGround.Add(new Patrol(distanceDetection));
-        listEnemyActionOnGround.Add(new GoToPlayer(distanceDetection,distanceLowAttack,distanceFarAttack));
+        listEnemyActionOnGround.Add(new GoToPlayer(distanceDetection,distanceFarAttack));
         listEnemyActionOnGround.Add(new AttackLongDistance(distanceFarAttack));
         listEnemyActionOnGround.Add(new RunToPlayer(distanceDetection, distanceLowAttack, distanceFarAttack));
         listEnemyActionOnGround.Add(new AttackShortDistance(distanceLowAttack));
 
 
         listEnemyActionInAir = new List<IAction>();
-        listEnemyActionInAir.Add(new Fly(distanceDetection, distanceFarAttack));
+        listEnemyActionInAir.Add(new FlyToPlayer(distanceDetection, distanceFarAttack));
         listEnemyActionInAir.Add(new FlyAttack(distanceFarAttack));
         listEnemyActionInAir.Add(new Landing(distanceDetection, distanceFarAttack));
     }

@@ -46,11 +46,11 @@ public class BoarAnimationMenage : MonoBehaviour
             {
                 if(NumberActionInAir != -1)
                 {
-                    animatorBoar.SetBool(dictionaryAnimation[(NumberActionInAir, -1)], false);
+                    animatorBoar.SetBool(dictionaryAnimation[(-1,NumberActionInAir )], false);
                 }
 
-                animatorBoar.SetBool(dictionaryAnimation[(enemy.NumberAction().inAir, -1)], true);
-                NumberActionInAir = enemy.NumberAction().onGround;
+                animatorBoar.SetBool(dictionaryAnimation[(-1, enemy.NumberAction().inAir)], true);
+                NumberActionInAir = enemy.NumberAction().inAir;
             }
         }
     }

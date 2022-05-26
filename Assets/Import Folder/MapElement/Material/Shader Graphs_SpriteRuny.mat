@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs_SpriteRuny
+  m_Shader: {fileID: -6465566751694194690, guid: 5345eeec8fbf35148bc38bf1cfeb63b6, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _SampleTexture2D_66670aa617024eacbe92aa2bd9b4530c_Texture_1:
+        m_Texture: {fileID: 2800000, guid: f31e9f92b23ea464399f504d91ef3f81, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_6c0f84f54b874a648437b756b91c73f4_Texture_1:
+        m_Texture: {fileID: 2800000, guid: da706ead7d072f748b2f92dfe3892a94, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_73972c6d76f54b7a9fa61bdf6f1a2734_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 84e120a631613c44f8577c88b3b8d6fa, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_a646b5be93564081a4d4bef0bd8496bc_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 64185160224c63e4ea3823b97e3c8bd7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_d1a0f611c2ce44c3a32824782b3e1e99_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 1981f2287b936ff45b064dc29eed600b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_f8427c58b5b447c882538ea3e06c4667: 2
+    m_Colors: []
+  m_BuildTextureStacks: []

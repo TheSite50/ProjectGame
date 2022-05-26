@@ -4,44 +4,41 @@ using UnityEngine;
 using UnityEngine.AI;
 public class UseSkill : IAction
 {
-    
-    public UseSkill()
+    private static int useSkill = 0;
+    private float distanceFarAttack = 0;
+    private float distanceDetection = 0;
+    public UseSkill(float distanceFarAttack, float distanceDetection)
     {
-
+        this.distanceFarAttack = distanceFarAttack;
+        this.distanceDetection = distanceDetection;
     }
 
     public void Actions(GameObject player, GameObject enemy, EnemyControll enemyAction)
     {
-        if (true)
+        if (useSkill==0 )
         {
-            //IdŸ do gracza jeœli jest w zasiêgu
+            useSkill = 1;
             enemy.GetComponent<NavMeshAgent>().isStopped = true;
-            UseThisSkill();
             StateAction(ActionState.actionRunning, enemyAction);
         }
-        if (false)
+        else if (useSkill == 1)
         {
-
-            //Przerwij pod¹¿anie do gracza
+            
             enemy.GetComponent<NavMeshAgent>().isStopped = true;
-
-            StateAction(ActionState.actionFail, enemyAction);
+            useSkill = 2;
+            StateAction(ActionState.actionRunning, enemyAction);
         }
         else
         {
             //B³¹d
             enemy.GetComponent<NavMeshAgent>().isStopped = true;
-            StateAction(ActionState.actionFail, enemyAction);
+            StateAction(ActionState.actionRunning, enemyAction);
         }
     }
 
     public void StateAction(ActionState enemyState, EnemyControll enemyAction)
     {
-        throw new System.NotImplementedException();
-    }
-    public void UseThisSkill()
-    {
-
+        enemyAction.SetState(enemyState);
     }
 
 }

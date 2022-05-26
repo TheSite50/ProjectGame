@@ -17,19 +17,20 @@ public class BossAttack : IAction
     }
     public void Actions(GameObject player, GameObject enemy, EnemyControll enemyAction)
     {
-        if(Random.Range(0, 10)<2&& attack == true)
-        {
-            typeAttack = 1;
-        }
-        else if(attack==true)
-        {
-            typeAttack = 0;
-        }
+        
         if (Vector3.Distance(player.transform.position, enemy.GetComponent<NavMeshAgent>().transform.position) <= distanceLowAttack && attack == true)
         {
-            
             enemy.GetComponent<NavMeshAgent>().isStopped = true;
             enemy.gameObject.transform.LookAt(new Vector3(player.transform.position.x, enemy.transform.position.y, player.transform.position.z));
+            if(Random.Range(0, 10)<2&& attack == true)
+            {
+                typeAttack = 1;
+            }
+            else if(attack==true)
+            {
+                typeAttack = 0;
+            }
+            
             if(typeAttack==0)
             {
                 enemy.GetComponent<Boss>().SetActionNumber(3);
@@ -44,7 +45,7 @@ public class BossAttack : IAction
             {
                 enemy.GetComponent<Boss>().SetActionNumber(2);
             }
-            enemy.GetComponent<NavMeshAgent>().isStopped = false;
+            enemy.GetComponent<NavMeshAgent>().isStopped = true;
             StateAction(ActionState.actionComplete, enemyAction);
             attack = true;
         }

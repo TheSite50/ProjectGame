@@ -1,4 +1,4 @@
-using System;
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,22 +6,29 @@ using UnityEngine.AI;
 
 public class Boss : BossProperties
 {
-    [SerializeField] private GameObject[] tabeleSkillElements;
-    private List<IAction> listEnemyActionOnGround;
+    [SerializeField] private ParticleSystem ball;
+    [SerializeField] private ParticleSystem ballAttack;
+    [SerializeField] private GameObject muzzle;
+    private ParticleSystem ballSkill;
+    private Dictionary<int,IAction> listEnemyActionOnGround;
     private bool isOnGround = false;
     private int numberActionOnGround = 0;
     private ActionState actionState;
     private RandomEnemySpawnBuff spawnBuff;
     private NavMeshAgent navMesh;
     private bool ILive = true;
+    private bool useSkill = false;
     private void Awake()
     {
         spawnBuff = this.GetComponent<RandomEnemySpawnBuff>();
         navMesh = GetComponent<NavMeshAgent>();
-        listEnemyActionOnGround = new List<IAction>();
-        listEnemyActionOnGround.Add(new Patrol(distanceDetection));
-        listEnemyActionOnGround.Add(new BossGoToPlayer(distanceDetection, distanceLowAttack));
-        listEnemyActionOnGround.Add(new BossAttack(distanceLowAttack));
+        listEnemyActionOnGround = new Dictionary<int, IAction>();
+        listEnemyActionOnGround.Add(0, new Patrol(distanceDetection));
+        listEnemyActionOnGround.Add(1, new BossGoToPlayer(distanceDetection, distanceLowAttack, distanceFarAttack));
+        listEnemyActionOnGround.Add(2, new BossAttack(distanceLowAttack));
+        //listEnemyActionOnGround.Add(3, new BossAttack(distanceLowAttack));
+        listEnemyActionOnGround.Add(5, new UseSkill(distanceFarAttack, distanceDetection));
+
         //listEnemyActionOnGround.Add(new UseSkill());
     }
     public override (bool isInFly, int onGround, int inAir) NumberAction()
@@ -51,12 +58,16 @@ public class Boss : BossProperties
     {
         sliderHp.value = this.GetHp() / 1000f;
 
-        if (numberActionOnGround==5)
+        if (Vector3.Distance(player.transform.position, this.transform.position) > distanceFarAttack && Vector3.Distance(player.transform.position, this.transform.position) < distanceDetection && useSkill == false)
         {
-            StartCoroutine(Use());
-            return;
+            useSkill = true;
+            if (useSkill == true)
+            {
+                numberActionOnGround = 5;
+                print("Hello");
+            }
         }
-        
+
         //listEnemyActionOnGround[numberActionOnGround].Actions(player, this.gameObject, this);
         if (player != null && isOnGround == true)
         {
@@ -66,6 +77,8 @@ public class Boss : BossProperties
             }
             else
             {
+                if (numberActionOnGround == 5)
+                    print("World");
                 listEnemyActionOnGround[numberActionOnGround].Actions(player, this.gameObject, this);
             }
             if (actionState == ActionState.actionComplete)
@@ -82,18 +95,17 @@ public class Boss : BossProperties
             
         }
     }
-    IEnumerator Use()
+    public void CreateThisSkill()
     {
-        foreach(GameObject element in tabeleSkillElements)
-        {
-            Vector3.Lerp(element.transform.position, new Vector3(element.transform.position.x, element.transform.position.y + 20f, element.transform.position.z), Time.deltaTime);
-        }
-        this.numberActionOnGround = 0;
-        yield return null;
+        ballSkill = Instantiate<ParticleSystem>(ball, muzzle.transform);
+        
     }
     private void UseThisSkill()
     {
-        this.numberActionOnGround = 5;
+        Destroy(ballSkill.gameObject);
+        muzzle.transform.LookAt(player.transform);
+        Instantiate<ParticleSystem>(ball, muzzle.transform.position, muzzle.transform.rotation);
+        Instantiate<ParticleSystem>(ballAttack, muzzle.transform.position, muzzle.transform.rotation);
     }
 
     private void FixedUpdate()

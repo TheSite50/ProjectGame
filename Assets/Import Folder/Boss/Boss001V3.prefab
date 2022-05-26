@@ -1096,7 +1096,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3132782674511254002}
   - component: {fileID: 2319971261487090505}
-  - component: {fileID: 471886979588501007}
   - component: {fileID: 5306085598436175178}
   - component: {fileID: 878732731056567799}
   - component: {fileID: 7650790382064087691}
@@ -1146,19 +1145,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &471886979588501007
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2319971261487090504}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.12, y: 9, z: 1.8}
-  m_Center: {x: 0, y: 4.5, z: 0}
 --- !u!195 &5306085598436175178
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1211,13 +1197,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceDetection: 1000
   distanceLowAttack: 20
-  distanceFarAttack: 50
+  distanceFarAttack: 500
   sliderHp: {fileID: 0}
   player: {fileID: 0}
   valueHp: 1000
   damage: 10
-  tabeleSkillElements:
-  - {fileID: 0}
+  ball: {fileID: 1020495648660525579, guid: 35909d5316a8b9949ab0897d6d472c22, type: 3}
+  ballAttack: {fileID: 1020495648660525579, guid: 1e988009616c1ce4daa531a53caa0525, type: 3}
+  muzzle: {fileID: 0}
 --- !u!114 &5189417737553687737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1412,6 +1399,7 @@ Transform:
   m_LocalScale: {x: 0.9999998, y: 0.99999994, z: 0.9999999}
   m_Children:
   - {fileID: 8500745940730871727}
+  - {fileID: 3239220551412546371}
   m_Father: {fileID: 4974957587988842712}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2716,6 +2704,36 @@ Transform:
   - {fileID: 55745720366999330}
   m_Father: {fileID: 234578602090386128}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5274180896438625494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3239220551412546371}
+  m_Layer: 7
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3239220551412546371
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5274180896438625494}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0045, y: 0.0155, z: 0.0206}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2800558991413852450}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5318777350610601431
 GameObject:

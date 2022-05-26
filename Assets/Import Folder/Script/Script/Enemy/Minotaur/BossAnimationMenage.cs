@@ -30,6 +30,7 @@ public class BossAnimationMenage : MonoBehaviour
     {
         if (NumberActionOnGround != enemy.NumberAction().onGround)
         {
+            
             if (NumberActionOnGround != -1)
             {
                 animatorBoss.SetBool(dictionaryAnimation[(NumberActionOnGround, -1)], false);

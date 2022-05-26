@@ -18,7 +18,7 @@ public class FlyAttack : IAction
         {
             //Daleki Atak
             enemy.GetComponent<Animator>().SetBool("FlyAttack", true);
-            enemy.transform.LookAt(new Vector3(player.transform.position.x, enemy.transform.position.y, player.transform.position.z));
+            enemy.transform.LookAt(new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z));
             StateAction(ActionState.actionRunning, enemyAction);
             attack = false;
         }

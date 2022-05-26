@@ -28,12 +28,13 @@ public class AttackShortDistance : IAction
         else if (attack==false)
         {
             //Koniec Atak
-            enemy.GetComponent<NavMeshAgent>().isStopped = false;
+            enemy.GetComponent<NavMeshAgent>().isStopped = true;
             StateAction(ActionState.actionComplete, enemyAction);
             attack = true;
         }
         else
         {
+            enemy.GetComponent<NavMeshAgent>().isStopped = true;
             //B³¹d
             attack = true;
             StateAction(ActionState.actionFail, enemyAction);

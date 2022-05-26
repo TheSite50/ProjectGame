@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public abstract class EnemyAction : EnemyControll
 {
     [Header("Enemy Action Parameter")] 
-    [SerializeField] protected float distanceDetection;
-    [SerializeField] protected float distanceLowAttack;
-    [SerializeField] protected float distanceFarAttack;
-    [SerializeField] protected GameObject muzzle;
+    [SerializeField] protected float distanceDetection=-1;
+    [SerializeField] protected float distanceLowAttack=-1;
+    [SerializeField] protected float distanceFarAttack=-1;
+    //[SerializeField] protected GameObject muzzle;
     [SerializeField] protected Slider sliderHp;
     protected GameObject player;
 

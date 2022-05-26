@@ -5,14 +5,12 @@ using UnityEngine.AI;
 public class GoToPlayer : IAction
 {
     private float distanceDetection;
-    private float distanceLowAttack;
     private float distanceFarAttack;
 
     
-    public GoToPlayer(float distanceDetection, float distanceLowAttack, float distanceFarAttack)
+    public GoToPlayer(float distanceDetection,  float distanceFarAttack)
     {
         this.distanceDetection = distanceDetection;
-        this.distanceLowAttack = distanceLowAttack;
         this.distanceFarAttack = distanceFarAttack;
     }
     public void Actions(GameObject player, GameObject enemy, EnemyControll enemyAction)
@@ -23,12 +21,14 @@ public class GoToPlayer : IAction
             enemy.GetComponent<NavMeshAgent>().isStopped = false;
             enemy.GetComponent<NavMeshAgent>().SetDestination(player.transform.position);
             StateAction(ActionState.actionRunning, enemyAction);
+            enemy.gameObject.transform.LookAt(new Vector3(player.transform.position.x, enemy.transform.position.y, player.transform.position.z));
         }
         else if (Vector3.Distance(player.transform.position, enemy.transform.position) < distanceFarAttack || Vector3.Distance(player.transform.position, enemy.transform.position) > distanceDetection )
         {
             //Przerwij pod¹¿anie do gracza
             enemy.GetComponent<NavMeshAgent>().isStopped = true;
             StateAction(ActionState.actionComplete, enemyAction);
+            enemy.gameObject.transform.LookAt(new Vector3(player.transform.position.x, enemy.transform.position.y, player.transform.position.z));
         }
         else
         {

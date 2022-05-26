@@ -4,36 +4,34 @@ using UnityEngine;
 
 public class Fly : IAction
 {
-    private float distanceDetection;    
-    private float distanceFarAttack;
-    private float flyDistance = 200f;
-    private bool attack = true;
-    public Fly(float distanceDetection,  float distanceFarAttack)
-    { 
+    private float distanceDetection;
+    private Vector3 nextPatrolPosition;
+    public Fly(float distanceDetection)
+    {
         this.distanceDetection = distanceDetection;
-        this.distanceFarAttack = distanceFarAttack;
     }
     public void Actions(GameObject player, GameObject enemy, EnemyControll enemyAction)
     {
-        enemy.GetComponent<Rigidbody>().useGravity = false;
-        enemy.GetComponent<Rigidbody>().isKinematic = true;
         
-            
-        //Shoot
-        
-        StateAction(ActionState.actionRunning, enemyAction);
-        if(Vector3.Distance(player.transform.position, enemy.transform.position)>distanceFarAttack)
+        if (Vector3.Distance(player.transform.position, enemy.transform.position) > distanceDetection)
         {
-            enemy.transform.position = Vector3.Lerp(enemy.transform.position, player.transform.position, Time.deltaTime/10);
+            if(Vector3.Distance(nextPatrolPosition, enemy.transform.position)<10f)
+            {
+                nextPatrolPosition= new Vector3(Random.Range(enemy.transform.position.x - 1000, enemy.transform.position.x + 1000), enemy.transform.position.y, Random.Range(enemy.transform.position.z - 1000, enemy.transform.position.z + 1000));
+            }
+            enemy.transform.LookAt(nextPatrolPosition);
+            enemy.transform.position = Vector3.Lerp(enemy.transform.position, nextPatrolPosition, Time.deltaTime/10);
+            StateAction(ActionState.actionRunning, enemyAction);
         }
-        else if(Vector3.Distance(player.transform.position, enemy.transform.position)<300f)
+        else if (Vector3.Distance(player.transform.position, enemy.transform.position) < distanceDetection)
         {
-            enemy.transform.position = Vector3.Lerp(enemy.transform.position, enemy.transform.position + DistanceKeep(player.transform.position,enemy.transform.position),Time.deltaTime/10);
+            StateAction(ActionState.actionComplete, enemyAction);
         }
-        else if(Vector3.Distance(player.transform.position, enemy.transform.position) <= distanceFarAttack )
+        else
         {
-           StateAction(ActionState.actionComplete, enemyAction);
+            StateAction(ActionState.actionFail, enemyAction);
         }
+       
 
     }
 
@@ -42,18 +40,4 @@ public class Fly : IAction
         enemyAction.SetState(enemyState);
     }
 
-    private float DistanceFloatDifference(float value1,float value2)
-    {
-        return value1 - value2;
-    }
-
-    private Vector3 DistanceKeep(Vector3 firstVector, Vector3 secondVector)
-    { 
-        if(Vector3.Distance(firstVector,secondVector)<1000f)
-        {
-            return new Vector3((secondVector.x - firstVector.x ) * Random.Range(1,10), secondVector.y * 20f, ( secondVector.z - firstVector.z ) * Random.Range(1, 10));
-        }
-
-        return Vector3.up*10f;
-    }
 }

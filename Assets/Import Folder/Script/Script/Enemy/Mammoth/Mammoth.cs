@@ -12,7 +12,7 @@ public class Mammoth : EnemyProperties
     private int numberAction = 0;
     private ActionState actionState;
     private float deathTime = 0;
-
+    [SerializeField] private GameObject muzzle;
 
     private bool iLive = true;
     private Rigidbody mammothRigidbody;
@@ -29,7 +29,7 @@ public class Mammoth : EnemyProperties
         spawnBuff = this.GetComponent<RandomEnemySpawnBuff>();
         listEnemyAction = new List<IAction>();
         listEnemyAction.Add(new Patrol(distanceDetection));
-        listEnemyAction.Add(new GoToPlayer(distanceDetection, distanceLowAttack, distanceFarAttack));
+        listEnemyAction.Add(new GoToPlayer(distanceDetection, distanceFarAttack));
         listEnemyAction.Add(new AttackInMove(distanceDetection, distanceLowAttack, distanceFarAttack));
         listEnemyAction.Add(new AttackShortDistance(distanceLowAttack));
     }
