@@ -13,6 +13,7 @@ public class MovementScript : MonoBehaviour
     [SerializeField] private Transform bulletParent;
     [SerializeField] float BulletDistance = 100f;
     
+    
     [SerializeField] private PlayerInput playerInput;
     public Vector2 inputDirecion;                       //input direction
     [SerializeField] private Vector3 _movementDirection;
@@ -30,6 +31,10 @@ public class MovementScript : MonoBehaviour
     [SerializeField] private float dashSpeed;
     [SerializeField] float movementSpeed = 2.8f;
 
+    [SerializeField] GameObject StompParticles;
+    [SerializeField] float particlesEnabledTime = 0.5f;
+    private bool stompActive = false;
+    [SerializeField] float stompRange = 40f;
     void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -100,6 +105,44 @@ public class MovementScript : MonoBehaviour
         {
             rb.MovePosition(dashSpeed * Time.deltaTime * move);
             yield return null;
+        }
+    }
+
+    public void Stomp(InputAction.CallbackContext context)
+    {
+        if(stompActive == false)
+        StartCoroutine(Stomp());
+    }
+    IEnumerator Stomp()
+    {
+        float startTime = Time.time;
+        Debug.Log(Time.time < startTime + particlesEnabledTime);
+        stompActive = true;
+        while (Time.time < startTime + particlesEnabledTime)
+        {
+            
+            StompParticles.SetActive(true);
+            CheckForEnemies();
+            
+            yield return null;
+        }
+        if (Time.time > startTime + particlesEnabledTime)
+        {
+            StompParticles.SetActive(false);
+            stompActive = false;
+        }
+            
+    }
+
+    public void CheckForEnemies()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, stompRange);
+        foreach(Collider c in colliders)
+        {
+            if (c.GetComponent<Enemy>())
+            {
+                c.GetComponent<Enemy>().Destroy();
+            }
         }
     }
     /*

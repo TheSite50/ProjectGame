@@ -33,7 +33,7 @@ public class UpperPartScript : MonoBehaviour
         HandleTurretRotation();
 
         LookDirection();
-        Debug.Log(whereLookLocation);
+        //Debug.Log(whereLookLocation);
         
         
     }
