@@ -99,11 +99,12 @@ public class MovementScript : MonoBehaviour
     }
     IEnumerator Dash()
     {
+        Vector3 dashDirection = move;
         float startTime = Time.time;
         Debug.Log(Time.time < startTime + dashTime);
         while (Time.time < startTime + dashTime)
         {
-            rb.MovePosition(dashSpeed * Time.deltaTime * move);
+            rb.MovePosition(transform.position + dashSpeed * Time.deltaTime * dashDirection);
             yield return null;
         }
     }
@@ -118,11 +119,12 @@ public class MovementScript : MonoBehaviour
         float startTime = Time.time;
         Debug.Log(Time.time < startTime + particlesEnabledTime);
         stompActive = true;
+        CheckForEnemies();
         while (Time.time < startTime + particlesEnabledTime)
         {
             
             StompParticles.SetActive(true);
-            CheckForEnemies();
+            
             
             yield return null;
         }
