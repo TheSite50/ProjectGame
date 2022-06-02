@@ -7,16 +7,12 @@ public class Movement : ScriptableObject
     private Vector3 actorPosition;
     public void ActorMovement(GameObject actor,Quaternion horizontalQuaternion ,Camera camera,float speed,Animator animator,bool isOnGround) 
     {
-            
-    
         if (isOnGround)
         {
             if(Input.GetAxis("Vertical") * speed>0.01f)
             actor.transform.rotation = Quaternion.Lerp(actor.transform.rotation, horizontalQuaternion,Time.deltaTime*5);
             animator.SetFloat("Forward", Mathf.Abs(Input.GetAxis("Vertical") * speed));
-            actorPosition = actor.transform.forward * Input.GetAxis("Vertical") * speed + Physics.gravity * Time.deltaTime + actor.transform.right * Input.GetAxis("Horizontal") * speed;
-            
-            
+            actorPosition = actor.transform.forward * Input.GetAxis("Vertical") * speed + Physics.gravity * Time.deltaTime + actor.transform.right * Input.GetAxis("Horizontal") * speed;   
         }
         else 
         {

@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439737601688677340}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -4809,6 +4809,7 @@ GameObject:
   - component: {fileID: 1020495648660525572}
   - component: {fileID: 1020495648660525579}
   - component: {fileID: 1020495648660525578}
+  - component: {fileID: 668663706861192849}
   m_Layer: 13
   m_Name: BossBall
   m_TagString: Untagged
@@ -8609,22 +8610,22 @@ ParticleSystem:
     - serializedVersion: 3
       emitter: {fileID: 2910863326014812705}
       type: 0
-      properties: 26
+      properties: 30
       emitProbability: 1
     - serializedVersion: 3
       emitter: {fileID: 8906191046649624309}
       type: 0
-      properties: 26
+      properties: 30
       emitProbability: 1
     - serializedVersion: 3
       emitter: {fileID: 7162308846305573848}
       type: 0
-      properties: 26
+      properties: 30
       emitProbability: 1
     - serializedVersion: 3
       emitter: {fileID: 8929509816968345464}
       type: 0
-      properties: 26
+      properties: 30
       emitProbability: 1
   LightsModule:
     enabled: 0
@@ -9621,6 +9622,18 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &668663706861192849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020495648660525577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67949494a168c7044b15402834ebbd73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5077857676285697411
 GameObject:
   m_ObjectHideFlags: 0
@@ -9646,7 +9659,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5077857676285697411}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -14462,7 +14475,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7887284484243822014}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -19278,7 +19291,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8167732778707582831}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

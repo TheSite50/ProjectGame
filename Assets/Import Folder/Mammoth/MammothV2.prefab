@@ -302,13 +302,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceDetection: 1000
-  distanceLowAttack: 50
-  distanceFarAttack: 400
-  muzzle: {fileID: 2195263907869530922}
+  distanceLowAttack: 10
+  distanceFarAttack: 200
   sliderHp: {fileID: 2195263908169383688}
   valueHp: 1000
   damage: 10
   fireProjectile: {fileID: 5820009342870576943, guid: 64aacf085ff536246a1806d1753e4669, type: 3}
+  muzzle: {fileID: 2195263907869530922}
 --- !u!65 &-2355779249695398245
 BoxCollider:
   m_ObjectHideFlags: 0

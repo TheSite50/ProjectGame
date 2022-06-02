@@ -9,6 +9,10 @@ public class Boss : BossProperties
     [SerializeField] private ParticleSystem ball;
     [SerializeField] private ParticleSystem ballAttack;
     [SerializeField] private GameObject muzzle;
+    [SerializeField] private SkinnedMeshRenderer bossMeshRenderer;
+    [SerializeField] private GameObject portal;
+    private ParticleSystem ballObject;
+    private ParticleSystem ballAttackObject;
     private ParticleSystem ballSkill;
     private Dictionary<int,IAction> listEnemyActionOnGround;
     private bool isOnGround = false;
@@ -18,6 +22,7 @@ public class Boss : BossProperties
     private NavMeshAgent navMesh;
     private bool ILive = true;
     private bool useSkill = false;
+    
     private void Awake()
     {
         spawnBuff = this.GetComponent<RandomEnemySpawnBuff>();
@@ -57,55 +62,83 @@ public class Boss : BossProperties
     void Update()
     {
         sliderHp.value = this.GetHp() / 1000f;
-
-        if (Vector3.Distance(player.transform.position, this.transform.position) > distanceFarAttack && Vector3.Distance(player.transform.position, this.transform.position) < distanceDetection && useSkill == false)
+        if(this.GetHp()<=0f)
         {
-            useSkill = true;
-            if (useSkill == true)
-            {
-                numberActionOnGround = 5;
-                print("Hello");
-            }
+            Death();
         }
-
-        //listEnemyActionOnGround[numberActionOnGround].Actions(player, this.gameObject, this);
-        if (player != null && isOnGround == true)
+        if (ILive)
         {
-            if (numberActionOnGround == 3)
+            if (Vector3.Distance(player.transform.position, this.transform.position) > distanceFarAttack && Vector3.Distance(player.transform.position, this.transform.position) < distanceDetection && useSkill == false)
             {
-                listEnemyActionOnGround[2].Actions(player, this.gameObject, this);
+                useSkill = true;
+                if (useSkill == true)
+                {
+                    numberActionOnGround = 5;
+                    
+                }
             }
-            else
+
+            //listEnemyActionOnGround[numberActionOnGround].Actions(player, this.gameObject, this);
+            if (player != null && isOnGround == true)
             {
-                if (numberActionOnGround == 5)
-                    print("World");
-                listEnemyActionOnGround[numberActionOnGround].Actions(player, this.gameObject, this);
+                if (numberActionOnGround == 3)
+                {
+                    listEnemyActionOnGround[2].Actions(player, this.gameObject, this);
+                }
+                else
+                {
+                    if (numberActionOnGround == 5)
+                       
+                    listEnemyActionOnGround[numberActionOnGround].Actions(player, this.gameObject, this);
+                }
+                if (actionState == ActionState.actionComplete)
+                {
+                    numberActionOnGround = numberActionOnGround < 2 ? numberActionOnGround + 1 : 2;
+                }
+                else if (actionState == ActionState.actionFail)
+                {
+                    numberActionOnGround = 0;
+                }
+                else
+                {
+                }
+
             }
-            if (actionState == ActionState.actionComplete)
-            {
-                numberActionOnGround = numberActionOnGround < 2 ? numberActionOnGround + 1 : 2;
-            }
-            else if (actionState == ActionState.actionFail)
-            {
-                numberActionOnGround = 0;
-            }
-            else
-            {
-            }
-            
         }
     }
+
+    private void Death()
+    {
+        bossMeshRenderer.material.SetInt("_IsLive", 0);
+        ILive = false;
+        this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        this.GetComponent<Animator>().enabled = false;
+        this.GetComponent<BossAnimationMenage>().enabled = false;
+        navMesh.enabled = false;
+        portal.SetActive(true);
+        if(ballObject.gameObject.activeInHierarchy)
+        {
+            Destroy(ballObject.gameObject);
+        }
+        if (ballAttackObject.gameObject.activeInHierarchy)
+        {
+            Destroy(ballAttackObject.gameObject);
+        }
+        this.GetComponent<Boss>().enabled = false;
+    }
+
     public void CreateThisSkill()
     {
         ballSkill = Instantiate<ParticleSystem>(ball, muzzle.transform);
+
         
     }
     private void UseThisSkill()
     {
         Destroy(ballSkill.gameObject);
         muzzle.transform.LookAt(player.transform);
-        Instantiate<ParticleSystem>(ball, muzzle.transform.position, muzzle.transform.rotation);
-        Instantiate<ParticleSystem>(ballAttack, muzzle.transform.position, muzzle.transform.rotation);
+        ballObject = Instantiate<ParticleSystem>(ball, muzzle.transform.position, muzzle.transform.rotation);
+        ballAttackObject =Instantiate<ParticleSystem>(ballAttack, muzzle.transform.position, muzzle.transform.rotation);
     }
 
     private void FixedUpdate()

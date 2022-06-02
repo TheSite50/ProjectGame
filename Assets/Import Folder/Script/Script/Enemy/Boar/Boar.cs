@@ -33,7 +33,7 @@ public class Boar : EnemyProperties
 
 
         listEnemyActionInAir = new List<IAction>();
-        listEnemyActionInAir.Add(new FlyToPlayer(distanceDetection, distanceFarAttack));
+        listEnemyActionInAir.Add(new FlyToPlayer(distanceDetection, distanceFarAttack,distanceLowAttack));
         listEnemyActionInAir.Add(new FlyAttack(distanceFarAttack));
         listEnemyActionInAir.Add(new Landing(distanceDetection, distanceFarAttack));
     }
@@ -129,6 +129,7 @@ public class Boar : EnemyProperties
         this.GetComponent<NavMeshAgent>().enabled = false;
         Instantiate<ParticleSystem>(explosionProjectile, this.transform.position, this.transform.rotation);
         spawnBuff.SpawnBuff();
+        Portal.KillEnemy();
         Destroy(this.gameObject);
     }
 

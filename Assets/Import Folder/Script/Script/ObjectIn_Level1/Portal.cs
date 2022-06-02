@@ -2,33 +2,37 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 public class Portal : MonoBehaviour
 {
-    private static int numberEnemyIsKilled = 0;
-    private int numberEnemyKilled = 100;
+    private static float numberEnemyIsKilled = 0;
+    private float numberEnemyKilled = 10;
     [SerializeField] private GameObject portal;
+    [SerializeField] private GameObject run;
+    [SerializeField] private GameObject run2;
     // Start is called before the first frame update
     void Start()
     {
         portal.SetActive(false);
-        numberEnemyIsKilled = 0;
+        numberEnemyIsKilled =0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(numberEnemyIsKilled==numberEnemyKilled)
+        if (numberEnemyIsKilled == numberEnemyKilled)
         {
             OpenPortal();
         }
+        run.GetComponent<MeshRenderer>().material.SetFloat("_Progress", (float)(numberEnemyIsKilled/numberEnemyKilled) * 2);
+        run2.GetComponent<MeshRenderer>().material.SetFloat("_Progress", (float)(numberEnemyIsKilled / numberEnemyKilled) * 2);
     }
 
     private void OpenPortal()
     {
         portal.SetActive(true);
     }
-
+    
     static public void KillEnemy()
     {
         numberEnemyIsKilled++;

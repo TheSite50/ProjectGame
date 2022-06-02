@@ -43,7 +43,11 @@ public class Ice_Enemy : EnemyProperties
         {
             navMesh.enabled = false;
         }
-        if (player != null && isOnGround == true )
+        if (this.GetHp() <= 0)
+        {
+            Death();
+        }
+        if (player != null && isOnGround == true&&ILive==true )
         {
             listEnemyActionOnGround[numberActionOnGround].Actions(player, this.gameObject, this);
             if (actionState == ActionState.actionComplete)
@@ -57,7 +61,6 @@ public class Ice_Enemy : EnemyProperties
             else
             {
             }
-            print(numberActionOnGround);
         }
 
     }
@@ -69,9 +72,12 @@ public class Ice_Enemy : EnemyProperties
 
     private void Death()
     {
+        ILive = false;
+        this.GetComponent<Ice_EnemyAnimationMenage>().enabled = false;
         this.GetComponent<NavMeshAgent>().enabled = false;
         spawnBuff.SpawnBuff();
-        Destroy(this.gameObject);
+        this.GetComponent<Animator>().SetBool("Death", true);
+        this.GetComponent<Ice_Enemy>().enabled = false;
     }
 
 

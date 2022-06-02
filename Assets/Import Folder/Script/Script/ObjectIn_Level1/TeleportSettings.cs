@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class TeleportSettings : MonoBehaviour
 {
     [SerializeField] private int level = 2;
+    private void Update()
+    {
+        
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.layer ==8)

@@ -22,8 +22,7 @@ public class Fire_Enemy : EnemyProperties
         //listEnemyActionOnGround.Add(new AttackLongDistance(distanceFarAttack));
         //listEnemyActionOnGround.Add(new RunToPlayer(distanceDetection, distanceLowAttack, distanceFarAttack));
         listEnemyActionOnGround.Add(new AttackShortDistance(distanceLowAttack));
-        listEnemyActionOnGround.Add(new AttackShortDistance(distanceLowAttack));
-        listEnemyActionOnGround.Add(new AttackShortDistance(distanceLowAttack));
+
 
     }
     // Start is called before the first frame update
@@ -50,7 +49,7 @@ public class Fire_Enemy : EnemyProperties
             if (actionState == ActionState.actionComplete)
             {
                
-                numberActionOnGround = numberActionOnGround < listEnemyActionOnGround.Count - 1 ? numberActionOnGround + 1 : 4; 
+                numberActionOnGround = numberActionOnGround < 2 ? numberActionOnGround + 1 :2; 
                 
             }
             else if (actionState == ActionState.actionFail)

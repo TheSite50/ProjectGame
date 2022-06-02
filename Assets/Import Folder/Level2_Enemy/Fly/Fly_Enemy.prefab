@@ -2480,8 +2480,8 @@ GameObject:
   - component: {fileID: 7909690327326644506}
   - component: {fileID: 4807232425124072048}
   - component: {fileID: 7352380495443101633}
-  - component: {fileID: 6321219231493790241}
   - component: {fileID: 5803124227589715871}
+  - component: {fileID: 7588125217926068372}
   m_Layer: 7
   m_Name: Fly_Enemy
   m_TagString: Untagged
@@ -2540,7 +2540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceDetection: 1000
   distanceLowAttack: 100
-  distanceFarAttack: 100
+  distanceFarAttack: 500
   sliderHp: {fileID: 4878519834127874035}
   valueHp: 100
   damage: 10
@@ -2560,22 +2560,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38af1b6469d89d64096e2a5400d4f378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!54 &6321219231493790241
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6991192612621837389}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 3
 --- !u!114 &5803124227589715871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2593,6 +2577,19 @@ MonoBehaviour:
   - {fileID: 101834860790743152, guid: 6cebc263ad4a6504190e956c5c760ae6, type: 3}
   - {fileID: 6266806030451732794, guid: 09661853c1e41cf458c0db5a7a2d86e1, type: 3}
   - {fileID: 9089345820096972454, guid: 1dcfb9fec84f643458eb9b8e51d82ae0, type: 3}
+--- !u!65 &7588125217926068372
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6991192612621837389}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 3, z: 0.5}
+  m_Center: {x: 0, y: 1.4, z: -0.08}
 --- !u!1 &7244573076436030159
 GameObject:
   m_ObjectHideFlags: 0

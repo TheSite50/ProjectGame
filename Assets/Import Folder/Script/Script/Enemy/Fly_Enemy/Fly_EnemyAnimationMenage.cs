@@ -25,12 +25,16 @@ public class Fly_EnemyAnimationMenage : MonoBehaviour
             {
                 animatorFly.SetBool(dictionaryAnimation[(-1, NumberActionInAir)], false);
             }
-            if(enemy.NumberAction().inAir==0)
+
+            if (enemy.NumberAction().inAir == 0 || enemy.NumberAction().inAir == 1)
             {
                 return;
             }
-            animatorFly.SetBool(dictionaryAnimation[(-1, enemy.NumberAction().inAir)], true);
-            NumberActionInAir = enemy.NumberAction().inAir;
+            else
+            {
+                animatorFly.SetBool(dictionaryAnimation[(-1, enemy.NumberAction().inAir)], true);
+                NumberActionInAir = enemy.NumberAction().inAir;
+            }
         }
         
     }

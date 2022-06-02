@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8282194080906353376}
   - component: {fileID: 3872718764298356717}
   - component: {fileID: 4654324674026453160}
-  - component: {fileID: 1601610347932741322}
   m_Layer: 12
   m_Name: Circle
   m_TagString: Untagged
@@ -97,19 +96,6 @@ CapsuleCollider:
   m_Height: 3
   m_Direction: 1
   m_Center: {x: 0.00000011920929, y: 1.1698569, z: 0.000000059604645}
---- !u!114 &1601610347932741322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 578918848062678594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5348053b1592645a1349de3b61fa99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 1
 --- !u!1 &3940709541672573345
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,6 +202,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5124466204891930489}
+  - component: {fileID: 2556219112245213394}
+  - component: {fileID: 5347634511702192555}
   m_Layer: 0
   m_Name: Teleport
   m_TagString: Untagged
@@ -232,7 +220,7 @@ Transform:
   m_GameObject: {fileID: 5500604268276843971}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.6, y: 1.9, z: 4.7}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 60, y: 60, z: 60}
   m_Children:
   - {fileID: 2372688438275796579}
   - {fileID: 2066534490991862435}
@@ -240,6 +228,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &2556219112245213394
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5500604268276843971}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.94
+  m_Height: 3
+  m_Direction: 1
+  m_Center: {x: 0.00000011920929, y: 1.1698569, z: 0.000000059604645}
+--- !u!114 &5347634511702192555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5500604268276843971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3f9b065f1fb34a49ac1ed554779f521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backToBase: {fileID: 0}
+  price: 5
 --- !u!1 &8227601774234941074
 GameObject:
   m_ObjectHideFlags: 0

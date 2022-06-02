@@ -43,15 +43,9 @@ public class Mammoth : EnemyProperties
 
         if (this.GetHp() <= 0f && iLive==true)
         {
-            mammothAnimator.SetTrigger("Death");
-            mammothNavMeshAgent.enabled = false;
-            mammothRigidbody.useGravity = false;
-            mammothRigidbody.isKinematic = true;
-            spawnBuff.SpawnBuff();
-            iLive = false;
-            deathTime = 0;
+            Death();
         }
-        if(iLive==false)
+        if (iLive==false)
         {
             deathTime += Time.deltaTime;
         }
@@ -95,6 +89,19 @@ public class Mammoth : EnemyProperties
         } 
         }
     }
+
+    private void Death()
+    {
+        mammothAnimator.SetTrigger("Death");
+        mammothNavMeshAgent.enabled = false;
+        mammothRigidbody.useGravity = false;
+        mammothRigidbody.isKinematic = true;
+        spawnBuff.SpawnBuff();
+        Portal.KillEnemy();
+        iLive = false;
+        deathTime = 0;
+    }
+
     private void FixedUpdate()
     {
         isOnGround = Physics.CheckSphere(this.gameObject.transform.position, 20, 110, QueryTriggerInteraction.Ignore);//ground detect settings

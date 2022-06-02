@@ -16,6 +16,7 @@ public class PlayerStats : MonoBehaviour, IHp
     private void Awake()
     {
         player = this.gameObject;
+        playerHp = PlayerData.SendHp();
     }
     private void Start()
     {

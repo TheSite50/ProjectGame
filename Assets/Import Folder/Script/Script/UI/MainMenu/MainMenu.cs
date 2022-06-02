@@ -34,6 +34,11 @@ public class MainMenu : MonoBehaviour
         mainMenu.SetActive(true);
         credits.SetActive(false);
     }
+    public void SaveGameBack()
+    {
+        mainMenu.SetActive(true);
+        saveGame.SetActive(false);
+    }
     public void ExitGame()
     {
         Application.Quit();

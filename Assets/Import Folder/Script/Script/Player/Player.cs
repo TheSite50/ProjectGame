@@ -14,11 +14,11 @@ public class Player : MonoBehaviour
     //private GameObject rightWeaponMuzzle;
     private GameObject horizontalRotation;
     private GameObject verticalRotation;
-
+    private Animator playerAnimator;
     [Header("Player Value")] 
-    [SerializeField] private float playerSpeed = 0.01f;
+    [SerializeField] private float playerSpeed = 1f;
     [SerializeField] private float mouseSpeed = 10f;
-    [SerializeField] private Animator playerAnimator;
+     
     [SerializeField] private GameObject viewPoint;
     //[SerializeField]private GameObject leftWeaponMuzzle;
     //[SerializeField]private GameObject rightWeaponMuzzle;
@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     
     private void Start()
     {
+        playerAnimator = CreatePlayerInGame.GetLegs().GetComponent<Animator>();
         if(CreatePlayerInGame.GetWeaponLeft())
             leftWeapon = CreatePlayerInGame.GetWeaponLeft();
         else
@@ -101,7 +102,7 @@ public class Player : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        isOnGround = Physics.CheckSphere(this.gameObject.transform.position, 20, 110, QueryTriggerInteraction.Ignore);//ground detect settings
+        isOnGround = Physics.CheckSphere(this.gameObject.transform.position, 20, 6, QueryTriggerInteraction.Ignore);//ground detect settings
 
     }
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,33 +23,49 @@ public class Fly_Enemy : EnemyProperties
 
         listEnemyActionInAir = new List<IAction>();
         listEnemyActionInAir.Add(new Fly(distanceDetection));
-        listEnemyActionInAir.Add(new FlyToPlayer(distanceDetection, distanceFarAttack));
-        listEnemyActionInAir.Add(new FlyAttack(distanceFarAttack));
-        listEnemyActionInAir.Add(new FlyAttack(distanceFarAttack));
+        listEnemyActionInAir.Add(new FlyToPlayer(distanceDetection, distanceFarAttack, distanceLowAttack));
+        listEnemyActionInAir.Add(new FlyAttack(distanceLowAttack));
+        listEnemyActionInAir.Add(new FlyAttack(distanceLowAttack));
     }
 
     // Update is called once per frame
     void Update()
     {
         sliderHp.value = this.GetHp() / 100f;
-        if(numberActionInAir==2&& counter<10)
+        
+
+        if(this.GetHp()<=0&&ILive==true)
         {
-            counter++;
+            Death();
         }
-        else if(counter==10)
+        if(ILive==false)
         {
-            numberActionInAir = 3;
+            this.transform.position = Vector3.Lerp(this.gameObject.transform.position, this.gameObject.transform.position + Vector3.down * 100f, Time.deltaTime);
+            if(this.transform.position.y<=-50)
+            {
+                Destroy(this.gameObject);
+
+            }
         }
         //idŸ do gracza
         //atakuj gracza
         //u¿yj umiejêtnoœci
         //zmieñ rodzej ataku
-        if (player != null)
+        if (player != null&& ILive==true)
         {
+            if(numberActionInAir==2&& counter<10)
+            {
+                counter++;
+            }
+            else if(counter==10)
+            {
+                numberActionInAir = 3;
+                counter = 0;
+            }
             listEnemyActionInAir[numberActionInAir].Actions(player, this.gameObject, this);
             if (actionState == ActionState.actionComplete)
             {
-                numberActionInAir = numberActionInAir < listEnemyActionInAir.Count - 1 ? numberActionInAir + 1 : 2;
+                numberActionInAir = numberActionInAir < 2 ? numberActionInAir + 1 : 2;
             }
             else if (actionState == ActionState.actionFail)
             {
@@ -57,12 +74,21 @@ public class Fly_Enemy : EnemyProperties
             else
             {
             }
+            
             muzzle.transform.LookAt(player.transform.position);
             muzzle2.transform.LookAt(player.transform.position);
         }
     }
 
+    private void Death()
+    {
+        
+        ILive = false;
+        spawnBuff.SpawnBuff();
+        this.GetComponent<Animator>().enabled = false;
+        this.GetComponent<Fly_EnemyAnimationMenage>().enabled = false;
 
+    }
 
     public override void SetState(ActionState actionState)
     {
