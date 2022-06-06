@@ -21,11 +21,12 @@ public class UpperPartScript : MonoBehaviour
     public Vector3 desiredShootLocation;//gdzie lec¹ naboje
    // public Vector3 whereShootLocation;
     bool raycast;
+    [SerializeField] so_weapon weapon;
 
     void Awake()
     {
         cameraTransform = Camera.main.transform;
-        shootAction = playerInput.actions["Fire"];
+        //shootAction = playerInput.actions["Fire"];
     }
 
     void Update()
@@ -50,40 +51,39 @@ public class UpperPartScript : MonoBehaviour
         }
         whereLookLocation=transform.forward * _weaponRange;
     }
-   
-    #endregion
-
-
     private void HandleTurretRotation()
     {
         //Quaternion targetRotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
         Quaternion targetRotation = Quaternion.Euler(cameraTransform.eulerAngles.x , cameraTransform.eulerAngles.y , 0);//odjêcie i dodanie pozycji zwiêksza odleg³oœæi celownika od œrodka ekranu
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
+    #endregion
+    #region Shooting
 
     private void OnEnable()
     {
-        shootAction.performed += _ => TryToShootNextBullet();
+        //shootAction.performed += _ => TryToShootNextBullet();
         //shootAction.performed += _ => ShootWeapon();
     }
     private void OnDisable()
     {
-        shootAction.performed -= _ => TryToShootNextBullet();
+        //shootAction.performed -= _ => TryToShootNextBullet();
         //shootAction.performed -= _ => ShootWeapon();
     }
 
-/*    public void ShootWeapon()
-    {
-        GameObject bullet = Instantiate(bulletPrefab, barrelLocation.position, Quaternion.identity, bulletParent);
-        BulletLogic bulletLogic = bullet.GetComponent<BulletLogic>();
-        bulletLogic.Target = desiredShootLocation;
-        if (raycast) 
+    /*    public void ShootWeapon()
         {
-            bulletLogic.Hit = true;
-            return;
-        }
-        bulletLogic.Hit = false;
-    }*/
+            GameObject bullet = Instantiate(bulletPrefab, barrelLocation.position, Quaternion.identity, bulletParent);
+            BulletLogic bulletLogic = bullet.GetComponent<BulletLogic>();
+            bulletLogic.Target = desiredShootLocation;
+            if (raycast) 
+            {
+                bulletLogic.Hit = true;
+                return;
+            }
+            bulletLogic.Hit = false;
+        }*/
+    
     public void ShootRaycast()
     {
         bool shootRaycast = Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit shootAtLocation, _weaponRange);
@@ -133,6 +133,7 @@ public class UpperPartScript : MonoBehaviour
             yield return new WaitForSeconds(0.03f);
         }
     }
+    #endregion
     /*
      * void Update(){
   if(IsShooting())

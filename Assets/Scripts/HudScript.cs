@@ -6,7 +6,7 @@ public class HudScript : MonoBehaviour
 {
     [SerializeField] GameObject followCrosshair;
     [SerializeField] UpperPartScript player;
-    [SerializeField] GameObject barrelLocation;
+
     
     // Update is called once per frame
     void Update()

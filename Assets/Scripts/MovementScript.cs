@@ -3,16 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+//co ma robiæ player ekskluzywnie
 public class MovementScript : MonoBehaviour
 {
     [Header("")]
     private Rigidbody rb;
-    
-    
-    
-    
-    
-    
+
     [Header("Systems")]
     [SerializeField] private InputScript _input;
     [SerializeField] private PlayerInput _playerInput;
@@ -35,9 +31,6 @@ public class MovementScript : MonoBehaviour
     private float _rotationVelocity;
     private float _verticalVelocity;
 
-
-
-
     [Header("Camera")]
     private Transform cameraTransform;
     [SerializeField] private float _rotationSpeed = 6;
@@ -59,21 +52,11 @@ public class MovementScript : MonoBehaviour
     [SerializeField] private Transform barrelLocation;
     [SerializeField] private GameObject bulletPrefab;
 
-    
-   
-                                    
-
-    
-
-    
-
-
-    
     [SerializeField]private float _sprintSpeed = 1f;
     [SerializeField] private float dashTime;
     [SerializeField] private float dashSpeed;
-    
 
+    #region Unity Functions
     void Awake()
     {
         
@@ -97,7 +80,8 @@ public class MovementScript : MonoBehaviour
         AutoRotationControlInDesiredDirection();
         //Move();
     }
-
+    #endregion
+    #region Controls
     private void HandleMovement()
     {
        // float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
@@ -125,7 +109,7 @@ public class MovementScript : MonoBehaviour
         Vector3 desiredDirection = new Vector3(_input.move.x, 0, _input.move.y);
         desiredDirection = desiredDirection.x * cameraTransform.right.normalized + desiredDirection.z * cameraTransform.forward.normalized;
         desiredDirection.y = 0;
-        Debug.Log(desiredDirection);
+        //Debug.Log(desiredDirection);
         //transform.forward = Vector3.SmoothDamp(transform.forward, desiredDirection.normalized, ref move, 0.5f);
         transform.forward = Vector3.Lerp(transform.forward, desiredDirection, _rotationSpeed * Time.deltaTime);
         if (Vector3.Dot(transform.forward, desiredDirection) > 0.7f )
@@ -136,55 +120,14 @@ public class MovementScript : MonoBehaviour
     }
 
 
-    private void Move()
-    {
-        
-        float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
-        if (_input.move == Vector2.zero) targetSpeed = 0.0f;
-        float currentHorizontalSpeed = new Vector3(_input.move.x, 0.0f, _input.move.y).magnitude;
-        
-        float speedOffset = 0.1f;
-        float inputMagnitude = _input.analogMovement ? _input.move.magnitude : 1f;
-        Debug.Log(currentHorizontalSpeed);
-        Debug.Log(targetSpeed);
-        if (currentHorizontalSpeed < targetSpeed - speedOffset || currentHorizontalSpeed > targetSpeed + speedOffset)
-        {
-
-            _speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMagnitude, Time.deltaTime * SpeedChangeRate);
-
-
-            _speed = Mathf.Round(_speed * 1000f) / 1000f;
-        }
-        else
-        {
-            _speed = targetSpeed;
-        }
-        
-
-        Vector3 inputDirection = new Vector3(_input.move.x, 0.0f, _input.move.y).normalized;
-
-        if (_input.move != Vector2.zero)
-        {
-            _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + cameraTransform.transform.eulerAngles.y;
-            float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity, RotationSmoothTime);
-
-            transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
-        }
-
-
-        Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
-
-        rb.MovePosition(targetDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
-    }
-
     private void CameraRotation()
     {
         // if there is an input and camera position is not fixed
         if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
         {
             float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
-            _cinemachineTargetYaw +=3* _input.look.x * deltaTimeMultiplier * _cameraSensitivity;
-            _cinemachineTargetPitch +=3* _input.look.y * deltaTimeMultiplier * _cameraSensitivity;
+            _cinemachineTargetYaw += 3 * _input.look.x * deltaTimeMultiplier * _cameraSensitivity;
+            _cinemachineTargetPitch += 3 * _input.look.y * deltaTimeMultiplier * _cameraSensitivity;
         }
 
         // clamp our rotations so our values are limited 360 degrees
@@ -194,19 +137,18 @@ public class MovementScript : MonoBehaviour
         // Cinemachine will follow this target
         CinemachineCameraTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride, _cinemachineTargetYaw, 0.0f);
     }
-    ///================================================
-    ///
-
-    public void HandleSprint(InputAction.CallbackContext context) 
-    {
-        
-    }
     public void Movement(InputAction.CallbackContext context)
     {
         inputDirecion = _cameraSensitivity * context.ReadValue<Vector2>();
         //Debug.Log(context);   
         //transform.rotation = Quaternion.Lerp(transform.rotation, CharacterRotation(), rotationSpeed * Time.deltaTime);
     }
+    #endregion
+    public void HandleSprint(InputAction.CallbackContext context) 
+    {
+        
+    }
+
     public void Dash(InputAction.CallbackContext context)
     {
         StartCoroutine(Dash());
@@ -294,3 +236,4 @@ public void ShootWeapon() {
 * movedirection+camerarotation but update when moving
 * ??? a/d rotate counterclockwise/clockwise and w and s move in rotated direction
 */
+

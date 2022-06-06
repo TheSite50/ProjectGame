@@ -7,6 +7,7 @@ public class InputScript : MonoBehaviour
 	public Vector2 look;
 	public bool jump;
 	public bool sprint;
+	public bool shoot;
 
 	public bool analogMovement;
 
@@ -16,7 +17,6 @@ public class InputScript : MonoBehaviour
 	public void OnMove(InputValue value)
 	{
 		MoveInput(value.Get<Vector2>());
-		
 	}
 
 	public void OnLook(InputValue value)
@@ -31,7 +31,10 @@ public class InputScript : MonoBehaviour
 	{
 		JumpInput(value.isPressed);
 	}
-
+	public void OnShoot(InputValue value)
+	{
+		ShootInput(value.isPressed);
+	}
 	public void OnSprint(InputValue value)
 	{
 		SprintInput(value.isPressed);
@@ -45,11 +48,15 @@ public class InputScript : MonoBehaviour
 	public void LookInput(Vector2 newLookDirection)
 	{
 		look = newLookDirection;
-	}
+    }
 
-	public void JumpInput(bool newJumpState)
+    public void JumpInput(bool newJumpState)
+    {
+        jump = newJumpState;
+    }
+	public void ShootInput(bool newShootState)
 	{
-		jump = newJumpState;
+		shoot = newShootState;
 	}
 
 	public void SprintInput(bool newSprintState)
