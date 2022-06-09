@@ -63,4 +63,23 @@ public class InputScript : MonoBehaviour
 	{
 		sprint = newSprintState;
 	}
+	/*
+	[SerializeField] MyInputActions idkwhatitis;
+	[SerializeField] InputAction controls;
+    private void Awake()
+    {
+		idkwhatitis = new MyInputActions();
+    }
+
+    private void OnEnable()
+    {
+        
+    }
+    private void OnDisable()
+    {
+        
+    }
+
+	*/
+
 }

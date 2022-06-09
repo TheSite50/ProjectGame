@@ -11,6 +11,7 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField] private float _rotationSpeed = 6;
     [SerializeField] float MoveSpeed;
     private Rigidbody _rb;
+    [SerializeField] private GroundCheck _groundCheck;
 
     [Header("Camera")]
     private Transform cameraTransform;

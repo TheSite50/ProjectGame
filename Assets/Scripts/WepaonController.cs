@@ -23,14 +23,19 @@ public abstract class WepaonController : MonoBehaviour, IShootable
         cameraTransform = Camera.main.transform;
     }
 
-
+    private void LateUpdate()
+    {
+        GunRotation();
+    }
 
     #region Weapon Rotation
 
     void GunRotation()
     {
-        Quaternion targetRotation = Quaternion.Euler(cameraTransform.eulerAngles.x, 0, 0);
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, weaponData.rotationSpeed * Time.deltaTime);
+        Vector3 targetPoint = new Vector3(Hull.WhereLookLocation().x, 0, 0);
+        this.transform.LookAt(targetPoint);
+        //Quaternion targetRotation = Quaternion.Euler(cameraTransform.eulerAngles.x, 0, 0);
+        //transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, weaponData.rotationSpeed * Time.deltaTime);
     }
 
     #endregion

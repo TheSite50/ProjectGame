@@ -40,7 +40,7 @@ public class @MyInputActions : IInputActionCollection, IDisposable
                     ""id"": ""5aa61f2b-3275-4436-b7c3-c8bb183c6fdb"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Hold""
                 },
                 {
                     ""name"": ""Rotation"",
@@ -56,7 +56,7 @@ public class @MyInputActions : IInputActionCollection, IDisposable
                     ""id"": ""f2c88e37-929a-427c-b80d-1a026148a68d"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Hold""
                 },
                 {
                     ""name"": ""Sprint"",
@@ -64,7 +64,7 @@ public class @MyInputActions : IInputActionCollection, IDisposable
                     ""id"": ""d3bdef50-614c-47ff-8636-65a357ce5500"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Hold""
                 },
                 {
                     ""name"": ""Dash"",
@@ -72,7 +72,7 @@ public class @MyInputActions : IInputActionCollection, IDisposable
                     ""id"": ""7f4dc6a0-8a2d-4294-80f8-54981d2f5ee6"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press""
                 },
                 {
                     ""name"": ""Jump"",

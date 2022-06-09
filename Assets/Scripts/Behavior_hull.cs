@@ -6,7 +6,7 @@ public class Behavior_hull : MonoBehaviour
 {
     [SerializeField] PlayerMovementScript player;
     [SerializeField] private so_hull HullParams;
-    [SerializeField]private float hullRotationSpeed = 5;
+    [SerializeField]public float hullRotationSpeed = 5;
     private Transform cameraTransform;
 
     [Header("Weapon")]
@@ -28,13 +28,13 @@ public class Behavior_hull : MonoBehaviour
     #region Turret Aiming
     public Vector3 WhereLookLocation()//yellow raycast z kamery który nakierowuje mecha gdzie ma patrzeæ
     {
-        raycast = Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit cameraLookAtPoint, 500);
-        Debug.DrawRay(cameraTransform.position, cameraTransform.forward * 500, Color.red);
+        raycast = Physics.Raycast(transform.position, transform.forward, out RaycastHit cameraLookAtPoint, 500);
+        Debug.DrawRay(transform.position, transform.forward * 500, Color.red);
         if (raycast)
         {
             return cameraLookAtPoint.point;
         }
-        return cameraTransform.forward * 500;
+        return transform.forward * 500;
     }
     private void HandleTurretRotation()
     {

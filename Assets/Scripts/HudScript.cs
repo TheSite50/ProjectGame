@@ -5,7 +5,7 @@ using UnityEngine;
 public class HudScript : MonoBehaviour
 {
     [SerializeField] GameObject followCrosshair;
-    [SerializeField] UpperPartScript player;
+    [SerializeField] Behavior_hull player;
 
     
     // Update is called once per frame
@@ -15,7 +15,7 @@ public class HudScript : MonoBehaviour
     }
     void UpdateCrosshairPosition() 
     {
-        followCrosshair.transform.position = Camera.main.WorldToScreenPoint(player.whereLookLocation);
+        followCrosshair.transform.position = Camera.main.WorldToScreenPoint(player.WhereLookLocation());
     }
 }
 
