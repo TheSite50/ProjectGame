@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 856269603}
     m_Modifications:
+    - target: {fileID: -1283843344049906236, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: price
+      value: 20000
+      objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -222,10 +226,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 214009610848214565, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 214009610848214566, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1054275038763480976, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: price
+      value: 
+      objectReference: {fileID: 1554839823}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: itemName
       value: Accesories
@@ -632,6 +648,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Torso (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 3629864282750095069, guid: 909bb2295c03691409de84478507d13d, type: 3}
+      propertyPath: price
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4910945843696280994, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -737,6 +757,10 @@ PrefabInstance:
     - target: {fileID: 214009610848214564, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_Name
       value: Torso (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3629864282750095069, guid: 909bb2295c03691409de84478507d13d, type: 3}
+      propertyPath: price
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4910945843696280994, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_IsActive
@@ -1001,6 +1025,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 856269603}
     m_Modifications:
+    - target: {fileID: -1283843344049906236, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: price
+      value: 20000
+      objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1093,10 +1121,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 214009610848214565, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 214009610848214566, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1054275038763480976, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: price
+      value: 
+      objectReference: {fileID: 1554839823}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: itemName
       value: Accesories
@@ -1204,6 +1244,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 856269603}
     m_Modifications:
+    - target: {fileID: -1283843344049906236, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: price
+      value: 20000
+      objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1296,10 +1340,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 214009610848214565, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 214009610848214566, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1054275038763480976, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: price
+      value: 
+      objectReference: {fileID: 1554839823}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: itemName
       value: Accesories
@@ -1342,6 +1398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  price: {fileID: 1554839823}
   itemName: Torso
 --- !u!1 &257707253
 GameObject:
@@ -1513,6 +1570,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Torso (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3629864282750095069, guid: 909bb2295c03691409de84478507d13d, type: 3}
+      propertyPath: price
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4910945843696280994, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1531,6 +1592,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1352057276}
     m_Modifications:
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: price
+      value: 
+      objectReference: {fileID: 1554839823}
     - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -1666,6 +1731,10 @@ PrefabInstance:
     - target: {fileID: 3249575864600936903, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3364700650277516928, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: price
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3420163452748775227, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1842,6 +1911,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Torso (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 3629864282750095069, guid: 909bb2295c03691409de84478507d13d, type: 3}
+      propertyPath: price
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4910945843696280994, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1871,6 +1944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  price: {fileID: 1554839823}
   itemName: Torso
 --- !u!1001 &268457403
 PrefabInstance:
@@ -1879,6 +1953,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 620847072}
     m_Modifications:
+    - target: {fileID: -3114639347355110893, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
+      propertyPath: price
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2004,6 +2082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  price: {fileID: 1554839823}
   itemName: Torso
 --- !u!1 &282607818
 GameObject:
@@ -2415,6 +2494,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Torso (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3629864282750095069, guid: 909bb2295c03691409de84478507d13d, type: 3}
+      propertyPath: price
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4910945843696280994, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -2433,6 +2516,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 856269603}
     m_Modifications:
+    - target: {fileID: -1283843344049906236, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: price
+      value: 20000
+      objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2525,10 +2612,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 214009610848214565, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 214009610848214566, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1054275038763480976, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: price
+      value: 
+      objectReference: {fileID: 1554839823}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: itemName
       value: Accesories
@@ -2729,6 +2828,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 856269603}
     m_Modifications:
+    - target: {fileID: -1283843344049906236, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: price
+      value: 20000
+      objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2821,10 +2924,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 214009610848214565, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 214009610848214566, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1054275038763480976, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: price
+      value: 
+      objectReference: {fileID: 1554839823}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: itemName
       value: Accesories
@@ -2856,6 +2971,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 620847072}
     m_Modifications:
+    - target: {fileID: -3114639347355110893, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
+      propertyPath: price
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2980,6 +3099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  price: {fileID: 1554839823}
   itemName: Hands
 --- !u!1 &392390350 stripped
 GameObject:
@@ -2999,6 +3119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  price: {fileID: 1554839823}
   itemName: Hands
 --- !u!1 &417804201
 GameObject:
@@ -3099,7 +3220,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 417804201}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0cc2cff33bb946458f1799d9f0ffae4, type: 3}
   m_Name: 
@@ -3273,6 +3394,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1352057276}
     m_Modifications:
     - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: price
+      value: 
+      objectReference: {fileID: 1554839823}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: informationCanvas
       value: 
       objectReference: {fileID: 1326699976}
@@ -3408,6 +3533,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3364700650277516928, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: price
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3420163452748775227, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -3534,7 +3663,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467912380}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -3572,7 +3701,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467912380}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b887bcda84ccddc4eaed233ff8ed7b1f, type: 3}
   m_Name: 
@@ -3587,7 +3716,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467912380}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0cc2cff33bb946458f1799d9f0ffae4, type: 3}
   m_Name: 
@@ -3681,6 +3810,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 856269603}
     m_Modifications:
+    - target: {fileID: -1283843344049906236, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: price
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3782,6 +3915,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: price
+      value: 
+      objectReference: {fileID: 1554839823}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: itemName
       value: Accesories
       objectReference: {fileID: 0}
@@ -3823,6 +3960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  price: {fileID: 1554839823}
   itemName: Hands
 --- !u!1001 &502517192
 PrefabInstance:
@@ -3831,6 +3969,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 856269603}
     m_Modifications:
+    - target: {fileID: -1283843344049906236, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: price
+      value: 20000
+      objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3923,10 +4065,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 214009610848214565, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 214009610848214566, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1054275038763480976, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: price
+      value: 
+      objectReference: {fileID: 1554839823}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: itemName
       value: Accesories
@@ -3958,6 +4112,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1352057276}
     m_Modifications:
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: price
+      value: 
+      objectReference: {fileID: 1554839823}
     - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -4094,6 +4252,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3364700650277516928, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: price
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3420163452748775227, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -4181,6 +4343,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1352057276}
     m_Modifications:
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: price
+      value: 
+      objectReference: {fileID: 1554839823}
     - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -4341,6 +4507,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 53.5725
       objectReference: {fileID: 0}
+    - target: {fileID: 3364700650277516928, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: price
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3420163452748775227, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4472,6 +4642,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 620847072}
     m_Modifications:
+    - target: {fileID: -3114639347355110893, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
+      propertyPath: price
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4796,6 +4970,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1352057276}
     m_Modifications:
     - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: price
+      value: 
+      objectReference: {fileID: 1554839823}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: informationCanvas
       value: 
       objectReference: {fileID: 1326699976}
@@ -4930,6 +5108,10 @@ PrefabInstance:
     - target: {fileID: 3249575864600936903, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3364700650277516928, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: price
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3420163452748775227, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5564,6 +5746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  price: {fileID: 1554839823}
   itemName: Torso
 --- !u!1001 &730769160
 PrefabInstance:
@@ -5572,6 +5755,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1352057276}
     m_Modifications:
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: price
+      value: 
+      objectReference: {fileID: 1554839823}
     - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -5707,6 +5894,10 @@ PrefabInstance:
     - target: {fileID: 3249575864600936903, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3364700650277516928, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: price
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3420163452748775227, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5870,6 +6061,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 620847072}
     m_Modifications:
+    - target: {fileID: -3114639347355110893, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
+      propertyPath: price
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -6218,6 +6413,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 856269603}
     m_Modifications:
+    - target: {fileID: -1283843344049906236, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: price
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -6312,8 +6511,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1054275038763480976, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: price
+      value: 
+      objectReference: {fileID: 1554839823}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: itemName
       value: Accesories
@@ -6324,7 +6527,7 @@ PrefabInstance:
       objectReference: {fileID: 1326699976}
     - target: {fileID: 7249339185922232658, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
@@ -7023,6 +7226,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 620847072}
     m_Modifications:
+    - target: {fileID: -3114639347355110893, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
+      propertyPath: price
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -7229,6 +7436,10 @@ PrefabInstance:
       propertyPath: objectPrefab
       value: 
       objectReference: {fileID: 5354328944050523387, guid: 0a50eb0825fe60d4a8f72627a0487d1e, type: 3}
+    - target: {fileID: 3629864282750095069, guid: 909bb2295c03691409de84478507d13d, type: 3}
+      propertyPath: price
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4910945843696280994, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -7258,6 +7469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  price: {fileID: 1554839823}
   itemName: Torso
 --- !u!1001 &988712151
 PrefabInstance:
@@ -7353,6 +7565,10 @@ PrefabInstance:
     - target: {fileID: 214009610848214564, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_Name
       value: Torso (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3629864282750095069, guid: 909bb2295c03691409de84478507d13d, type: 3}
+      propertyPath: price
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4910945843696280994, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_IsActive
@@ -7539,6 +7755,10 @@ PrefabInstance:
       propertyPath: objectPrefab
       value: 
       objectReference: {fileID: 58921936458041960, guid: fa5b0ebecaa0acb4ab4b4fa7fa633a68, type: 3}
+    - target: {fileID: 3629864282750095069, guid: 909bb2295c03691409de84478507d13d, type: 3}
+      propertyPath: price
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4910945843696280994, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -7571,6 +7791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  price: {fileID: 1554839823}
   itemName: Torso
 --- !u!1 &1040948375 stripped
 GameObject:
@@ -7590,6 +7811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  price: {fileID: 1554839823}
   itemName: Torso
 --- !u!1 &1084736806
 GameObject:
@@ -7801,6 +8023,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1352057276}
     m_Modifications:
     - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: price
+      value: 
+      objectReference: {fileID: 1554839823}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: informationCanvas
       value: 
       objectReference: {fileID: 1326699976}
@@ -7940,6 +8166,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3364700650277516928, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: price
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3420163452748775227, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -8027,6 +8257,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1352057276}
     m_Modifications:
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: price
+      value: 
+      objectReference: {fileID: 1554839823}
     - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -8162,6 +8396,10 @@ PrefabInstance:
     - target: {fileID: 3249575864600936903, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3364700650277516928, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: price
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3420163452748775227, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: m_AnchorMax.y
@@ -8384,6 +8622,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 620847072}
     m_Modifications:
+    - target: {fileID: -3114639347355110893, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
+      propertyPath: price
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -8642,6 +8884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  price: {fileID: 1554839823}
   itemName: Hands
 --- !u!1 &1181498635
 GameObject:
@@ -8685,6 +8928,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 620847072}
     m_Modifications:
+    - target: {fileID: -3114639347355110893, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
+      propertyPath: price
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -8983,7 +9230,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1277797343}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -9021,7 +9268,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1277797343}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b887bcda84ccddc4eaed233ff8ed7b1f, type: 3}
   m_Name: 
@@ -9036,7 +9283,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1277797343}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0cc2cff33bb946458f1799d9f0ffae4, type: 3}
   m_Name: 
@@ -9542,6 +9789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  price: {fileID: 1554839823}
   itemName: Torso
 --- !u!1 &1402445485
 GameObject:
@@ -9877,6 +10125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  price: {fileID: 1554839823}
   itemName: Torso
 --- !u!1001 &1525285467
 PrefabInstance:
@@ -9972,6 +10221,10 @@ PrefabInstance:
     - target: {fileID: 214009610848214564, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_Name
       value: Torso (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3629864282750095069, guid: 909bb2295c03691409de84478507d13d, type: 3}
+      propertyPath: price
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4910945843696280994, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_IsActive
@@ -10248,6 +10501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  price: {fileID: 1554839823}
   itemName: Hands
 --- !u!1 &1559610837
 GameObject:
@@ -10371,6 +10625,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 620847072}
     m_Modifications:
+    - target: {fileID: -3114639347355110893, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
+      propertyPath: price
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -10492,6 +10750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  price: {fileID: 1554839823}
   itemName: Hands
 --- !u!1 &1641969284
 GameObject:
@@ -10634,6 +10893,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 620847072}
     m_Modifications:
+    - target: {fileID: -3114639347355110893, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
+      propertyPath: price
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -10759,6 +11022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  price: {fileID: 1554839823}
   itemName: Hands
 --- !u!1 &1681918214
 GameObject:
@@ -10887,6 +11151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  price: {fileID: 1554839823}
   itemName: Hands
 --- !u!1 &1740415776
 GameObject:
@@ -11143,6 +11408,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Torso (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3629864282750095069, guid: 909bb2295c03691409de84478507d13d, type: 3}
+      propertyPath: price
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4910945843696280994, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -11236,6 +11505,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 856269603}
     m_Modifications:
+    - target: {fileID: -1283843344049906236, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: price
+      value: 20000
+      objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -11328,10 +11601,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 214009610848214565, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 214009610848214566, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1054275038763480976, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: price
+      value: 
+      objectReference: {fileID: 1554839823}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: itemName
       value: Accesories
@@ -11647,6 +11932,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 620847072}
     m_Modifications:
+    - target: {fileID: -3114639347355110893, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
+      propertyPath: price
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -11761,6 +12050,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1352057276}
     m_Modifications:
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: price
+      value: 
+      objectReference: {fileID: 1554839823}
     - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -11896,6 +12189,10 @@ PrefabInstance:
     - target: {fileID: 3249575864600936903, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3364700650277516928, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: price
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3420163452748775227, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: m_AnchorMax.y
@@ -12070,6 +12367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  price: {fileID: 1554839823}
   itemName: Torso
 --- !u!1 &1953899603
 GameObject:
@@ -12184,6 +12482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  price: {fileID: 1554839823}
   itemName: Hands
 --- !u!1 &2004973399
 GameObject:
@@ -12285,6 +12584,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1352057276}
     m_Modifications:
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: price
+      value: 
+      objectReference: {fileID: 1554839823}
     - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -12420,6 +12723,10 @@ PrefabInstance:
     - target: {fileID: 3249575864600936903, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3364700650277516928, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: price
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3420163452748775227, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: m_AnchorMax.y
@@ -12660,6 +12967,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 856269603}
     m_Modifications:
+    - target: {fileID: -1283843344049906236, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: price
+      value: 20000
+      objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -12752,10 +13063,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 214009610848214565, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 214009610848214566, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1054275038763480976, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: price
+      value: 
+      objectReference: {fileID: 1554839823}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: itemName
       value: Accesories
@@ -12931,6 +13254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  price: {fileID: 1554839823}
   itemName: Hands
 --- !u!1 &2058284818
 GameObject:
@@ -13285,7 +13609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

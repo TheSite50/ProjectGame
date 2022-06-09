@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1722214243691717419}
-  - component: {fileID: 2324856236405568894}
   - component: {fileID: 8029055821586563155}
+  - component: {fileID: -8769918900615760885}
   m_Layer: 0
   m_Name: UpperPart
   m_TagString: Untagged
@@ -33,22 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2324856236405568894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5354328944050523387}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8414ba2d74894d4fbfe9bdd382708b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 1
-  _weaponRange: 500
-  whereLookLocation: {x: 0, y: 0, z: 0}
-  desiredShootLocation: {x: 0, y: 0, z: 0}
 --- !u!114 &8029055821586563155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,6 +48,20 @@ MonoBehaviour:
   tabConectField:
   - {fileID: 6447695841518894651}
   - {fileID: 2777264091783753107}
+--- !u!114 &-8769918900615760885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5354328944050523387}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332d124a1ed892f40b1600b25758e167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HullParams: {fileID: 0}
+  hullRotationSpeed: 5
 --- !u!1001 &5332691050613336554
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12,9 +12,9 @@ public abstract class EnemyAction : EnemyControll
     //[SerializeField] protected GameObject muzzle;
     [SerializeField] protected Slider sliderHp;
     protected GameObject player;
-
+    public abstract void SetPlayer(GameObject player);
     //ActionState StateAction(ActionState enemyAction);
-    
+
 
 }
 

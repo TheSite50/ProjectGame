@@ -77,9 +77,6 @@ public class SlotGetObject : MonoBehaviour, IDropHandler
                 break;
             case ItemType.Legs:
                 PlayerBuild.AddLegs(null);
-                //SaveBuildField[0] = spawnObject.GetComponent<MechElement>().GetFieldConect(0);
-
-                //SaveBuildField = SpawnObject.transform.GetChild(0).gameObject;
                 break;
             default:
                 break;

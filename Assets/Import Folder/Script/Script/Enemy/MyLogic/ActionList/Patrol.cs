@@ -35,12 +35,14 @@ public class Patrol : IAction
        else if (Vector3.Distance(player.transform.position, enemy.transform.position) <= distanceDetection)
        {
             //Przerwij Patrol
-           enemy.GetComponent<NavMeshAgent>().isStopped = false;
+            patrol = false;
+            enemy.GetComponent<NavMeshAgent>().isStopped = false;
            StateAction(ActionState.actionComplete, enemyAction);
        }
        else
        {
             //B³¹d
+            patrol = false;
             enemy.GetComponent<NavMeshAgent>().isStopped = false;
             StateAction(ActionState.actionFail, enemyAction);
        }

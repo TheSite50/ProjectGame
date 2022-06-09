@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class BuyComponent : MonoBehaviour
 {
-    private int price = 20;
+    [SerializeField] private int price = 20;
 
     public void BuyThisCompoennt()
     {
@@ -19,5 +19,9 @@ public class BuyComponent : MonoBehaviour
             //    this.gameObject.GetComponent<InformationAboutMe>().SendIngormationAboutMe();
             //}
         }
+    }
+    public int GetPrice()
+    {
+        return this.price;
     }
 }

@@ -25,13 +25,14 @@ public class Boss : BossProperties
     
     private void Awake()
     {
+        
         spawnBuff = this.GetComponent<RandomEnemySpawnBuff>();
         navMesh = GetComponent<NavMeshAgent>();
         listEnemyActionOnGround = new Dictionary<int, IAction>();
         listEnemyActionOnGround.Add(0, new Patrol(distanceDetection));
         listEnemyActionOnGround.Add(1, new BossGoToPlayer(distanceDetection, distanceLowAttack, distanceFarAttack));
         listEnemyActionOnGround.Add(2, new BossAttack(distanceLowAttack));
-        //listEnemyActionOnGround.Add(3, new BossAttack(distanceLowAttack));
+        listEnemyActionOnGround.Add(3, new BossAttack(distanceLowAttack));
         listEnemyActionOnGround.Add(5, new UseSkill(distanceFarAttack, distanceDetection));
 
         //listEnemyActionOnGround.Add(new UseSkill());
@@ -42,21 +43,13 @@ public class Boss : BossProperties
         return (false, numberActionOnGround, -1);
     }
 
-    public override void SetPlayer(GameObject player)
-    {
-        this.player = player;
-    }
+    
 
     public override void SetState(ActionState actionState)
     {
         this.actionState = actionState;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -68,28 +61,31 @@ public class Boss : BossProperties
         }
         if (ILive)
         {
-            if (Vector3.Distance(player.transform.position, this.transform.position) > distanceFarAttack && Vector3.Distance(player.transform.position, this.transform.position) < distanceDetection && useSkill == false)
-            {
-                useSkill = true;
-                if (useSkill == true)
-                {
-                    numberActionOnGround = 5;
-                    
-                }
-            }
+           if (Vector3.Distance(player.transform.position, this.transform.position) > distanceFarAttack && Vector3.Distance(player.transform.position, this.transform.position) < distanceDetection && useSkill == false)
+           {
+               useSkill = true;
+               if (useSkill == true)
+               {
+                   numberActionOnGround = 5;
+                   
+               }
+           }
 
             //listEnemyActionOnGround[numberActionOnGround].Actions(player, this.gameObject, this);
             if (player != null && isOnGround == true)
             {
-                if (numberActionOnGround == 3)
+               if (numberActionOnGround == 3)
+               {
+                   listEnemyActionOnGround[2].Actions(player, this.gameObject, this);
+               }
+               else if (numberActionOnGround == 5)
                 {
-                    listEnemyActionOnGround[2].Actions(player, this.gameObject, this);
+                    listEnemyActionOnGround[5].Actions(player, this.gameObject, this);
                 }
                 else
-                {
-                    if (numberActionOnGround == 5)
-                       
-                    listEnemyActionOnGround[numberActionOnGround].Actions(player, this.gameObject, this);
+               {
+                      
+                  listEnemyActionOnGround[numberActionOnGround].Actions(player, this.gameObject, this);
                 }
                 if (actionState == ActionState.actionComplete)
                 {
@@ -102,8 +98,9 @@ public class Boss : BossProperties
                 else
                 {
                 }
-
+                
             }
+           
         }
     }
 
@@ -143,7 +140,7 @@ public class Boss : BossProperties
 
     private void FixedUpdate()
     {
-        isOnGround = Physics.CheckSphere(this.gameObject.transform.position, 9, 110, QueryTriggerInteraction.Ignore);//ground detect settings
+        isOnGround = Physics.CheckSphere(this.gameObject.transform.position, 18, 110, QueryTriggerInteraction.Ignore);//ground detect settings
 
     }
     public void SetActionNumber(int actionNumber)

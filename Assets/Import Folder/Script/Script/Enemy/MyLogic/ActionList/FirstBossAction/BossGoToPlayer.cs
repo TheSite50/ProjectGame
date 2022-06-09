@@ -22,18 +22,23 @@ public class BossGoToPlayer : IAction
             enemy.GetComponent<NavMeshAgent>().SetDestination(player.transform.position);
             StateAction(ActionState.actionRunning, enemyAction);
         }
-        else if (Vector3.Distance(player.transform.position, enemy.transform.position) < distanceLowAttack || Vector3.Distance(player.transform.position, enemy.transform.position) > distanceDetection )
+        else if (Vector3.Distance(player.transform.position, enemy.transform.position) < distanceLowAttack  )
         {
             
             //Przerwij pod¹¿anie do gracza
-            enemy.GetComponent<NavMeshAgent>().isStopped = true;
+            enemy.GetComponent<NavMeshAgent>().isStopped = false;
             StateAction(ActionState.actionComplete, enemyAction);
         }
-        else
+        else if(Vector3.Distance(player.transform.position, enemy.transform.position) > distanceDetection)
         {
             
             //B³¹d
-            enemy.GetComponent<NavMeshAgent>().isStopped = true;
+            enemy.GetComponent<NavMeshAgent>().isStopped = false;
+            StateAction(ActionState.actionFail, enemyAction);
+        }
+        else
+        {
+            enemy.GetComponent<NavMeshAgent>().isStopped = false;
             StateAction(ActionState.actionFail, enemyAction);
         }
     }

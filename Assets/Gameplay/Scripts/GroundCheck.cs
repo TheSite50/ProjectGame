@@ -8,7 +8,7 @@ public class GroundCheck : MonoBehaviour
     public bool isGrounded;
     private void OnTriggerStay(Collider other)
     {
-        isGrounded = other.gameObject.layer == groundLayerMask; //other != null && (((1 << other.gameObject.layer) & groundLayerMask) !=0);//? 1<<8 = 100000000 = 256
+        isGrounded = other != null && (((1 << other.gameObject.layer) & groundLayerMask) !=0);
     }
     private void OnTriggerExit(Collider other)
     {

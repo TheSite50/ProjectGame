@@ -95,7 +95,7 @@ public class Boar : EnemyProperties
             else
             {
             }
-            muzzle.transform.LookAt(player.transform.position+Vector3.up*10f);
+            muzzle.transform.LookAt(player.transform.position);
         }
         else if(iFly == true)
         {
@@ -111,7 +111,7 @@ public class Boar : EnemyProperties
             else
             {
             }
-            muzzle.transform.LookAt(player.transform.position + Vector3.up * 5f);
+            muzzle.transform.LookAt(player.transform.position);
         }
         
 
@@ -120,7 +120,7 @@ public class Boar : EnemyProperties
     }
     private void FixedUpdate()
     {
-        isOnGround = Physics.CheckSphere(this.gameObject.transform.position, 9, 110, QueryTriggerInteraction.Ignore);//ground detect settings
+        isOnGround = Physics.CheckSphere(this.gameObject.transform.position, 18, 110, QueryTriggerInteraction.Ignore);//ground detect settings
         
     }
 
@@ -141,7 +141,7 @@ public class Boar : EnemyProperties
 
     public void LongAttack()
     {
-        Instantiate<ParticleSystem>(toxicProjectile, muzzle.transform.position, muzzle.transform.rotation) ;
+        Instantiate<ParticleSystem>(toxicProjectile, muzzle.transform.position, muzzle.transform.rotation);
     }
     public void ChargeAttack()
     {

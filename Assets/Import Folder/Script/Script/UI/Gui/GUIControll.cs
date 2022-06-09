@@ -37,7 +37,7 @@ public class GUIControll : MonoBehaviour
     void Update()
     {
         playerHp.value = player.GetComponent<PlayerStats>().GetHp()/1000f;
-        amunationInWeapon.text = leftWeapon.GetComponent<WeaponParameter>().GetAmmunation().Item1 +"/"+ leftWeapon.GetComponent<WeaponParameter>().GetAmmunation().Item2;
+        //amunationInWeapon.text = leftWeapon.GetComponent<WeaponParameter>().GetAmmunation().Item1 +"/"+ leftWeapon.GetComponent<WeaponParameter>().GetAmmunation().Item2;
         blueEssence.text = GameInformation.GetEssence().blueEssenceValue.ToString();
         greenEssence.text = GameInformation.GetEssence().greenEssenceValue.ToString();
     }

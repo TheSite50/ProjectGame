@@ -6,10 +6,9 @@ using UnityEngine.AI;
 public class BossAttack : IAction
 {
     private bool attack = true;
-    private float distanceLowAttack = 0;
+    private float distanceLowAttack;
     private int typeAttack = 0;
-    BossStrongAttack strongAttack = new BossStrongAttack();
-    BossWeakAttack weakAttack = new BossWeakAttack();
+    
 
     public BossAttack(float distanceLowAttack)
     {
@@ -46,7 +45,7 @@ public class BossAttack : IAction
                 enemy.GetComponent<Boss>().SetActionNumber(2);
             }
             enemy.GetComponent<NavMeshAgent>().isStopped = true;
-            StateAction(ActionState.actionComplete, enemyAction);
+            StateAction(ActionState.actionFail, enemyAction);
             attack = true;
         }
         else

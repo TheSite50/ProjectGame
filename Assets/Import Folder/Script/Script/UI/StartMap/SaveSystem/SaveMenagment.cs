@@ -9,7 +9,12 @@ public class SaveMenagment : MonoBehaviour
     {
         if (!File.Exists(Application.persistentDataPath + "/MenageSave.JSON"))
         {
-            File.Create(Application.persistentDataPath + "/MenageSave.JSON");
+            File.Create(Application.persistentDataPath + "/MenageSave.JSON").Dispose();
+        }
+        if(File.ReadAllText(Application.persistentDataPath + "/MenageSave.JSON")=="")
+        {
+            SerializateDataMenage data = new SerializateDataMenage();
+            SaveMenagment.SerializationMenagmentSlot(data);
         }
     }
     

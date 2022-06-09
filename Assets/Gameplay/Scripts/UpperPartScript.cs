@@ -5,13 +5,13 @@ using UnityEngine.InputSystem;
 
 public class UpperPartScript : MonoBehaviour
 {
-    private PlayerInput playerInput;
-    //[SerializeField] private Animator animator;
+    [SerializeField] private PlayerInput playerInput;
+    [SerializeField] private Animator animator;
 
     [SerializeField] private float rotationSpeed = 25f;
-    private GameObject bulletPrefab;
-    private Transform barrelLocation;
-    //[SerializeField] private Transform bulletParent;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform barrelLocation;
+    [SerializeField] private Transform bulletParent;
     [SerializeField] float _weaponRange = 100f;
 
     private Transform cameraTransform;
@@ -21,17 +21,12 @@ public class UpperPartScript : MonoBehaviour
     public Vector3 desiredShootLocation;//gdzie lec¹ naboje
    // public Vector3 whereShootLocation;
     bool raycast;
+    [SerializeField] so_weapon weapon;
 
-    void Start()
+    void Awake()
     {
-        playerInput = CreatePlayerInGame.GetPlayer().GetComponent<PlayerInput>();
-        barrelLocation = CreatePlayerInGame.GetArm().GetComponent<SetOfMiniguns>().WeaponMuzzle().weaponMuzzleLeft.transform;
-        //error repair
-        bulletPrefab = CreatePlayerInGame.GetArm().GetComponent<IWeapon>().GetBullet();
         cameraTransform = Camera.main.transform;
-        shootAction = playerInput.actions["Fire"];
-        shootAction.performed += _ => TryToShootNextBullet();
-        
+        //shootAction = playerInput.actions["Fire"];
     }
 
     void Update()
@@ -39,7 +34,7 @@ public class UpperPartScript : MonoBehaviour
         HandleTurretRotation();
 
         LookDirection();
-        
+        //Debug.Log(whereLookLocation);
         
         
     }
@@ -56,40 +51,39 @@ public class UpperPartScript : MonoBehaviour
         }
         whereLookLocation=transform.forward * _weaponRange;
     }
-   
-    #endregion
-
-
     private void HandleTurretRotation()
     {
         //Quaternion targetRotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
         Quaternion targetRotation = Quaternion.Euler(cameraTransform.eulerAngles.x , cameraTransform.eulerAngles.y , 0);//odjêcie i dodanie pozycji zwiêksza odleg³oœæi celownika od œrodka ekranu
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
+    #endregion
+    #region Shooting
 
-    //private void OnEnable()
-    //{
-    //    shootAction.performed += _ => TryToShootNextBullet();
-    //    //shootAction.performed += _ => ShootWeapon();
-    //}
-    //private void OnDisable()
-    //{
-    //    shootAction.performed -= _ => TryToShootNextBullet();
-    //    //shootAction.performed -= _ => ShootWeapon();
-    //}
-
-/*    public void ShootWeapon()
+    private void OnEnable()
     {
-        GameObject bullet = Instantiate(bulletPrefab, barrelLocation.position, Quaternion.identity, bulletParent);
-        BulletLogic bulletLogic = bullet.GetComponent<BulletLogic>();
-        bulletLogic.Target = desiredShootLocation;
-        if (raycast) 
+        //shootAction.performed += _ => TryToShootNextBullet();
+        //shootAction.performed += _ => ShootWeapon();
+    }
+    private void OnDisable()
+    {
+        //shootAction.performed -= _ => TryToShootNextBullet();
+        //shootAction.performed -= _ => ShootWeapon();
+    }
+
+    /*    public void ShootWeapon()
         {
-            bulletLogic.Hit = true;
-            return;
-        }
-        bulletLogic.Hit = false;
-    }*/
+            GameObject bullet = Instantiate(bulletPrefab, barrelLocation.position, Quaternion.identity, bulletParent);
+            BulletLogic bulletLogic = bullet.GetComponent<BulletLogic>();
+            bulletLogic.Target = desiredShootLocation;
+            if (raycast) 
+            {
+                bulletLogic.Hit = true;
+                return;
+            }
+            bulletLogic.Hit = false;
+        }*/
+    
     public void ShootRaycast()
     {
         bool shootRaycast = Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit shootAtLocation, _weaponRange);
@@ -104,7 +98,7 @@ public class UpperPartScript : MonoBehaviour
 
     public void ShootWeapon()
     {
-        GameObject bullet = Instantiate(bulletPrefab, barrelLocation.position , barrelLocation.rotation );
+        GameObject bullet = Instantiate(bulletPrefab, barrelLocation.position, Quaternion.identity, bulletParent);
         BulletLogic bulletLogic = bullet.GetComponent<BulletLogic>();
         if (raycast)//strzela przed siebie dodac rotacje do minigunów by obraca³y siê w strone kursora,dodac kursor pokazujacy gdzie dokladnie teraz poleci pocisk
         {
@@ -123,21 +117,23 @@ public class UpperPartScript : MonoBehaviour
 
     void TryToShootNextBullet()
     {
+        
         if (Time.realtimeSinceStartup >= lastBulletShootTime + secondsBetweenBullets)
             StartCoroutine(ShootBurstCoroutine());
     }
 
     IEnumerator ShootBurstCoroutine()
     {
-        //Debug.Log("test2");
+        
         lastBulletShootTime = Time.realtimeSinceStartup;
         for (int bulletNr = 0; bulletNr < 5; bulletNr++)
         {
-            //Debug.Log("test3");
+            
             ShootWeapon();
             yield return new WaitForSeconds(0.03f);
         }
     }
+    #endregion
     /*
      * void Update(){
   if(IsShooting())

@@ -5,12 +5,12 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour, IHp
 {
     private float playerHp = 1000f;
-    private int ammunationInMagazineLeftWeapon = 0;
-    private int magazineNumberLeftWeapon = 0;
-    private int ammunationInMagazineRightWeapon = 0;
-    private int magazineNumberRightWeapon = 0;
-    private WeaponParameter weaponAmmunationLeft = null;
-    private WeaponParameter weaponAmmunationRight = null;
+    //private int ammunationInMagazineLeftWeapon = 0;
+    //private int magazineNumberLeftWeapon = 0;
+    //private int ammunationInMagazineRightWeapon = 0;
+    //private int magazineNumberRightWeapon = 0;
+   // private WeaponParameter weaponAmmunationLeft = null;
+    //private WeaponParameter weaponAmmunationRight = null;
     private static GameObject player;
     [SerializeField] private Canvas gameOver;
     private void Awake()
@@ -21,14 +21,14 @@ public class PlayerStats : MonoBehaviour, IHp
     private void Start()
     {
         
-        if (CreatePlayerInGame.GetWeaponLeft())
-            weaponAmmunationLeft = CreatePlayerInGame.GetWeaponLeft().GetComponent<WeaponParameter>();
-        else
-        {
-            weaponAmmunationLeft = CreatePlayerInGame.GetArm().GetComponent<WeaponParameter>();
-        }
-        if (CreatePlayerInGame.GetWeaponRight() != null)
-            weaponAmmunationRight = CreatePlayerInGame.GetWeaponRight().GetComponent<WeaponParameter>();
+       // if (CreatePlayerInGame.GetWeaponLeft())
+       //     weaponAmmunationLeft = CreatePlayerInGame.GetWeaponLeft().GetComponent<WeaponParameter>();
+       // else
+       // {
+       //     weaponAmmunationLeft = CreatePlayerInGame.GetArm().GetComponent<WeaponParameter>();
+       // }
+       // if (CreatePlayerInGame.GetWeaponRight() != null)
+       //     weaponAmmunationRight = CreatePlayerInGame.GetWeaponRight().GetComponent<WeaponParameter>();
 
     }
     public float GetHp()
@@ -42,21 +42,21 @@ public class PlayerStats : MonoBehaviour, IHp
     }
     private void Update()
     {
-        if (CreatePlayerInGame.GetWeaponLeft())
-        {
-            ammunationInMagazineLeftWeapon = weaponAmmunationLeft.GetAmmunation().Item1;
-            magazineNumberLeftWeapon = weaponAmmunationLeft.GetAmmunation().Item2;
-        }
-        else
-        {
-            ammunationInMagazineLeftWeapon = weaponAmmunationLeft.GetAmmunation().Item1;
-            magazineNumberLeftWeapon = weaponAmmunationLeft.GetAmmunation().Item2;
-        }
-        if (CreatePlayerInGame.GetWeaponRight() != null)
-        {
-            ammunationInMagazineRightWeapon = weaponAmmunationRight.GetAmmunation().Item1;
-            magazineNumberRightWeapon = weaponAmmunationRight.GetAmmunation().Item2;
-        }
+       // if (CreatePlayerInGame.GetWeaponLeft())
+       // {
+       //     ammunationInMagazineLeftWeapon = weaponAmmunationLeft.GetAmmunation().Item1;
+       //     magazineNumberLeftWeapon = weaponAmmunationLeft.GetAmmunation().Item2;
+       // }
+       // else
+       // {
+       //     ammunationInMagazineLeftWeapon = weaponAmmunationLeft.GetAmmunation().Item1;
+       //     magazineNumberLeftWeapon = weaponAmmunationLeft.GetAmmunation().Item2;
+       // }
+       // if (CreatePlayerInGame.GetWeaponRight() != null)
+       // {
+       //     ammunationInMagazineRightWeapon = weaponAmmunationRight.GetAmmunation().Item1;
+       //     magazineNumberRightWeapon = weaponAmmunationRight.GetAmmunation().Item2;
+       // }
         if (playerHp <= 0f)
         {
             gameOver.gameObject.SetActive(true);

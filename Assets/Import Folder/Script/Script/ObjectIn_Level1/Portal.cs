@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class Portal : MonoBehaviour
 {
     private static float numberEnemyIsKilled = 0;
-    private float numberEnemyKilled = 10;
+    private float numberEnemyKilled = 100;
     [SerializeField] private GameObject portal;
     [SerializeField] private GameObject run;
     [SerializeField] private GameObject run2;

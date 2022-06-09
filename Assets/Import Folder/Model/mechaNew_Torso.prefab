@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 836127590165975250}
   - component: {fileID: 58921936458041961}
   - component: {fileID: 1356837816354830588}
-  - component: {fileID: 838204281366729587}
+  - component: {fileID: 8292575273176283163}
   m_Layer: 8
   m_Name: mechaNew_Torso
   m_TagString: Untagged
@@ -66,7 +66,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5, y: 4, z: 4}
   m_Center: {x: 0, y: 3, z: 0}
---- !u!114 &838204281366729587
+--- !u!114 &8292575273176283163
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,14 +75,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 58921936458041960}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8414ba2d74894d4fbfe9bdd382708b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 332d124a1ed892f40b1600b25758e167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 25
-  barrelLocation: {fileID: 12893048976620884}
-  _weaponRange: 100
-  whereLookLocation: {x: 0, y: 0, z: 0}
-  desiredShootLocation: {x: 0, y: 0, z: 0}
+  HullParams: {fileID: 0}
+  hullRotationSpeed: 5
 --- !u!1 &680830988528517236
 GameObject:
   m_ObjectHideFlags: 0

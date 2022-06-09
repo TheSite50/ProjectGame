@@ -58,7 +58,6 @@ GameObject:
   - component: {fileID: 2006031646266854874}
   - component: {fileID: 6298863967229653848}
   - component: {fileID: 7171385380125430741}
-  - component: {fileID: 2705520944822813118}
   m_Layer: 8
   m_Name: AnotherTest
   m_TagString: Untagged
@@ -160,23 +159,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.35, y: 6.477367, z: 4.1425734}
   m_Center: {x: 0, y: -0.7683018, z: 2.8468196}
---- !u!114 &2705520944822813118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5214295099409666894}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8414ba2d74894d4fbfe9bdd382708b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 25
-  barrelLocation: {fileID: 3801377259814528411}
-  _weaponRange: 100
-  whereLookLocation: {x: 0, y: 0, z: 0}
-  desiredShootLocation: {x: 0, y: 0, z: 0}
 --- !u!1 &6200896904191616794
 GameObject:
   m_ObjectHideFlags: 0

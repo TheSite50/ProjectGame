@@ -8,12 +8,12 @@ public class MenuPause : MonoBehaviour
     [SerializeField] private StopGame stop;
     public void MainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(0);
         
     }
     public void Armorry()
     {
-        SceneManager.LoadScene("StartMap");
+        SceneManager.LoadScene(1);
     }
     public void Options()
     {
