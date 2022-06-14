@@ -4,6 +4,7 @@ using UnityEngine;
 
 public interface IReloadable
 {
+    public void Reload(bool isReloading);
     public void ReloadWeapon(int currentAmmoInMag, int ammoInReserve, int MaxAmmoCount);
 
 }

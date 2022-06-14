@@ -6,8 +6,9 @@ public class HudScript : MonoBehaviour
 {
     [SerializeField] GameObject followCrosshair;
     [SerializeField] Behavior_hull player;
+    [SerializeField] private weaponSystem _weapon;
 
-    
+
     // Update is called once per frame
     void Update()
     {
@@ -15,7 +16,7 @@ public class HudScript : MonoBehaviour
     }
     void UpdateCrosshairPosition() 
     {
-        followCrosshair.transform.position = Camera.main.WorldToScreenPoint(player.WhereLookLocation());
+        followCrosshair.transform.position = Camera.main.WorldToScreenPoint(_weapon.WhereShootLocation());
     }
 }
 

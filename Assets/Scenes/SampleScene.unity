@@ -162,13 +162,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 110111955}
-  m_LocalRotation: {x: -0.00000005960463, y: 2.8421703e-14, z: 1.4210851e-14, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.0141, y: -0.0613, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1068755521}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &269219873
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,6 +582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followCrosshair: {fileID: 1179847429}
   player: {fileID: 1828597184}
+  _weapon: {fileID: 1541372894}
 --- !u!114 &457999844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -894,13 +895,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 565898589}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.0141, y: -0.0613, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 941665947}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &626787977
 GameObject:
   m_ObjectHideFlags: 0
@@ -2007,7 +2008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 0cf191d542190854ea128b25fb216dd2, type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -2021,8 +2022,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1560996399}
-        m_TargetAssemblyTypeName: MovementScript, Assembly-CSharp
+      - m_Target: {fileID: 1205873122}
+        m_TargetAssemblyTypeName: InputScript, Assembly-CSharp
         m_MethodName: 
         m_Mode: 0
         m_Arguments:
@@ -2037,8 +2038,8 @@ MonoBehaviour:
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1560996399}
-        m_TargetAssemblyTypeName: CameraScript, Assembly-CSharp
+      - m_Target: {fileID: 1205873122}
+        m_TargetAssemblyTypeName: InputScript, Assembly-CSharp
         m_MethodName: 
         m_Mode: 0
         m_Arguments:
@@ -2123,6 +2124,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 7f4dc6a0-8a2d-4294-80f8-54981d2f5ee6
     m_ActionName: Player/Dash[/Keyboard/z]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8922c5dc-bbb3-47fe-bcff-8ee1dfc583ff
+    m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c6b509c9-1dca-45bd-9338-778e8a454ffa
+    m_ActionName: Player/Reload[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -2149,7 +2158,7 @@ MonoBehaviour:
   CinemachineCameraTarget: {fileID: 1623307129}
   LockCameraPosition: 0
   hull: {fileID: 0}
-  x: {fileID: 0}
+  _weapon: {fileID: 0}
 --- !u!136 &1205873126
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2197,6 +2206,7 @@ MonoBehaviour:
   jump: 0
   sprint: 0
   shoot: 0
+  reload: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
@@ -2581,16 +2591,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3196bf2a6517d1544b42efa4caffd910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _input: {fileID: 1560996401}
   weapon: {fileID: 11400000, guid: c324916eee01c6340b568f360028b9f0, type: 2}
-  hull: {fileID: 1828597184}
-  cameraTransform: {fileID: 0}
+  hull: {fileID: 0}
+  barrelLocation: {fileID: 110111956}
   bulletParent: {fileID: 1733735709}
-  raycast: 0
-  lastBulletShootTime: 0
-  secondsBetweenBullets: 0
-  CurrentAmmoInMag: 0
-  AmmoInReserve: 0
 --- !u!1 &1560996399
 GameObject:
   m_ObjectHideFlags: 0
@@ -2634,7 +2638,7 @@ MonoBehaviour:
   CinemachineCameraTarget: {fileID: 963588268}
   LockCameraPosition: 0
   hull: {fileID: 1828597182}
-  x: {fileID: 7882833162188811267, guid: 6d4b6cc643c41c449bd2a7dd3b482611, type: 3}
+  _weapon: {fileID: 1541372894}
 --- !u!114 &1560996401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2652,6 +2656,7 @@ MonoBehaviour:
   jump: 0
   sprint: 0
   shoot: 0
+  reload: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
@@ -2728,9 +2733,9 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1560996399}
-        m_TargetAssemblyTypeName: MovementScript, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 1560996401}
+        m_TargetAssemblyTypeName: InputScript, Assembly-CSharp
+        m_MethodName: Move
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2744,10 +2749,10 @@ MonoBehaviour:
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1560996399}
-        m_TargetAssemblyTypeName: CameraScript, Assembly-CSharp
+      - m_Target: {fileID: 1560996400}
+        m_TargetAssemblyTypeName: PlayerMovementScript, Assembly-CSharp
         m_MethodName: 
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2759,7 +2764,19 @@ MonoBehaviour:
     m_ActionId: 798df611-4070-4d03-9b86-d5958a4aea47
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1560996400}
+        m_TargetAssemblyTypeName: PlayerMovementScript, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 5aa61f2b-3275-4436-b7c3-c8bb183c6fdb
     m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -2816,9 +2833,9 @@ MonoBehaviour:
     m_ActionName: Player/Sprint[/Keyboard/shift]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1899147601}
-        m_TargetAssemblyTypeName: UpperPartScript, Assembly-CSharp
-        m_MethodName: Wanda
+      - m_Target: {fileID: 1560996400}
+        m_TargetAssemblyTypeName: PlayerMovementScript, Assembly-CSharp
+        m_MethodName: BoolInputTest
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2830,6 +2847,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 7f4dc6a0-8a2d-4294-80f8-54981d2f5ee6
     m_ActionName: Player/Dash[/Keyboard/z]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8922c5dc-bbb3-47fe-bcff-8ee1dfc583ff
+    m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c6b509c9-1dca-45bd-9338-778e8a454ffa
+    m_ActionName: Player/Reload[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -3554,6 +3579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followCrosshair: {fileID: 1133457684}
   player: {fileID: 0}
+  _weapon: {fileID: 0}
 --- !u!1 &2129415201
 GameObject:
   m_ObjectHideFlags: 0
@@ -4184,6 +4210,22 @@ PrefabInstance:
     - target: {fileID: 2742787004086370355, guid: 3623b3a7665ccf843a46b2973288ddee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2742787004086370359, guid: 3623b3a7665ccf843a46b2973288ddee, type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2742787004086370359, guid: 3623b3a7665ccf843a46b2973288ddee, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2742787004086370359, guid: 3623b3a7665ccf843a46b2973288ddee, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_ActionId
+      value: 8922c5dc-bbb3-47fe-bcff-8ee1dfc583ff
+      objectReference: {fileID: 0}
+    - target: {fileID: 2742787004086370359, guid: 3623b3a7665ccf843a46b2973288ddee, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_ActionName
+      value: Player/Jump[/Keyboard/space]
       objectReference: {fileID: 0}
     - target: {fileID: 2742787005502878610, guid: 3623b3a7665ccf843a46b2973288ddee, type: 3}
       propertyPath: bulletParent

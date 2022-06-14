@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class weaponSystem : MonoBehaviour, IWeapon
+
+public abstract class weaponSystem : MonoBehaviour, IWeapon, IReloadable
 {
-    [SerializeField] protected InputScript _input;
+
+
     [SerializeField] protected so_weapon weapon;
     [SerializeField] protected Behavior_hull hull;
-
+    [SerializeField] protected Transform barrelLocation;
     protected Transform cameraTransform;
     [SerializeField] protected Transform bulletParent;
     protected bool raycast;
@@ -30,19 +32,20 @@ public abstract class weaponSystem : MonoBehaviour, IWeapon
     }
     #region Shooting
     public abstract void TryToShootNextBullet();
-    public void ShootWeapon()
+    public void Shooting()
     {
-        GameObject bullet = Instantiate(weapon.bulletPrefab, weapon.barrelLocation.position, Quaternion.identity, bulletParent);
+        Debug.Log("Shooting");
+        GameObject bullet = Instantiate(weapon.bulletPrefab, barrelLocation.position, Quaternion.identity, bulletParent);
         BulletLogic bulletLogic = bullet.GetComponent<BulletLogic>();
         if (raycast)//strzela przed siebie dodac rotacje do minigunów by obraca³y siê w strone kursora,dodac kursor pokazujacy gdzie dokladnie teraz poleci pocisk
         {
             bulletLogic.Target = WhereShootLocation();
-            bulletLogic.Hit = true;
+            //bulletLogic.Hit = true;
         }
         else
         {
-            bulletLogic.Target = weapon.barrelLocation.position + weapon.barrelLocation.forward * weapon.range;
-            bulletLogic.Hit = false;
+            bulletLogic.Target = barrelLocation.position + barrelLocation.forward * weapon.range;
+            //bulletLogic.Hit = false;
         }
     }
     #endregion
@@ -50,21 +53,23 @@ public abstract class weaponSystem : MonoBehaviour, IWeapon
     public void RotateGun() 
     {
         Quaternion targetRotation = Quaternion.Euler(cameraTransform.eulerAngles.x, 0, 0);
-        Debug.Log(targetRotation);
+        //Debug.Log(targetRotation);
         this.transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRotation, weapon.rotationSpeed * Time.deltaTime);
-        //Debug.Log(this.transform.rotation);
-        //Vector3 targetPoint = new Vector3(hull.WhereLookLocation().x, 0, 0);
-        //this.transform.LookAt(targetPoint);
     }
     public Vector3 WhereShootLocation()//yellow raycast z kamery który nakierowuje mecha gdzie ma patrzeæ
     {
-        raycast = Physics.Raycast(weapon.barrelLocation.position, weapon.barrelLocation.forward, out RaycastHit cameraLookAtPoint, 500);
-        Debug.DrawRay(weapon.barrelLocation.position, weapon.barrelLocation.forward * 500, Color.blue);
+        raycast = Physics.Raycast(barrelLocation.position, barrelLocation.forward, out RaycastHit cameraLookAtPoint, 500);
+        Debug.DrawRay(barrelLocation.position, barrelLocation.forward * 500, Color.blue);
         if (raycast)
         {
             return cameraLookAtPoint.point;
         }
-        return weapon.barrelLocation.forward * 500;
+        return barrelLocation.forward * 500;
     }
+    #endregion
+    #region Reload
+    public abstract void ReloadWeapon(int currentAmmoInMag, int ammoInReserve, int MaxAmmoCount);
+
+    public abstract void Reload(bool isReloading);
     #endregion
 }

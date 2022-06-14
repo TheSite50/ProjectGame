@@ -7,7 +7,7 @@ public class PlayerMovementScript : MonoBehaviour
     private InputScript _input;
     private PlayerInput _playerInput;
 
-    
+
     [SerializeField] private float _rotationSpeed = 6;
     [SerializeField] float MoveSpeed;
     private Rigidbody _rb;
@@ -27,7 +27,7 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField] private GameObject hull;
     private bool IsCurrentDeviceMouse => _playerInput.currentControlScheme == "KeyboardMouse";
 
-    [SerializeField]GameObject x;
+    [SerializeField] private weaponSystem _weapon;
 
     #region Unity Functions
     private void Awake()
@@ -39,26 +39,35 @@ public class PlayerMovementScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
+
+        
         AutoRotationControlInDesiredDirection();
     }
     private void LateUpdate()
     {
-        // HandleTurretRotation();
-        //LookDirection();
         
+        Shooting();
         CameraRotation();
-        
+
     }
-   /* private void Update()
+    void Shooting()
     {
-        if (_input.jump == true)
-            aabbcc();
-        Debug.Log("working");
-    }*/
+        if (_input.shoot)
+        {
+            _weapon.TryToShootNextBullet();
+        }
+    }
+    void Reloading()
+    {
+        _weapon.Reload(_input.reload);
+    }
+
     #endregion
     #region Mech Controls
-    void AutoRotationControlInDesiredDirection()
+    public void AutoRotationControlInDesiredDirection()
     {
+        //Debug.Log(_input.move);   
+        //Vector3 desiredDirection = new Vector3(move.x, 0, move.y);
         Vector3 desiredDirection = new Vector3(_input.move.x, 0, _input.move.y);
         desiredDirection = desiredDirection.x * cameraTransform.right.normalized + desiredDirection.z * cameraTransform.forward.normalized;
         desiredDirection.y = 0;
@@ -73,7 +82,7 @@ public class PlayerMovementScript : MonoBehaviour
         }
 
     }
-    private void CameraRotation()
+    public void CameraRotation()
     {
         // if there is an input and camera position is not fixed
         if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
