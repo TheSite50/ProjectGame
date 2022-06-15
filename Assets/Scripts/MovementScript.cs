@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+//outdated 
 //co ma robiæ player ekskluzywnie
 public class MovementScript : MonoBehaviour
 {

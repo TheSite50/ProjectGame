@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//used not finished
 public class W_BurstGun : weaponSystem, IReloadable
 {
     bool isReloading = false;

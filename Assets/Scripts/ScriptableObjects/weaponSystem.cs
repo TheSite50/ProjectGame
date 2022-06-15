@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+//used
 public abstract class weaponSystem : MonoBehaviour, IWeapon
 {
 

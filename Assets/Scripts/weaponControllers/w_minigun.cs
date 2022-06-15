@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+//used not finished
 public class W_Minigun : weaponSystem, IReloadable
 {
     

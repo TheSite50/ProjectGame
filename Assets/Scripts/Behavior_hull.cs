@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//used
 public class Behavior_hull : MonoBehaviour
 {
     [SerializeField] PlayerMovementScript player;

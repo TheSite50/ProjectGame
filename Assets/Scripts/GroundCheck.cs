@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//used to implement
 public class GroundCheck : MonoBehaviour
 {
     [SerializeField] private LayerMask groundLayerMask;

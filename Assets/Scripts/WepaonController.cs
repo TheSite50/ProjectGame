@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-
+//used
 public abstract class WepaonController : MonoBehaviour, IShootable
 {
     [SerializeField] so_weapon weaponData;

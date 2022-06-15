@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+//used
 public class InputScript : MonoBehaviour
 {
 	[HideInInspector] public Vector2 move;

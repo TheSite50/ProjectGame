@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//used may be outdated
 public class BulletLogic : MonoBehaviour
 {
     [SerializeField] private GameObject bulletDecal;

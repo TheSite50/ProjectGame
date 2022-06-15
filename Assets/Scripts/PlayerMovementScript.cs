@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+//used
 public class PlayerMovementScript : MonoBehaviour
 {
     private InputScript _input;
