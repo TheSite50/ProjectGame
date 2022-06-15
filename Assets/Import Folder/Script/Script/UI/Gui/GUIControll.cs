@@ -6,10 +6,10 @@ using TMPro;
 
 public class GUIControll : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI amunationInWeapon;
+    [SerializeField] private TextMeshProUGUI ammunitionInWeapon;
     [SerializeField] private TextMeshProUGUI blueEssence;
     [SerializeField] private TextMeshProUGUI greenEssence;
-    [SerializeField] private Slider playerHp;
+    [SerializeField] private Image playerHp;
     [SerializeField] private GameObject player;
     private GameObject leftWeapon;
     private GameObject rightWeapon;
@@ -36,8 +36,22 @@ public class GUIControll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerHp.value = player.GetComponent<PlayerStats>().GetHp()/1000f;
-        //amunationInWeapon.text = leftWeapon.GetComponent<WeaponParameter>().GetAmmunation().Item1 +"/"+ leftWeapon.GetComponent<WeaponParameter>().GetAmmunation().Item2;
+        playerHp.fillAmount = player.GetComponent<PlayerStats>().GetHp() / 1000f;
+        if(playerHp.fillAmount <= 0.25)
+        {
+            playerHp.color = Color.red;
+        }
+        else
+        if (playerHp.fillAmount < 0.4)
+        {
+            playerHp.color = Color.yellow;
+        }
+        else
+        {
+            playerHp.color = Color.green;
+        }
+
+        //ammunitionInWeapon.text = leftWeapon.GetComponent<WeaponParameter>().GetAmmunation().Item1 +"/"+ leftWeapon.GetComponent<WeaponParameter>().GetAmmunation().Item2;
         blueEssence.text = GameInformation.GetEssence().blueEssenceValue.ToString();
         greenEssence.text = GameInformation.GetEssence().greenEssenceValue.ToString();
     }
