@@ -5,16 +5,14 @@ using UnityEngine;
 
 public class W_Minigun : weaponSystem, IReloadable
 {
-    float lastBulletShootTime;
-    float secondsBetweenBullets = 5f;
-    int CurrentAmmoInMag;
-    int AmmoInReserve;
+    
     private void Update()
     {
         RotateGun();
     }
     private void Start()
     {
+        secondsBetweenBullets = 60 / weapon.fireRate;
         AmmoInReserve = 500;
         CurrentAmmoInMag = 50;
     }
@@ -22,30 +20,47 @@ public class W_Minigun : weaponSystem, IReloadable
     {
         CurrentAmmoInMag = currentAmmoInMag;
         AmmoInReserve = ammoInReserve;
-    } 
-    public override void TryToShootNextBullet()
+    }
+/*    private IEnumerator _shoot;
+    public void TryToShootNextBullet(bool isShooting)
     {
         Debug.Log("Shooting Working");
-        if (Time.realtimeSinceStartup >= lastBulletShootTime + secondsBetweenBullets)
-            StartCoroutine(ShootWeapon());
-    }
-    IEnumerator ShootWeapon()
+        if (isShooting)
+        {
+            if (Time.realtimeSinceStartup >= lastBulletShootTime + secondsBetweenBullets)
+            {
+                if (_shoot != null)
+                    StopCoroutine(_shoot);
+                _shoot = ShootWeapon();
+                StartCoroutine(_shoot);
+            }
+        }
+        if (!isShooting)
+        {
+            if (_shoot != null)
+            {
+                StopCoroutine(_shoot);
+            }
+        }
+    }*/
+    public override IEnumerator ShootWeapon()
     {
-        //Debug.Log("ShootInputWorking");
+        Debug.Log("ShootInputWorking w_MG");
         if (CurrentAmmoInMag > 0)
         {
+            //Debug.Log(CurrentAmmoInMag + " w_MG");
+            //Debug.Log(lastBulletShootTime);
             lastBulletShootTime = Time.realtimeSinceStartup;
             base.Shooting();
             CurrentAmmoInMag--;
-            Debug.Log(CurrentAmmoInMag);
             yield return new WaitForSeconds(1f);
         }
         if (CurrentAmmoInMag == 0) 
         {
-            Debug.Log("No Ammo");
+            Debug.Log("No Ammo w_MG");
         }
     }
-    public override void Reload(bool isReloading) 
+    public void Reload(bool isReloading) 
     {
         StartCoroutine(Reloading());
 
@@ -55,7 +70,7 @@ public class W_Minigun : weaponSystem, IReloadable
         ReloadWeapon(CurrentAmmoInMag, AmmoInReserve, weapon.magSize);
         yield return new WaitForSeconds(weapon.reloadSpeed);
     }
-    public override void ReloadWeapon(int currentAmmoInMag, int ammoInReserve, int MaxAmmoCount)
+    public void ReloadWeapon(int currentAmmoInMag, int ammoInReserve, int MaxAmmoCount)
     {
         if (ammoInReserve == 0)
             return;

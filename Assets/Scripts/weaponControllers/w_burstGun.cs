@@ -3,21 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 public class W_BurstGun : weaponSystem, IReloadable
 {
-    float lastBulletShootTime;
-    private float secondsBetweenBullets = 1;
-    int CurrentAmmoInMag;
-    int AmmoInReserve;
     bool isReloading = false;
     private void Update()
     {
         RotateGun();
     }
-    public override void TryToShootNextBullet()
-    {
-        if (Time.realtimeSinceStartup >= lastBulletShootTime + secondsBetweenBullets)
-            StartCoroutine(ShootWeapon());
-    }
-    IEnumerator ShootWeapon()
+    public override IEnumerator ShootWeapon()
     {
         if (CurrentAmmoInMag > 0 && !isReloading)
         {
@@ -34,7 +25,7 @@ public class W_BurstGun : weaponSystem, IReloadable
             }
         }
     }
-    public override void Reload(bool isReloading)
+    public void Reload(bool isReloading)
     {
         StartCoroutine(Reloading());
 
@@ -46,7 +37,7 @@ public class W_BurstGun : weaponSystem, IReloadable
         yield return new WaitForSeconds(weapon.reloadSpeed);
         isReloading = false;
     }
-    public override void ReloadWeapon(int currentAmmoInMag, int ammoInReserve, int MaxAmmoCount)
+    public void ReloadWeapon(int currentAmmoInMag, int ammoInReserve, int MaxAmmoCount)
     {
         if (!isReloading)
         {
@@ -62,5 +53,4 @@ public class W_BurstGun : weaponSystem, IReloadable
             CurrentAmmoInMag = MaxAmmoCount;
         }
     }
-
 }

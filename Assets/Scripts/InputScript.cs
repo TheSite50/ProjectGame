@@ -7,7 +7,8 @@ public class InputScript : MonoBehaviour
 	[HideInInspector] public Vector2 look;
 	[HideInInspector] public bool jump;
 	[HideInInspector] public bool sprint;
-	[HideInInspector] public bool shoot;
+	[HideInInspector] public bool shootLPM;
+	[HideInInspector] public bool shootRPM;
 	[HideInInspector] public bool reload;
 
 	[HideInInspector] public bool analogMovement;
@@ -35,7 +36,12 @@ public class InputScript : MonoBehaviour
     public void OnShoot(InputValue value)
 	{
 		//Debug.Log(value.isPressed);
-		shoot = value.isPressed;
+		shootLPM = value.isPressed;
+	}
+	public void OnShootRPM(InputValue value)
+	{
+		//Debug.Log(value.isPressed);
+		shootRPM = value.isPressed;
 	}
 	public void OnSprint(InputValue value)
 	{
@@ -58,7 +64,11 @@ public class InputScript : MonoBehaviour
     }
 	public void ShootInput(bool newShootState)
 	{
-		shoot = newShootState;
+		shootLPM = newShootState;
+	}
+	public void ShootRPMInput(bool newShootState)
+	{
+		shootRPM = newShootState;
 	}
 
 	public void SprintInput(bool newSprintState)

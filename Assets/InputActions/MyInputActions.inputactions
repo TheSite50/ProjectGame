@@ -76,6 +76,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "ShootRPM",
+                    "type": "Value",
+                    "id": "8c2fe92b-0a79-4a54-bc60-c2d2926fdd56",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -269,7 +277,7 @@
                 {
                     "name": "",
                     "id": "cb58cb8f-510a-469b-bdda-c9b475a58a06",
-                    "path": "<Mouse>/rightButton",
+                    "path": "<Keyboard>/ctrl",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -340,6 +348,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Reload",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8bb28b2d-c642-484b-b037-1d393e5ff4ff",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "ShootRPM",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -89,6 +89,14 @@ public class @MyInputActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ShootRPM"",
+                    ""type"": ""Value"",
+                    ""id"": ""8c2fe92b-0a79-4a54-bc60-c2d2926fdd56"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -282,7 +290,7 @@ public class @MyInputActions : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""cb58cb8f-510a-469b-bdda-c9b475a58a06"",
-                    ""path"": ""<Mouse>/rightButton"",
+                    ""path"": ""<Keyboard>/ctrl"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
@@ -353,6 +361,17 @@ public class @MyInputActions : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Reload"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8bb28b2d-c642-484b-b037-1d393e5ff4ff"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""ShootRPM"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -939,6 +958,7 @@ public class @MyInputActions : IInputActionCollection, IDisposable
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Reload = m_Player.FindAction("Reload", throwIfNotFound: true);
+        m_Player_ShootRPM = m_Player.FindAction("ShootRPM", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1009,6 +1029,7 @@ public class @MyInputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Dash;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Reload;
+    private readonly InputAction m_Player_ShootRPM;
     public struct PlayerActions
     {
         private @MyInputActions m_Wrapper;
@@ -1022,6 +1043,7 @@ public class @MyInputActions : IInputActionCollection, IDisposable
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Reload => m_Wrapper.m_Player_Reload;
+        public InputAction @ShootRPM => m_Wrapper.m_Player_ShootRPM;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1058,6 +1080,9 @@ public class @MyInputActions : IInputActionCollection, IDisposable
                 @Reload.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
                 @Reload.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
                 @Reload.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
+                @ShootRPM.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShootRPM;
+                @ShootRPM.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShootRPM;
+                @ShootRPM.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShootRPM;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1089,6 +1114,9 @@ public class @MyInputActions : IInputActionCollection, IDisposable
                 @Reload.started += instance.OnReload;
                 @Reload.performed += instance.OnReload;
                 @Reload.canceled += instance.OnReload;
+                @ShootRPM.started += instance.OnShootRPM;
+                @ShootRPM.performed += instance.OnShootRPM;
+                @ShootRPM.canceled += instance.OnShootRPM;
             }
         }
     }
@@ -1254,6 +1282,7 @@ public class @MyInputActions : IInputActionCollection, IDisposable
         void OnDash(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
+        void OnShootRPM(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

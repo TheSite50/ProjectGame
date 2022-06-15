@@ -149,7 +149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 110111956}
   m_Layer: 0
-  m_Name: barrelSocket
+  m_Name: rightBarrelSocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -882,7 +882,7 @@ GameObject:
   m_Component:
   - component: {fileID: 565898590}
   m_Layer: 0
-  m_Name: barrelSocket
+  m_Name: leftBarrelSocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1073,7 +1073,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 0
-  m_LookAt: {fileID: 963588269}
+  m_LookAt: {fileID: 0}
   m_Follow: {fileID: 963588269}
   m_Lens:
     FieldOfView: 50
@@ -1098,7 +1098,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674415728}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 14.79, z: -15}
+  m_LocalPosition: {x: 5.04, y: 13.93, z: -19.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1456280368}
@@ -1199,6 +1199,27 @@ Transform:
   m_Father: {fileID: 1657330478}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
+--- !u!1 &779339628 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1392356021687951512, guid: 913662b39faa9ed42bd32a0c41397030, type: 3}
+  m_PrefabInstance: {fileID: 1541372892}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &779339629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779339628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3196bf2a6517d1544b42efa4caffd910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: c324916eee01c6340b568f360028b9f0, type: 2}
+  hull: {fileID: 0}
+  barrelLocation: {fileID: 565898590}
+  bulletParent: {fileID: 1733735709}
 --- !u!4 &792369948 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1501982438164327865, guid: 913662b39faa9ed42bd32a0c41397030, type: 3}
@@ -1475,6 +1496,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d4a4bc0b66c6c41418ba39046b6522f1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f32bbeb017ef1ec4b9387ad66d6304f0, type: 2}
     - target: {fileID: 919132149155446097, guid: d4a4bc0b66c6c41418ba39046b6522f1, type: 3}
       propertyPath: m_Name
       value: mecha_weapon_left_1
@@ -1631,7 +1656,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 14.79, z: -15}
+  m_LocalPosition: {x: 5.04, y: 13.93, z: -19.66}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2158,7 +2183,8 @@ MonoBehaviour:
   CinemachineCameraTarget: {fileID: 1623307129}
   LockCameraPosition: 0
   hull: {fileID: 0}
-  _weapon: {fileID: 0}
+  _weaponRight: {fileID: 0}
+  _weaponLeft: {fileID: 0}
 --- !u!136 &1205873126
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2480,7 +2506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damping: {x: 0, y: 5, z: 3}
-  ShoulderOffset: {x: 0, y: 4, z: -5}
+  ShoulderOffset: {x: 5.04, y: 3.14, z: -9.66}
   VerticalArmLength: 0
   CameraSide: 1
   CameraDistance: 10
@@ -2604,12 +2630,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1560996404}
-  - component: {fileID: 1560996403}
   - component: {fileID: 1560996402}
+  - component: {fileID: 1560996406}
+  - component: {fileID: 1560996405}
   - component: {fileID: 1560996401}
   - component: {fileID: 1560996400}
-  - component: {fileID: 1560996405}
-  - component: {fileID: 1560996406}
   m_Layer: 0
   m_Name: PlayerV2
   m_TagString: Player
@@ -2630,7 +2655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationSpeed: 5
-  MoveSpeed: 1
+  MoveSpeed: 0.5
   _groundCheck: {fileID: 279289785}
   _cameraSensitivity: 300
   TopClamp: 70
@@ -2638,7 +2663,8 @@ MonoBehaviour:
   CinemachineCameraTarget: {fileID: 963588268}
   LockCameraPosition: 0
   hull: {fileID: 1828597182}
-  _weapon: {fileID: 1541372894}
+  _weaponRight: {fileID: 1541372894}
+  _weaponLeft: {fileID: 779339629}
 --- !u!114 &1560996401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2669,26 +2695,10 @@ BoxCollider:
   m_GameObject: {fileID: 1560996399}
   m_Material: {fileID: 13400000, guid: 87f5bea2ae6a8df43845287e580a0ef8, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 9.153698, y: 7.125493, z: 8.427427}
   m_Center: {x: 0.11648178, y: 3.538982, z: 0.29692554}
---- !u!54 &1560996403
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1560996399}
-  serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 2
-  m_AngularDrag: 5
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 0
 --- !u!4 &1560996404
 Transform:
   m_ObjectHideFlags: 0
@@ -2860,8 +2870,8 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!136 &1560996406
-CapsuleCollider:
+--- !u!143 &1560996406
+CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2870,10 +2880,14 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Height: 13.6
+  m_Radius: 4
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 6.75, z: 0}
 --- !u!1 &1623307129
 GameObject:
   m_ObjectHideFlags: 0
@@ -3592,7 +3606,7 @@ GameObject:
   - component: {fileID: 2129415205}
   - component: {fileID: 2129415204}
   - component: {fileID: 2129415203}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

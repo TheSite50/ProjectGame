@@ -10,7 +10,8 @@ public class PlayerMovementScript : MonoBehaviour
 
     [SerializeField] private float _rotationSpeed = 6;
     [SerializeField] float MoveSpeed;
-    private Rigidbody _rb;
+    //private Rigidbody _rb;
+    private CharacterController player;
     [SerializeField] private GroundCheck _groundCheck;
 
     [Header("Camera")]
@@ -27,7 +28,8 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField] private GameObject hull;
     private bool IsCurrentDeviceMouse => _playerInput.currentControlScheme == "KeyboardMouse";
 
-    [SerializeField] private weaponSystem _weapon;
+    [SerializeField] private weaponSystem _weaponRight;
+    [SerializeField] private weaponSystem _weaponLeft;
 
     #region Unity Functions
     private void Awake()
@@ -35,7 +37,8 @@ public class PlayerMovementScript : MonoBehaviour
         cameraTransform = Camera.main.transform;
         _playerInput = GetComponent<PlayerInput>();
         _input = GetComponent<InputScript>();
-        _rb = GetComponent<Rigidbody>();
+        //_rb = GetComponent<Rigidbody>();
+        player = GetComponent<CharacterController>();
     }
     private void FixedUpdate()
     {
@@ -44,22 +47,24 @@ public class PlayerMovementScript : MonoBehaviour
         AutoRotationControlInDesiredDirection();
     }
     private void LateUpdate()
-    {
-        
+    {   
+        Debug.Log(_input.shootLPM + " PMS");
         Shooting();
         CameraRotation();
 
     }
     void Shooting()
     {
-        if (_input.shoot)
-        {
-            _weapon.TryToShootNextBullet();
-        }
+        _weaponRight.TryToShootNextBullet(_input.shootLPM);
+        _weaponLeft.TryToShootNextBullet(_input.shootRPM);
     }
     void Reloading()
     {
-        _weapon.Reload(_input.reload);
+        if (_weaponRight is IReloadable)
+        {
+            //(IReloadable)_weapon.Reload(_input.reload);
+            
+        }
     }
 
     #endregion
@@ -77,7 +82,8 @@ public class PlayerMovementScript : MonoBehaviour
         //transform.forward = Vector3.Lerp(transform.forward, desiredDirection, _rotationSpeed * Time.deltaTime);
         if (Vector3.Dot(transform.forward, desiredDirection) > 0.7f)
         {
-            _rb.AddForce(500 * MoveSpeed * desiredDirection.normalized);
+            player.Move(MoveSpeed * desiredDirection.normalized);
+            //_rb.AddForce(500 * MoveSpeed * desiredDirection.normalized);
             //_rb.MovePosition(transform.position + desiredDirection.normalized * 25 * MoveSpeed * Time.deltaTime);
         }
 
