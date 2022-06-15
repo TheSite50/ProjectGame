@@ -26,4 +26,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Import Folder/Scene/Level2Map.unity
     guid: b8179a3d7a057b243a52ecfd7388e27e
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: e384e5482156eab4da593e5e54d97bb9, type: 2}
