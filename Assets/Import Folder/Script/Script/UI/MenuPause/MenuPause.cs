@@ -9,11 +9,13 @@ public class MenuPause : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
-        
+        Time.timeScale = 1;
+
     }
     public void Armorry()
     {
         SceneManager.LoadScene(1);
+        Time.timeScale = 1;
     }
     public void Options()
     {

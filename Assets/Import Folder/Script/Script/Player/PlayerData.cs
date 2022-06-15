@@ -8,7 +8,7 @@ public class PlayerData : MonoBehaviour
     private GameObject player;
     private void Awake()
     {
-       
+        playerHp = 1000;
     }
     private void Start()
     {

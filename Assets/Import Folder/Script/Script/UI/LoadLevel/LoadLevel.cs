@@ -12,11 +12,11 @@ public class LoadLevel : MonoBehaviour
     
     void Start()
     {
-        
+        StartCoroutine(StartLoadLevel());
     }
     public void StartMap()
     {
-        StartCoroutine(StartLoadLevel());
+        
     }
 
     public IEnumerator StartLoadLevel()

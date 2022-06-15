@@ -23,6 +23,11 @@ public class SlotMenage : MonoBehaviour
             {
                 slotOpen.GetComponent<Image>().enabled = false;
                 slotOpen.GetComponent<SlotGetObject>().enabled = false;
+                if(slotOpen.transform.childCount>0)
+                {
+                    Destroy(slotOpen.transform.GetChild(0).gameObject);
+                }
+                
             }
         }
     }
