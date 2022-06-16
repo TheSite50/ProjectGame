@@ -68,7 +68,7 @@ public class Boar : EnemyProperties
         if(this.GetHp()<=70f&& this.GetHp() >= 50f)
         {
             
-            iFly = true;
+            iFly = false;
             
             navMesh.enabled = false;
         }
