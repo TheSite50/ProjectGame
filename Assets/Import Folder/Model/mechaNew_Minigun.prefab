@@ -71,6 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6738922894408457747}
+  - component: {fileID: 7817726339502650472}
   m_Layer: 8
   m_Name: L_Shoulder
   m_TagString: Untagged
@@ -93,6 +94,20 @@ Transform:
   m_Father: {fileID: 1044265281421797846}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7817726339502650472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869470376353901598}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3196bf2a6517d1544b42efa4caffd910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: c324916eee01c6340b568f360028b9f0, type: 2}
+  barrelLocation: {fileID: 6738922894408457747}
 --- !u!1 &3258409091416593779
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,6 +117,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 57770518906624686}
+  - component: {fileID: 1910299716671299940}
   m_Layer: 8
   m_Name: R_Shoulder
   m_TagString: Untagged
@@ -124,6 +140,20 @@ Transform:
   m_Father: {fileID: 1044265281421797846}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1910299716671299940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3258409091416593779}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3196bf2a6517d1544b42efa4caffd910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: c324916eee01c6340b568f360028b9f0, type: 2}
+  barrelLocation: {fileID: 57770518906624686}
 --- !u!1 &4855254407482887430
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,6 +437,8 @@ GameObject:
   - component: {fileID: 7228024114642524769}
   - component: {fileID: 3824061804496841819}
   - component: {fileID: 6718534178266571332}
+  - component: {fileID: 8184724694757209645}
+  - component: {fileID: 6916251102150875729}
   m_Layer: 8
   m_Name: mechaNew_Minigun
   m_TagString: Untagged
@@ -470,3 +502,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3d7abae515865241bc93af035432b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8184724694757209645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8051995569471552599}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3196bf2a6517d1544b42efa4caffd910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: c324916eee01c6340b568f360028b9f0, type: 2}
+  barrelLocation: {fileID: 4159259832056696016}
+--- !u!114 &6916251102150875729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8051995569471552599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45130f4ade4ceaa4b9b978bffe100224, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponRight: {fileID: 1910299716671299940}
+  weaponLeft: {fileID: 7817726339502650472}

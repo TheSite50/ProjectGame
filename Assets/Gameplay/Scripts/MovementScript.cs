@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+//outdated 
 //co ma robiæ player ekskluzywnie
 public class MovementScript : MonoBehaviour
 {
@@ -93,7 +93,7 @@ public class MovementScript : MonoBehaviour
         Debug.Log(desiredMove);
         move = Vector3.Lerp(move, desiredMove, _rotationSpeed);
 
-        rb.MovePosition(transform.position + MoveSpeed * Time.deltaTime * move*50);
+        rb.MovePosition(transform.position + 50 * MoveSpeed * Time.deltaTime * move);
         transform.forward = Vector3.Lerp(transform.forward, move, _rotationSpeed);
     }
     void PlayerControlsRotationMovementSetting() 
@@ -102,7 +102,7 @@ public class MovementScript : MonoBehaviour
         Quaternion addRotation = transform.rotation * Quaternion.Euler(desiredMove);
         rb.MoveRotation(addRotation);
         rb.MovePosition(transform.position + _input.move.y * 25 * MoveSpeed * Time.deltaTime * transform.forward);
-        Debug.Log(1000*transform.forward * _input.move.y * MoveSpeed * Time.deltaTime);
+        Debug.Log(_input.move.y * 1000 * MoveSpeed * Time.deltaTime * transform.forward);
     }
     void AutoRotationControlInDesiredDirection() 
     {
@@ -114,7 +114,7 @@ public class MovementScript : MonoBehaviour
         transform.forward = Vector3.Lerp(transform.forward, desiredDirection, _rotationSpeed * Time.deltaTime);
         if (Vector3.Dot(transform.forward, desiredDirection) > 0.7f )
         {//to fix doesn't move in this direction stnads still and doesnt move
-            rb.MovePosition(transform.position + desiredDirection.normalized * 25 * MoveSpeed * Time.deltaTime);
+            rb.MovePosition(transform.position + 25 * MoveSpeed * Time.deltaTime * desiredDirection.normalized);
         }
 
     }
@@ -181,7 +181,7 @@ public class MovementScript : MonoBehaviour
     
     private bool IsGrounded()
     {
-        return _groundCheck.GetComponent<GroundCheck>().isGrounded;
+        return _groundCheck.GetComponent<GroundCheck>().IsGrounded;
     }
 
 

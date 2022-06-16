@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-
+//todelete
 public class Behavior_weapon : ScriptableObject
 {
 

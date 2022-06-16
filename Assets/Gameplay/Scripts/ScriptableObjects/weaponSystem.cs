@@ -2,73 +2,120 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class weaponSystem : MonoBehaviour, IReloadable
+//used
+public abstract class weaponSystem : MonoBehaviour, IWeapon , IReloadable
 {
-    [SerializeField] so_weapon weapon;
-    [SerializeField] Behavior_hull hull;
-    float lastBulletShootTime;
-    float secondsBetweenBullets = 1f;
-    private Transform cameraTransform;
-    [SerializeField] private Transform bulletParent;
-    private bool raycast;
 
+    protected float lastBulletShootTime;
+    protected float secondsBetweenBullets = 5f;
+    public int CurrentAmmoInMag { get; set; }
+    public int AmmoInReserve { get; set; }
+
+    [SerializeField] protected so_weapon weapon;
+    //[SerializeField] protected Behavior_hull hull;
+    [SerializeField] protected Transform barrelLocation;
+    protected Transform cameraTransform;
+    //[SerializeField] protected Transform bulletParent;
+    protected bool raycast;
+    public int MaxAmmo => weapon.magSize;
+    public bool IsWeaponBusy { get; set; }
     private void Awake()
     {
         cameraTransform = Camera.main.transform;
+        AmmoInReserve = 999999;
     }
-    private void LateUpdate()
+    private void Update()
     {
         RotateGun();
     }
-
-    public void TryToShootNextBullet()
+    #region Shooting
+    private IEnumerator _shoot;
+    public void TryToShootNextBullet(bool isShooting) 
     {
-        if (Time.realtimeSinceStartup >= lastBulletShootTime + secondsBetweenBullets)
-            StartCoroutine(ShootBurstCoroutine());
-    }
-
-    IEnumerator ShootBurstCoroutine()
-    {
-
-        lastBulletShootTime = Time.realtimeSinceStartup;
-        for (int bulletNr = 0; bulletNr < 5; bulletNr++)
+        if (isShooting)
         {
-            ShootWeapon();
-            yield return new WaitForSeconds(0.03f);
+            if (Time.realtimeSinceStartup >= lastBulletShootTime + secondsBetweenBullets)
+            {
+                //Debug.Log(Time.realtimeSinceStartup + "//" + lastBulletShootTime + "//" + secondsBetweenBullets);
+                if (_shoot != null)
+                {
+                    StopCoroutine(_shoot);
+                }
+                _shoot = ShootWeapon();
+                StartCoroutine(_shoot);
+            }
+        }
+        if (!isShooting)
+        {
+            if (_shoot != null)
+            {
+                StopCoroutine(_shoot);
+            }
         }
     }
-    public void ShootWeapon()
+    public abstract IEnumerator ShootWeapon();
+    public void Shooting()
     {
-        GameObject bullet = Instantiate(weapon.bulletPrefab, weapon.barrelLocation.position, Quaternion.identity, bulletParent);
+        //Debug.Log("Shooting WS");
+        GameObject bullet = Instantiate(weapon.bulletPrefab, barrelLocation.position, barrelLocation.rotation);
         BulletLogic bulletLogic = bullet.GetComponent<BulletLogic>();
         if (raycast)//strzela przed siebie dodac rotacje do minigunów by obraca³y siê w strone kursora,dodac kursor pokazujacy gdzie dokladnie teraz poleci pocisk
         {
-            bulletLogic.Target = hull.WhereLookLocation();
-            bulletLogic.Hit = true;
+            bulletLogic.Target = WhereShootLocation();
+            //bulletLogic.Hit = true;
         }
         else
         {
-            bulletLogic.Target = weapon.barrelLocation.position + weapon.barrelLocation.forward * weapon.range;
-            bulletLogic.Hit = false;
+            bulletLogic.Target = barrelLocation.position + barrelLocation.forward * weapon.range;
+            //bulletLogic.Hit = false;
         }
     }
-    public void ReloadWeapon(int currentAmmoInMag, int ammoInReserve, int MaxAmmoCount)
-    {
-        if (ammoInReserve == 0)
-            return;
-        if (ammoInReserve <= MaxAmmoCount - currentAmmoInMag)
-        {
-            currentAmmoInMag += ammoInReserve;
-            ammoInReserve = 0;
-            return;
-        }
-        ammoInReserve -= (MaxAmmoCount - currentAmmoInMag);
-        currentAmmoInMag = MaxAmmoCount;
-    }
-    //obracanie 
+    #endregion
+    #region rotation
     public void RotateGun() 
     {
         Quaternion targetRotation = Quaternion.Euler(cameraTransform.eulerAngles.x, 0, 0);
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, weapon.rotationSpeed * Time.deltaTime);
+        //Debug.Log(targetRotation);
+        this.transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRotation, weapon.rotationSpeed * Time.deltaTime);
     }
+    public Vector3 WhereShootLocation()//yellow raycast z kamery który nakierowuje mecha gdzie ma patrzeæ
+    {
+        raycast = Physics.Raycast(barrelLocation.position, barrelLocation.forward, out RaycastHit cameraLookAtPoint, 500);
+        Debug.DrawRay(barrelLocation.position, barrelLocation.forward * 500, Color.blue);
+        if (raycast)
+        {
+            return cameraLookAtPoint.point;
+        }
+        return barrelLocation.forward * 500;
+    }
+
+    public void Reload()
+    {
+        if (AmmoInReserve != 0 && CurrentAmmoInMag != weapon.magSize)
+        {
+            StartCoroutine(Reloading());
+        }
+    }
+    IEnumerator Reloading()
+    {
+        IsWeaponBusy = true;
+        ReloadWeapon(CurrentAmmoInMag, AmmoInReserve, weapon.magSize);
+        yield return new WaitForSeconds(weapon.reloadSpeed);
+        Debug.Log("reloading");
+        IsWeaponBusy = false;
+    }
+    public void ReloadWeapon(int currentAmmoInMag, int ammoInReserve, int MaxAmmoCount)
+    {
+        if (ammoInReserve <= MaxAmmoCount - currentAmmoInMag)
+        {
+            CurrentAmmoInMag += ammoInReserve;
+            AmmoInReserve = 0;
+            Debug.Log("reloaded!");
+            return;
+        }
+        AmmoInReserve -= (MaxAmmoCount - currentAmmoInMag);
+        CurrentAmmoInMag = MaxAmmoCount;
+        Debug.Log("reloaded!");
+    }
+    #endregion
 }

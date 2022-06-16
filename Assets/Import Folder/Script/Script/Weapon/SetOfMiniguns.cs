@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetOfMiniguns : MonoBehaviour, IWeapon
+public class SetOfMiniguns : MonoBehaviour
 {
     private int time = 0;
     [SerializeField]private GameObject bullet;

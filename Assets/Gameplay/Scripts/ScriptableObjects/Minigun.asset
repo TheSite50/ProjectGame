@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e3374dba702d3e489a174210a166f25, type: 3}
   m_Name: Minigun
   m_EditorClassIdentifier: 
+  weaponName: Minigun
   damage: 25
-  accuracy: 50
-  fireRate: 900
-  recoil: 0.5
-  magSize: 200
+  fireRate: 450
   burstCount: 0
-  reloadSpeed: 5
+  accuracy: 50
+  recoil: 0.5
   range: 100
+  rotationSpeed: 5
+  magSize: 50
+  reloadSpeed: 5
   shootSound: {fileID: 0}
-  Bullet: {fileID: 0}
+  bulletPrefab: {fileID: 8317034742612643490, guid: 947f87e96704a96499c697c8d06c3f62, type: 3}
+  barrelLocation: {fileID: 0}
+  model: {fileID: 0}

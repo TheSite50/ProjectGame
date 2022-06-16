@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+//outdated 
 public class UpperPartScript : MonoBehaviour
 {
     [SerializeField] private PlayerInput playerInput;

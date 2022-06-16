@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MachineGun : MonoBehaviour, IWeapon
-{
+public class MachineGun : MonoBehaviour
+{ 
     private int time = 0;
     [SerializeField] GameObject weaponMuzzle;
     [SerializeField] GameObject bullet;

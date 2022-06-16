@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//used may be outdated
 public class BulletLogic : MonoBehaviour
 {
     [SerializeField] private GameObject bulletDecal;
@@ -26,6 +26,7 @@ public class BulletLogic : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        Hit = true;
         ContactPoint contact = collision.GetContact(0);
         GameObject.Instantiate(bulletDecal, contact.point + contact.normal*0.0001f, Quaternion.LookRotation(contact.normal));
         Destroy(gameObject);   

@@ -1,8 +1,9 @@
 using UnityEngine;
 [CreateAssetMenu(fileName ="WeaponScriptableObject", menuName ="ScriptableObjects/Weapons")]
+//used
 public  class so_weapon : ScriptableObject
 {
-    public string name;
+    public string weaponName;
     [Header("Weapon Performance")]
     public int damage;
     public float fireRate;
@@ -12,7 +13,7 @@ public  class so_weapon : ScriptableObject
     public float recoil;
     public int range;
     public float rotationSpeed;
-    public ShootingMode mode;
+   
     [Header("Weapon Capacity")]
     public int magSize;
     public float reloadSpeed;
