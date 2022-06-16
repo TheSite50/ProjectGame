@@ -18,6 +18,7 @@ public abstract class weaponSystem : MonoBehaviour, IWeapon , IReloadable
     [SerializeField] protected Transform bulletParent;
     protected bool raycast;
     public int MaxAmmo => weapon.magSize;
+    public bool IsWeaponBusy { get; set; }
     private void Awake()
     {
         cameraTransform = Camera.main.transform;
@@ -90,18 +91,21 @@ public abstract class weaponSystem : MonoBehaviour, IWeapon , IReloadable
 
     public void Reload()
     {
-        StartCoroutine(Reloading());
+        if (AmmoInReserve != 0 && CurrentAmmoInMag != weapon.magSize)
+        {
+            StartCoroutine(Reloading());
+        }
     }
     IEnumerator Reloading()
     {
+        IsWeaponBusy = true;
         ReloadWeapon(CurrentAmmoInMag, AmmoInReserve, weapon.magSize);
         yield return new WaitForSeconds(weapon.reloadSpeed);
         Debug.Log("reloading");
+        IsWeaponBusy = false;
     }
     public void ReloadWeapon(int currentAmmoInMag, int ammoInReserve, int MaxAmmoCount)
     {
-        if (ammoInReserve == 0)
-            return;
         if (ammoInReserve <= MaxAmmoCount - currentAmmoInMag)
         {
             CurrentAmmoInMag += ammoInReserve;

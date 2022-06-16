@@ -8,7 +8,7 @@ public class PlayerMovementScript : MonoBehaviour
 {
     private InputScript _input;
     private PlayerInput _playerInput;
-    public bool _isPlayerBusy { get; set; }
+    public bool _isPlayerBusy => (_weaponLeft.IsWeaponBusy || _weaponRight.IsWeaponBusy);
 
     [SerializeField] private float _rotationSpeed = 6;
     [SerializeField] float MoveSpeed;
