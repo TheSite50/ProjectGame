@@ -75,13 +75,13 @@ public class WaveCounter : MonoBehaviour
         int spawnEnemy = 0;
         float spawnLocationX = 0;
         float spawnLocationZ = 0;
-
+        
         while (spawnEnemy < numEnemy)
         {
 
             spawnLocationX = this.gameObject.transform.position.x;
             spawnLocationZ = this.gameObject.transform.position.z;
-            GameObject spwanedEnemy = Instantiate<GameObject>(enemy[Random.Range(0, enemy.Count)], new Vector3(spawnLocationX, this.gameObject.transform.position.y, spawnLocationZ), this.gameObject.transform.rotation);
+            GameObject spwanedEnemy = Instantiate<GameObject>(enemy[Random.Range(0, enemy.Count-1)], new Vector3(spawnLocationX+Random.Range(-20,20), this.gameObject.transform.position.y, spawnLocationZ+Random.Range(-20, 20)), this.gameObject.transform.rotation);
             spwanedEnemy.GetComponent<EnemyAction>().SetPlayer(player);
             yield return null;
             spawnEnemy++;

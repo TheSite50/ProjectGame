@@ -27,6 +27,14 @@ public class PlayerMovementScript : MonoBehaviour
     private GameObject hull;
     private bool IsCurrentDeviceMouse => _playerInput.currentControlScheme == "KeyboardMouse";
 
+    [Header("Stomp")]
+    [SerializeField] GameObject StompParticles;
+    [SerializeField] float stompCooldown = 0.5f;
+    private bool stompActive = false;
+    [SerializeField] float stompRange = 40f;
+    [SerializeField] float stompDamage = 1000f;
+    [SerializeField] LinePath _linepath;
+
     //[SerializeField]GameObject x;
 
     #region Unity Functions
@@ -37,6 +45,7 @@ public class PlayerMovementScript : MonoBehaviour
         _playerInput = GetComponent<PlayerInput>();
         _input = GetComponent<InputScript>();
         _rb = GetComponent<Rigidbody>();
+        _linepath = GetComponent<LinePath>();
     }
 
     private void Start()
@@ -53,6 +62,7 @@ public class PlayerMovementScript : MonoBehaviour
     {
         // HandleTurretRotation();
         //LookDirection();
+        Path();
         
         CameraRotation();
         
@@ -107,6 +117,51 @@ public class PlayerMovementScript : MonoBehaviour
     #endregion
     #region Special Moves
     void Dash() { }
-    void Stomp() { }
+    public void Stomp() {
+        if(stompActive ==false)
+        {
+            stompActive = true;
+            float startTime = Time.time;
+            Debug.Log(Time.time < startTime + stompCooldown);
+
+
+            if (Time.time < startTime + stompCooldown)
+            {
+                CheckForEnemies();
+                StompParticles.SetActive(true);
+                Invoke("StopParticles", stompCooldown);
+            }
+
+        }
+
+
+
+    }
+
+    void StopParticles()
+    {
+        StompParticles.SetActive(false);
+        stompActive = false;
+    }
+
+    public void CheckForEnemies()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, stompRange);
+        foreach (Collider c in colliders)
+        {
+            if (c.GetComponent<EnemyProperties>())
+            {
+                c.GetComponent<EnemyProperties>().SetHp(c.GetComponent<EnemyProperties>().GetHp() - stompDamage);
+            }
+        }
+    }
+
+    public void Path()
+    {
+        if(_input.path)
+        {
+            _linepath.getPath();
+        }
+    }
     #endregion
 }

@@ -8,6 +8,8 @@ public class InputScript : MonoBehaviour
 	public bool jump;
 	public bool sprint;
 	public bool shoot;
+	public bool stomp;
+	public bool path;
 
 	public bool analogMovement;
 
@@ -39,6 +41,15 @@ public class InputScript : MonoBehaviour
 	{
 		SprintInput(value.isPressed);
 	}
+	public void OnStomp(InputValue value)
+	{
+		StompInput(value.isPressed);
+	}
+
+	public void OnPath(InputValue value)
+	{
+		PathInput(value.isPressed);
+	}
 
 	public void MoveInput(Vector2 newMoveDirection)
 	{
@@ -63,4 +74,16 @@ public class InputScript : MonoBehaviour
 	{
 		sprint = newSprintState;
 	}
+
+	public void StompInput(bool newStompState)
+	{
+		stomp = newStompState;
+		
+	}
+	public void PathInput(bool newPathState)
+	{
+		path = newPathState;
+
+	}
 }
+

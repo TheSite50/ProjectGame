@@ -101,12 +101,21 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Stomp"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""9b2ec9bf-fa23-496d-bd07-fcdfb20de90b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Path"",
+                    ""type"": ""Value"",
+                    ""id"": ""1ac6dc53-a0ed-4256-8ada-21d9d84ee0cb"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -371,6 +380,17 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Stomp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6d7cf585-62d9-4c03-af4b-6183beb354d5"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Path"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -967,6 +987,7 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Stomp = m_Player.FindAction("Stomp", throwIfNotFound: true);
+        m_Player_Path = m_Player.FindAction("Path", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1047,6 +1068,7 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Dash;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Stomp;
+    private readonly InputAction m_Player_Path;
     public struct PlayerActions
     {
         private @MyInputActions m_Wrapper;
@@ -1060,6 +1082,7 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Stomp => m_Wrapper.m_Player_Stomp;
+        public InputAction @Path => m_Wrapper.m_Player_Path;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1096,6 +1119,9 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                 @Stomp.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStomp;
                 @Stomp.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStomp;
                 @Stomp.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStomp;
+                @Path.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPath;
+                @Path.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPath;
+                @Path.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPath;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1127,6 +1153,9 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                 @Stomp.started += instance.OnStomp;
                 @Stomp.performed += instance.OnStomp;
                 @Stomp.canceled += instance.OnStomp;
+                @Path.started += instance.OnPath;
+                @Path.performed += instance.OnPath;
+                @Path.canceled += instance.OnPath;
             }
         }
     }
@@ -1292,6 +1321,7 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
         void OnDash(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnStomp(InputAction.CallbackContext context);
+        void OnPath(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

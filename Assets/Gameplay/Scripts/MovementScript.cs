@@ -53,8 +53,18 @@ public class MovementScript : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
 
     [SerializeField]private float _sprintSpeed = 1f;
+    
+
+    [Header("Dash")]
     [SerializeField] private float dashTime;
     [SerializeField] private float dashSpeed;
+
+    [Header("Stomp")]
+    [SerializeField] GameObject StompParticles;
+    [SerializeField] float particlesEnabledTime = 0.5f;
+    private bool stompActive = false;
+    [SerializeField] float stompRange = 40f;
+    [SerializeField] float stompDamage = 1000f;
 
     #region Unity Functions
     void Awake()
@@ -153,6 +163,11 @@ public class MovementScript : MonoBehaviour
     {
         StartCoroutine(Dash());
     }
+    public void Stomp(InputAction.CallbackContext context)
+    {
+        if (stompActive == false)
+            StartCoroutine(Stomp());
+    }
     ///================================================
     ///
     private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
@@ -193,6 +208,40 @@ public class MovementScript : MonoBehaviour
         {
             rb.MovePosition(dashSpeed * Time.deltaTime * move);
             yield return null;
+        }
+    }
+
+    IEnumerator Stomp()
+    {
+        float startTime = Time.time;
+        Debug.Log(Time.time < startTime + particlesEnabledTime);
+        stompActive = true;
+        CheckForEnemies();
+        while (Time.time < startTime + particlesEnabledTime)
+        {
+
+            StompParticles.SetActive(true);
+
+
+            yield return null;
+        }
+        if (Time.time > startTime + particlesEnabledTime)
+        {
+            StompParticles.SetActive(false);
+            stompActive = false;
+        }
+
+    }
+
+    public void CheckForEnemies()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, stompRange);
+        foreach (Collider c in colliders)
+        {
+            if (c.GetComponent<EnemyProperties>())
+            {
+                c.GetComponent<EnemyProperties>().SetHp(c.GetComponent<EnemyProperties>().GetHp() - stompDamage);
+            }
         }
     }
     /*
