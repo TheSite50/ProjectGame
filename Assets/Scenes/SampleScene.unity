@@ -572,7 +572,7 @@ MonoBehaviour:
   player: {fileID: 1828597184}
   _weapon: {fileID: 1541372894}
   followCrosshair2: {fileID: 1926835690}
-  _weapon2: {fileID: 779339629}
+  _weapon2: {fileID: 779339630}
 --- !u!114 &457999844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1194,7 +1194,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1392356021687951512, guid: 913662b39faa9ed42bd32a0c41397030, type: 3}
   m_PrefabInstance: {fileID: 1541372892}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &779339629
+--- !u!114 &779339630
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1203,10 +1203,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 779339628}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3196bf2a6517d1544b42efa4caffd910, type: 3}
+  m_Script: {fileID: 11500000, guid: 6188b090fb3d96442b0c07ce5d2d2460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: c324916eee01c6340b568f360028b9f0, type: 2}
+  weapon: {fileID: 11400000, guid: 586c889217b853946aeb22a98bdb8436, type: 2}
   hull: {fileID: 0}
   barrelLocation: {fileID: 565898590}
   bulletParent: {fileID: 1733735709}
@@ -2673,7 +2673,7 @@ MonoBehaviour:
   LockCameraPosition: 0
   hull: {fileID: 1828597182}
   _weaponRight: {fileID: 1541372894}
-  _weaponLeft: {fileID: 779339629}
+  _weaponLeft: {fileID: 779339630}
   gravityStrength: 15
 --- !u!114 &1560996401
 MonoBehaviour:

@@ -8,7 +8,7 @@ public class PlayerMovementScript : MonoBehaviour
 {
     private InputScript _input;
     private PlayerInput _playerInput;
-    public bool _isPlayerBusy => (_weaponLeft.IsWeaponBusy || _weaponRight.IsWeaponBusy);
+    public bool _isPlayerBusy { get; set; }
 
     [SerializeField] private float _rotationSpeed = 6;
     [SerializeField] float MoveSpeed;
@@ -73,29 +73,33 @@ public class PlayerMovementScript : MonoBehaviour
     }
     void Shooting()
     {
-        if (!_isPlayerBusy)
+        if (!_weaponRight.IsWeaponBusy)
         {
             _weaponRight.TryToShootNextBullet(_input.shootLPM);
+        }
+        if (!_weaponLeft.IsWeaponBusy)
+        {
             _weaponLeft.TryToShootNextBullet(_input.shootRPM);
         }
     }
     void Reloading()
     {
-        if (!_isPlayerBusy)
-        {
-            if (_input.reload) 
-            {
-                if (_weaponRight.CurrentAmmoInMag != _weaponRight.MaxAmmo)
-                {
-                    _weaponRight.Reload();
 
-                }
-                if (_weaponLeft.CurrentAmmoInMag != _weaponRight.MaxAmmo)
-                {
-                    _weaponLeft.Reload();
-                }
+        if (_input.reload && !_weaponRight.IsWeaponBusy)
+        {
+            if (_weaponRight.CurrentAmmoInMag != _weaponRight.MaxAmmo)
+            {
+                _weaponRight.Reload();
             }
         }
+        if (_input.reload && !_weaponLeft.IsWeaponBusy)
+        {
+            if (_weaponLeft.CurrentAmmoInMag != _weaponRight.MaxAmmo)
+            {
+                _weaponLeft.Reload();
+            }
+        }
+        
     }
 
     #endregion
