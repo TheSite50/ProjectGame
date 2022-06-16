@@ -47,12 +47,12 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Shoot"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""5aa61f2b-3275-4436-b7c3-c8bb183c6fdb"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Rotation"",
@@ -65,21 +65,21 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Aim"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""f2c88e37-929a-427c-b80d-1a026148a68d"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Sprint"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""d3bdef50-614c-47ff-8636-65a357ce5500"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Dash"",
@@ -98,6 +98,24 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Reload"",
+                    ""type"": ""Value"",
+                    ""id"": ""c6b509c9-1dca-45bd-9338-778e8a454ffa"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ShootRPM"",
+                    ""type"": ""Value"",
+                    ""id"": ""8c2fe92b-0a79-4a54-bc60-c2d2926fdd56"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -291,7 +309,7 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""cb58cb8f-510a-469b-bdda-c9b475a58a06"",
-                    ""path"": ""<Mouse>/rightButton"",
+                    ""path"": ""<Keyboard>/ctrl"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
@@ -351,6 +369,28 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5d4378e8-ee65-40f4-b0f2-9e8059a4b822"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Reload"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8bb28b2d-c642-484b-b037-1d393e5ff4ff"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""ShootRPM"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -946,6 +986,8 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
+        m_Player_Reload = m_Player.FindAction("Reload", throwIfNotFound: true);
+        m_Player_ShootRPM = m_Player.FindAction("ShootRPM", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1025,6 +1067,8 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Sprint;
     private readonly InputAction m_Player_Dash;
     private readonly InputAction m_Player_Jump;
+    private readonly InputAction m_Player_Reload;
+    private readonly InputAction m_Player_ShootRPM;
     public struct PlayerActions
     {
         private @MyInputActions m_Wrapper;
@@ -1037,6 +1081,8 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
+        public InputAction @Reload => m_Wrapper.m_Player_Reload;
+        public InputAction @ShootRPM => m_Wrapper.m_Player_ShootRPM;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1070,6 +1116,12 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                 @Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                @Reload.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
+                @Reload.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
+                @Reload.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
+                @ShootRPM.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShootRPM;
+                @ShootRPM.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShootRPM;
+                @ShootRPM.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShootRPM;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1098,6 +1150,12 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @Reload.started += instance.OnReload;
+                @Reload.performed += instance.OnReload;
+                @Reload.canceled += instance.OnReload;
+                @ShootRPM.started += instance.OnShootRPM;
+                @ShootRPM.performed += instance.OnShootRPM;
+                @ShootRPM.canceled += instance.OnShootRPM;
             }
         }
     }
@@ -1262,6 +1320,8 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
         void OnSprint(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnReload(InputAction.CallbackContext context);
+        void OnShootRPM(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

@@ -341,7 +341,7 @@ MonoBehaviour:
   BottomClamp: -30
   CinemachineCameraTarget: {fileID: 6950988021789111162}
   LockCameraPosition: 0
-  gravityStrength: 9.81
+  gravityStrength: 15
 --- !u!114 &6950988022378167782
 MonoBehaviour:
   m_ObjectHideFlags: 0

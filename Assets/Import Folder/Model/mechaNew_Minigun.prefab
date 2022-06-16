@@ -437,7 +437,6 @@ GameObject:
   - component: {fileID: 7228024114642524769}
   - component: {fileID: 3824061804496841819}
   - component: {fileID: 6718534178266571332}
-  - component: {fileID: 8184724694757209645}
   - component: {fileID: 6916251102150875729}
   m_Layer: 8
   m_Name: mechaNew_Minigun
@@ -502,20 +501,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3d7abae515865241bc93af035432b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8184724694757209645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8051995569471552599}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3196bf2a6517d1544b42efa4caffd910, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: c324916eee01c6340b568f360028b9f0, type: 2}
-  barrelLocation: {fileID: 4159259832056696016}
 --- !u!114 &6916251102150875729
 MonoBehaviour:
   m_ObjectHideFlags: 0

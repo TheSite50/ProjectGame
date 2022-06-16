@@ -12,7 +12,7 @@ public abstract class weaponSystem : MonoBehaviour, IWeapon , IReloadable
     public int AmmoInReserve { get; set; }
 
     [SerializeField] protected so_weapon weapon;
-    //[SerializeField] protected Behavior_hull hull;
+    [SerializeField] protected Behavior_hull hull;
     [SerializeField] protected Transform barrelLocation;
     protected Transform cameraTransform;
     //[SerializeField] protected Transform bulletParent;

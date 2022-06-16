@@ -4,8 +4,8 @@ using UnityEngine;
 //used
 public class Behavior_hull : MonoBehaviour
 {
-    [SerializeField] PlayerMovementScript player;
-    [SerializeField] private so_hull HullParams;
+    //[SerializeField] PlayerMovementScript player;
+    //[SerializeField] private so_hull HullParams;
     [SerializeField]public float hullRotationSpeed = 5;
     private Transform cameraTransform;
 

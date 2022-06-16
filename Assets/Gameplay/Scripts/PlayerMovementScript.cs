@@ -9,7 +9,7 @@ public class PlayerMovementScript : MonoBehaviour
     private InputScript _input;
     private PlayerInput _playerInput;
     public bool _isPlayerBusy => (_weaponLeft.IsWeaponBusy || _weaponRight.IsWeaponBusy);
-   //public bool _isPlayerBusy = true;
+   
 
     [SerializeField] private float _rotationSpeed = 6;
     [SerializeField] float MoveSpeed;
@@ -38,7 +38,6 @@ public class PlayerMovementScript : MonoBehaviour
     #region Unity Functions
     private void Awake()
     {
-        
         cameraTransform = Camera.main.transform;
         _playerInput = GetComponent<PlayerInput>();
         _input = GetComponent<InputScript>();
@@ -48,23 +47,26 @@ public class PlayerMovementScript : MonoBehaviour
 
     private void Start()
     {
-        if(CreatePlayerInGame.GetWeaponRight() != null)
+
+        if (CreatePlayerInGame.GetWeaponRight() != null)
         {
             _weaponRight = CreatePlayerInGame.GetWeaponRight().GetComponent<weaponSystem>();
         }
         else
         {
+            CreatePlayerInGame.GetArm().GetComponent<LocationWeapons>().GetWeaponPosition().weaponRight.enabled = true;
             _weaponRight = CreatePlayerInGame.GetArm().GetComponent<LocationWeapons>().GetWeaponPosition().weaponRight;
-            _weaponRight.enabled = true;
+            
         }
-        if(CreatePlayerInGame.GetWeaponRight() != null)
+        if (CreatePlayerInGame.GetWeaponRight() != null)
         {
             _weaponLeft = CreatePlayerInGame.GetWeaponLeft().GetComponent<weaponSystem>();
         }
         else
         {
+
+            CreatePlayerInGame.GetArm().GetComponent<LocationWeapons>().GetWeaponPosition().weaponLeft.enabled = true;
             _weaponLeft = CreatePlayerInGame.GetArm().GetComponent<LocationWeapons>().GetWeaponPosition().weaponLeft;
-            _weaponLeft.enabled = true;
         }
     }
     private void FixedUpdate()
