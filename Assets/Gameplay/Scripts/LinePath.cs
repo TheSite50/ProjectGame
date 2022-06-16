@@ -15,16 +15,22 @@ public class LinePath : MonoBehaviour
 
     public void getPath()
     {
+        
         line.enabled = true;
         target = Object.FindObjectOfType<EnemyAction>().transform;
-        line.SetPosition(0, agent.position); //set the line's origin
-        line.SetPosition(1, target.position);
+        if(Object.FindObjectOfType<EnemyAction>())
+        {
+            line.SetPosition(0, agent.position); //set the line's origin
+            line.SetPosition(1, target.position);
+            Invoke("DisableLine", 1f);
+        }
+       
         //agent.SetDestination(target.position); //create the path
         //yield WaitForEndOfFrame(); //wait for the path to generate
 
         //DrawPath(agent.path);
 
-        Invoke("DisableLine", 1f);
+        
 
     }
     public void DisableLine()

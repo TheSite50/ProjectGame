@@ -7,6 +7,7 @@ public class WaveCounter : MonoBehaviour
     [SerializeField] private List<int> numEnemyInWave;
     [SerializeField] private List<GameObject> enamyTyp;
     [SerializeField] private List<GameObject> spawnPoints;
+    [SerializeField] Portal portal;
     private int numWave=0;
     private GameObject spawnPoint;
     private int randomValue=0;
@@ -40,13 +41,13 @@ public class WaveCounter : MonoBehaviour
     private void SpawnNewEnemy()
     {
         randomValue = Random.Range(0, spawnPoints.Count - 1);
-        spawnPoint = spawnPoints[randomValue];
-        if (Vector3.Distance(this.gameObject.transform.position, spawnPoint.gameObject.transform.position) <= 1000)
+        spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count - 1)];
+        
+        if(numWave == 5)
         {
-            spawnPoint = randomValue + 1 > spawnPoints.Count - 1 ? spawnPoints[0] : spawnPoints[randomValue + 1];
+            portal.OpenPortal();
         }
-
-        StartCoroutine(SpawnEnemy(numEnemyInWave[numWave], enamyTyp));
+        StartCoroutine(SpawnEnemy(spawnPoint.transform ,numEnemyInWave[numWave], enamyTyp));
     }
     private int Sum(int number = 10 )
     {
@@ -70,7 +71,7 @@ public class WaveCounter : MonoBehaviour
 
 
 
-    public IEnumerator SpawnEnemy(int numEnemy, List<GameObject> enemy)
+    public IEnumerator SpawnEnemy(Transform spawnpoint, int numEnemy, List<GameObject> enemy)
     {
         int spawnEnemy = 0;
         float spawnLocationX = 0;
@@ -79,9 +80,9 @@ public class WaveCounter : MonoBehaviour
         while (spawnEnemy < numEnemy)
         {
 
-            spawnLocationX = this.gameObject.transform.position.x;
-            spawnLocationZ = this.gameObject.transform.position.z;
-            GameObject spwanedEnemy = Instantiate<GameObject>(enemy[Random.Range(0, enemy.Count-1)], new Vector3(spawnLocationX+Random.Range(-20,20), this.gameObject.transform.position.y, spawnLocationZ+Random.Range(-20, 20)), this.gameObject.transform.rotation);
+            spawnLocationX = spawnpoint.position.x;
+            spawnLocationZ = spawnpoint.position.z;
+            GameObject spwanedEnemy = Instantiate<GameObject>(enemy[Random.Range(0, enemy.Count-1)], new Vector3(spawnLocationX+Random.Range(-3,3), spawnpoint.position.y, spawnLocationZ+Random.Range(-3, 3)), this.gameObject.transform.rotation);
             spwanedEnemy.GetComponent<EnemyAction>().SetPlayer(player);
             yield return null;
             spawnEnemy++;

@@ -28,7 +28,7 @@ public class Portal : MonoBehaviour
         run2.GetComponent<MeshRenderer>().material.SetFloat("_Progress", (float)(numberEnemyIsKilled / numberEnemyKilled) * 2);
     }
 
-    private void OpenPortal()
+    public void OpenPortal()
     {
         portal.SetActive(true);
     }

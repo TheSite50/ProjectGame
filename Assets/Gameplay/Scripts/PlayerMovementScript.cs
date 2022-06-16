@@ -29,7 +29,7 @@ public class PlayerMovementScript : MonoBehaviour
 
     [Header("Stomp")]
     [SerializeField] GameObject StompParticles;
-    [SerializeField] float stompCooldown = 0.5f;
+    [SerializeField] float stompCooldown = 5f;
     private bool stompActive = false;
     [SerializeField] float stompRange = 40f;
     [SerializeField] float stompDamage = 1000f;
@@ -63,7 +63,7 @@ public class PlayerMovementScript : MonoBehaviour
         // HandleTurretRotation();
         //LookDirection();
         Path();
-        
+        Stomp();
         CameraRotation();
         
     }
@@ -117,8 +117,11 @@ public class PlayerMovementScript : MonoBehaviour
     #endregion
     #region Special Moves
     void Dash() { }
-    public void Stomp() {
-        if(stompActive ==false)
+    public void Stomp()
+    {
+        if(_input.stomp)
+        { 
+        if (stompActive == false)
         {
             stompActive = true;
             float startTime = Time.time;
@@ -132,6 +135,7 @@ public class PlayerMovementScript : MonoBehaviour
                 Invoke("StopParticles", stompCooldown);
             }
 
+        }
         }
 
 
@@ -154,6 +158,7 @@ public class PlayerMovementScript : MonoBehaviour
                 c.GetComponent<EnemyProperties>().SetHp(c.GetComponent<EnemyProperties>().GetHp() - stompDamage);
             }
         }
+        
     }
 
     public void Path()
