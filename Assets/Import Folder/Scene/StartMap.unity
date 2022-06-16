@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571385, b: 0.30692253, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -164,11 +164,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_LocalPosition.x
@@ -200,7 +200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 435
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -244,8 +244,24 @@ PrefabInstance:
       objectReference: {fileID: 1554839823}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: itemName
-      value: Accesories
+      value: Rune Fragment
       objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: parameters
+      value: +10 Boss DMG
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: description
+      value: Fragment of Rune from the portal.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: parameterCanvas
+      value: 
+      objectReference: {fileID: 131308875}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: descriptionCanvas
+      value: 
+      objectReference: {fileID: 1140712987}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -590,11 +606,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -626,11 +642,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 435
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -155
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -700,11 +716,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -736,11 +752,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 560
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -155
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1059,11 +1075,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1095,11 +1111,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 560
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -155
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1139,8 +1155,24 @@ PrefabInstance:
       objectReference: {fileID: 1554839823}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: itemName
-      value: Accesories
+      value: Place Holder
       objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: parameters
+      value: Useless
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: description
+      value: Place for what?...
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: parameterCanvas
+      value: 
+      objectReference: {fileID: 131308875}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: descriptionCanvas
+      value: 
+      objectReference: {fileID: 1140712987}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -1278,11 +1310,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1314,11 +1346,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 435
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -155
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1358,8 +1390,24 @@ PrefabInstance:
       objectReference: {fileID: 1554839823}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: itemName
-      value: Accesories
+      value: Place Holder
       objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: parameters
+      value: Useless
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: description
+      value: Place for what?...
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: parameterCanvas
+      value: 
+      objectReference: {fileID: 131308875}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: descriptionCanvas
+      value: 
+      objectReference: {fileID: 1140712987}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -1398,8 +1446,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  parameterCanvas: {fileID: 131308875}
+  descriptionCanvas: {fileID: 1140712987}
   price: {fileID: 1554839823}
-  itemName: Torso
+  itemName: Unpacked Torso
+  parameters: Useless
+  description: That torso isn't ready to be sold!
 --- !u!1 &257707253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,11 +1564,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1548,7 +1600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 560
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1596,6 +1648,26 @@ PrefabInstance:
       propertyPath: price
       value: 
       objectReference: {fileID: 1554839823}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: itemName
+      value: Temporary Legs
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: parameters
+      value: Useless
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: description
+      value: Who put that in the shop?!
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: parameterCanvas
+      value: 
+      objectReference: {fileID: 131308875}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: descriptionCanvas
+      value: 
+      objectReference: {fileID: 1140712987}
     - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -1853,11 +1925,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1889,11 +1961,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 310
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -155
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1944,8 +2016,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  parameterCanvas: {fileID: 131308875}
+  descriptionCanvas: {fileID: 1140712987}
   price: {fileID: 1554839823}
-  itemName: Torso
+  itemName: Unpacked Torso
+  parameters: Useless
+  description: That torso isn't ready to be sold!
 --- !u!1001 &268457403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1987,11 +2063,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2023,11 +2099,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 435
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -155
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2082,8 +2158,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  parameterCanvas: {fileID: 131308875}
+  descriptionCanvas: {fileID: 1140712987}
   price: {fileID: 1554839823}
-  itemName: Torso
+  itemName: Unpacked Torso
+  parameters: Useless
+  description: That torso isn't ready to be sold!
 --- !u!1 &282607818
 GameObject:
   m_ObjectHideFlags: 0
@@ -2436,11 +2516,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2472,7 +2552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 310
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2496,7 +2576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3629864282750095069, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: price
-      value: 2147483647
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 4910945843696280994, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_IsActive
@@ -2518,7 +2598,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -1283843344049906236, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: price
-      value: 20000
+      value: 7000
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_Pivot.x
@@ -2550,11 +2630,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2586,7 +2666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 310
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2630,8 +2710,24 @@ PrefabInstance:
       objectReference: {fileID: 1554839823}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: itemName
-      value: Accesories
+      value: Material Container
       objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: parameters
+      value: +20% Loot
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: description
+      value: Increases amount of loot gathered.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: parameterCanvas
+      value: 
+      objectReference: {fileID: 131308875}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: descriptionCanvas
+      value: 
+      objectReference: {fileID: 1140712987}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -2862,11 +2958,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2898,11 +2994,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 185
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -155
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2942,8 +3038,24 @@ PrefabInstance:
       objectReference: {fileID: 1554839823}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: itemName
-      value: Accesories
+      value: Place Holder
       objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: parameters
+      value: Useless
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: description
+      value: Place for what?...
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: parameterCanvas
+      value: 
+      objectReference: {fileID: 131308875}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: descriptionCanvas
+      value: 
+      objectReference: {fileID: 1140712987}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -3005,11 +3117,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3041,7 +3153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3099,8 +3211,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  parameterCanvas: {fileID: 131308875}
+  descriptionCanvas: {fileID: 1140712987}
   price: {fileID: 1554839823}
-  itemName: Hands
+  itemName: Default Hands
+  parameters: Default
+  description: Battle calibrated hands.
 --- !u!1 &392390350 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 214009610848214564, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
@@ -3119,8 +3235,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  parameterCanvas: {fileID: 131308875}
+  descriptionCanvas: {fileID: 1140712987}
   price: {fileID: 1554839823}
-  itemName: Hands
+  itemName: Factory New Hands
+  parameters: Useless
+  description: Theese hands weren't calibrated for combat use yet...
 --- !u!1 &417804201
 GameObject:
   m_ObjectHideFlags: 0
@@ -3397,6 +3517,26 @@ PrefabInstance:
       propertyPath: price
       value: 
       objectReference: {fileID: 1554839823}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: itemName
+      value: Temporary Legs
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: parameters
+      value: Useless
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: description
+      value: Who put that in the shop?!
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: parameterCanvas
+      value: 
+      objectReference: {fileID: 131308875}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: descriptionCanvas
+      value: 
+      objectReference: {fileID: 1140712987}
     - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -3792,7 +3932,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'MainMenu
+  m_Text: 'Back
 
 '
 --- !u!222 &472787793
@@ -3812,7 +3952,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -1283843344049906236, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: price
-      value: 100
+      value: 12000
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_Pivot.x
@@ -3844,11 +3984,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3880,7 +4020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 185
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3920,8 +4060,24 @@ PrefabInstance:
       objectReference: {fileID: 1554839823}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: itemName
-      value: Accesories
+      value: Jetpack
       objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: parameters
+      value: 100 Fuel Capacity
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: description
+      value: Allows to boost into the air. Useless in caves.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: parameterCanvas
+      value: 
+      objectReference: {fileID: 131308875}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: descriptionCanvas
+      value: 
+      objectReference: {fileID: 1140712987}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -3960,8 +4116,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  parameterCanvas: {fileID: 131308875}
+  descriptionCanvas: {fileID: 1140712987}
   price: {fileID: 1554839823}
-  itemName: Hands
+  itemName: Factory New Hands
+  parameters: Useless
+  description: Theese hands weren't calibrated for combat use yet...
 --- !u!1001 &502517192
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4003,11 +4163,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4039,7 +4199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 560
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4083,8 +4243,24 @@ PrefabInstance:
       objectReference: {fileID: 1554839823}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: itemName
-      value: Accesories
+      value: Place Holder
       objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: parameters
+      value: Useless
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: description
+      value: Place for what?...
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: parameterCanvas
+      value: 
+      objectReference: {fileID: 131308875}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: descriptionCanvas
+      value: 
+      objectReference: {fileID: 1140712987}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -4116,6 +4292,26 @@ PrefabInstance:
       propertyPath: price
       value: 
       objectReference: {fileID: 1554839823}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: itemName
+      value: Temporary Legs
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: parameters
+      value: Useless
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: description
+      value: Who put that in the shop?!
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: parameterCanvas
+      value: 
+      objectReference: {fileID: 131308875}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: descriptionCanvas
+      value: 
+      objectReference: {fileID: 1140712987}
     - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -4347,6 +4543,26 @@ PrefabInstance:
       propertyPath: price
       value: 
       objectReference: {fileID: 1554839823}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: itemName
+      value: Default Legs
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: parameters
+      value: Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: description
+      value: Everyone has to stard somewhere...
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: parameterCanvas
+      value: 
+      objectReference: {fileID: 131308875}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: descriptionCanvas
+      value: 
+      objectReference: {fileID: 1140712987}
     - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -4644,7 +4860,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3114639347355110893, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: price
-      value: 2147483647
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_Pivot.x
@@ -4676,11 +4892,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4712,7 +4928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 435
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4974,6 +5190,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1554839823}
     - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: itemName
+      value: Reinforced Legs
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: parameters
+      value: +5 SPD, +5 HP
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: description
+      value: Legs reinforced with extra metal.
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: parameterCanvas
+      value: 
+      objectReference: {fileID: 131308875}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: descriptionCanvas
+      value: 
+      objectReference: {fileID: 1140712987}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: informationCanvas
       value: 
       objectReference: {fileID: 1326699976}
@@ -5111,7 +5347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3364700650277516928, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: price
-      value: 2147483647
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 3420163452748775227, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5211,7 +5447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &620847072
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5746,8 +5982,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  parameterCanvas: {fileID: 131308875}
+  descriptionCanvas: {fileID: 1140712987}
   price: {fileID: 1554839823}
-  itemName: Torso
+  itemName: Unpacked Torso
+  parameters: Useless
+  description: That torso isn't ready to be sold!
 --- !u!1001 &730769160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5759,6 +5999,26 @@ PrefabInstance:
       propertyPath: price
       value: 
       objectReference: {fileID: 1554839823}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: itemName
+      value: Temporary Legs
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: parameters
+      value: Useless
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: description
+      value: Who put that in the shop?!
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: parameterCanvas
+      value: 
+      objectReference: {fileID: 131308875}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: descriptionCanvas
+      value: 
+      objectReference: {fileID: 1140712987}
     - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -6095,11 +6355,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6131,11 +6391,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -155
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6415,7 +6675,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -1283843344049906236, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: price
-      value: 100
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_Pivot.x
@@ -6447,11 +6707,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6483,7 +6743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6519,8 +6779,24 @@ PrefabInstance:
       objectReference: {fileID: 1554839823}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: itemName
-      value: Accesories
+      value: Foot Thruster
       objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: parameters
+      value: +10 Stomp DMG
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: description
+      value: Increases the speed of your foot.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: parameterCanvas
+      value: 
+      objectReference: {fileID: 131308875}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: descriptionCanvas
+      value: 
+      objectReference: {fileID: 1140712987}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -6700,7 +6976,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &856269603
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7260,11 +7536,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7296,11 +7572,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 310
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -155
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7374,11 +7650,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7410,7 +7686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 185
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -7469,8 +7745,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  parameterCanvas: {fileID: 131308875}
+  descriptionCanvas: {fileID: 1140712987}
   price: {fileID: 1554839823}
-  itemName: Torso
+  itemName: Damaged Torso
+  parameters: +10 SPD, -10 HP
+  description: Torso damaged in battle. Lighter.
 --- !u!1001 &988712151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7508,11 +7788,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7544,11 +7824,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 185
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -155
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7693,11 +7973,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7729,7 +8009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -7791,8 +8071,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  parameterCanvas: {fileID: 131308875}
+  descriptionCanvas: {fileID: 1140712987}
   price: {fileID: 1554839823}
-  itemName: Torso
+  itemName: Basic Torso
+  parameters: Default
+  description: Everyone has to start somewhere....
 --- !u!1 &1040948375 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 214009610848214564, guid: 909bb2295c03691409de84478507d13d, type: 3}
@@ -7811,8 +8095,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  parameterCanvas: {fileID: 131308875}
+  descriptionCanvas: {fileID: 1140712987}
   price: {fileID: 1554839823}
-  itemName: Torso
+  itemName: Mithril Torso
+  parameters: +60 HP, +30 DEF
+  description: Torso containing small bits of mithril.
 --- !u!1 &1084736806
 GameObject:
   m_ObjectHideFlags: 0
@@ -8026,6 +8314,26 @@ PrefabInstance:
       propertyPath: price
       value: 
       objectReference: {fileID: 1554839823}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: itemName
+      value: Ragged Legs
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: parameters
+      value: -10 SPD +5 HP
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: description
+      value: Legs ragged on the battlefield
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: parameterCanvas
+      value: 
+      objectReference: {fileID: 131308875}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: descriptionCanvas
+      value: 
+      objectReference: {fileID: 1140712987}
     - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -8261,6 +8569,26 @@ PrefabInstance:
       propertyPath: price
       value: 
       objectReference: {fileID: 1554839823}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: itemName
+      value: Temporary Legs
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: parameters
+      value: Useless
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: description
+      value: Who put that in the shop?!
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: parameterCanvas
+      value: 
+      objectReference: {fileID: 131308875}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: descriptionCanvas
+      value: 
+      objectReference: {fileID: 1140712987}
     - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -8656,11 +8984,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8692,11 +9020,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 185
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -155
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8884,8 +9212,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  parameterCanvas: {fileID: 131308875}
+  descriptionCanvas: {fileID: 1140712987}
   price: {fileID: 1554839823}
-  itemName: Hands
+  itemName: Factory New Hands
+  parameters: Useless
+  description: Theese hands weren't calibrated for combat use yet...
 --- !u!1 &1181498635
 GameObject:
   m_ObjectHideFlags: 0
@@ -8962,11 +9294,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8998,7 +9330,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 560
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -9789,8 +10121,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  parameterCanvas: {fileID: 131308875}
+  descriptionCanvas: {fileID: 1140712987}
   price: {fileID: 1554839823}
-  itemName: Torso
+  itemName: Aluminum Torso
+  parameters: +20 SPD
+  description: Light and easy to use.
 --- !u!1 &1402445485
 GameObject:
   m_ObjectHideFlags: 0
@@ -10125,8 +10461,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  parameterCanvas: {fileID: 131308875}
+  descriptionCanvas: {fileID: 1140712987}
   price: {fileID: 1554839823}
-  itemName: Torso
+  itemName: Unpacked Torso
+  parameters: Useless
+  description: That torso isn't ready to be sold!
 --- !u!1001 &1525285467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10164,11 +10504,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10200,11 +10540,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -155
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10255,7 +10595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1530143874
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10501,8 +10841,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  parameterCanvas: {fileID: 131308875}
+  descriptionCanvas: {fileID: 1140712987}
   price: {fileID: 1554839823}
-  itemName: Hands
+  itemName: Factory New Hands
+  parameters: Useless
+  description: Theese hands weren't calibrated for combat use yet...
 --- !u!1 &1559610837
 GameObject:
   m_ObjectHideFlags: 0
@@ -10627,7 +10971,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3114639347355110893, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: price
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_Pivot.x
@@ -10659,11 +11003,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10695,7 +11039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 185
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -10750,8 +11094,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  parameterCanvas: {fileID: 131308875}
+  descriptionCanvas: {fileID: 1140712987}
   price: {fileID: 1554839823}
-  itemName: Hands
+  itemName: Handy-Hands
+  parameters: +2 Pickup Range, -5 Reload
+  description: Extensible hands, great for picking up loot.
 --- !u!1 &1641969284
 GameObject:
   m_ObjectHideFlags: 0
@@ -10770,7 +11118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1641969285
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10787,10 +11135,10 @@ RectTransform:
   m_Father: {fileID: 26381292}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 424, y: -15}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1641969286
 MonoBehaviour:
@@ -10895,7 +11243,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3114639347355110893, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: price
-      value: 2147483647
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_Pivot.x
@@ -10927,11 +11275,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10963,7 +11311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 310
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -11022,8 +11370,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  parameterCanvas: {fileID: 131308875}
+  descriptionCanvas: {fileID: 1140712987}
   price: {fileID: 1554839823}
-  itemName: Hands
+  itemName: Quick Hands
+  parameters: +5 Reload
+  description: Hands created with assult rifles in mind.
 --- !u!1 &1681918214
 GameObject:
   m_ObjectHideFlags: 0
@@ -11151,8 +11503,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  parameterCanvas: {fileID: 131308875}
+  descriptionCanvas: {fileID: 1140712987}
   price: {fileID: 1554839823}
-  itemName: Hands
+  itemName: M.I.T.H.R.I.L. Hands
+  parameters: +10 Reload, -10 Recoil
+  description: Hands developed by M.I.T.H.R.I.L. Corporation.
 --- !u!1 &1740415776
 GameObject:
   m_ObjectHideFlags: 0
@@ -11350,11 +11706,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11386,7 +11742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 435
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -11410,7 +11766,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3629864282750095069, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: price
-      value: 2147483647
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 4910945843696280994, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: m_IsActive
@@ -11539,11 +11895,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11575,11 +11931,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -155
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11619,8 +11975,24 @@ PrefabInstance:
       objectReference: {fileID: 1554839823}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: itemName
-      value: Accesories
+      value: Place Holder
       objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: parameters
+      value: Useless
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: description
+      value: Place for what?...
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: parameterCanvas
+      value: 
+      objectReference: {fileID: 131308875}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: descriptionCanvas
+      value: 
+      objectReference: {fileID: 1140712987}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -11966,11 +12338,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12002,11 +12374,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 560
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -155
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -12054,6 +12426,26 @@ PrefabInstance:
       propertyPath: price
       value: 
       objectReference: {fileID: 1554839823}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: itemName
+      value: Temporary Legs
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: parameters
+      value: Useless
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: description
+      value: Who put that in the shop?!
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: parameterCanvas
+      value: 
+      objectReference: {fileID: 131308875}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: descriptionCanvas
+      value: 
+      objectReference: {fileID: 1140712987}
     - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -12367,8 +12759,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  parameterCanvas: {fileID: 131308875}
+  descriptionCanvas: {fileID: 1140712987}
   price: {fileID: 1554839823}
-  itemName: Torso
+  itemName: Unpacked Torso
+  parameters: Useless
+  description: That torso isn't ready to be sold!
 --- !u!1 &1953899603
 GameObject:
   m_ObjectHideFlags: 0
@@ -12482,8 +12878,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  parameterCanvas: {fileID: 131308875}
+  descriptionCanvas: {fileID: 1140712987}
   price: {fileID: 1554839823}
-  itemName: Hands
+  itemName: Factory New Hands
+  parameters: Useless
+  description: Theese hands weren't calibrated for combat use yet...
 --- !u!1 &2004973399
 GameObject:
   m_ObjectHideFlags: 0
@@ -12588,6 +12988,26 @@ PrefabInstance:
       propertyPath: price
       value: 
       objectReference: {fileID: 1554839823}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: itemName
+      value: Experimental Legs
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: parameters
+      value: +30 HP, +10 AGI
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: description
+      value: Legs using experimental technology.
+      objectReference: {fileID: 0}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: parameterCanvas
+      value: 
+      objectReference: {fileID: 131308875}
+    - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: descriptionCanvas
+      value: 
+      objectReference: {fileID: 1140712987}
     - target: {fileID: 28278743107884579, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -12726,7 +13146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3364700650277516928, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: price
-      value: 2147483647
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 3420163452748775227, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: m_AnchorMax.y
@@ -13001,11 +13421,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13037,11 +13457,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 310
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -155
       objectReference: {fileID: 0}
     - target: {fileID: 214009609223349036, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13081,8 +13501,24 @@ PrefabInstance:
       objectReference: {fileID: 1554839823}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: itemName
-      value: Accesories
+      value: Place Holder
       objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: parameters
+      value: Useless
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: description
+      value: Place for what?...
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: parameterCanvas
+      value: 
+      objectReference: {fileID: 131308875}
+    - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: descriptionCanvas
+      value: 
+      objectReference: {fileID: 1140712987}
     - target: {fileID: 3058902473947495710, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: informationCanvas
       value: 
@@ -13254,8 +13690,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   informationCanvas: {fileID: 1326699976}
+  parameterCanvas: {fileID: 131308875}
+  descriptionCanvas: {fileID: 1140712987}
   price: {fileID: 1554839823}
-  itemName: Hands
+  itemName: Factory New Hands
+  parameters: Useless
+  description: Theese hands weren't calibrated for combat use yet...
 --- !u!1 &2058284818
 GameObject:
   m_ObjectHideFlags: 0

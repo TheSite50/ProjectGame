@@ -7,16 +7,24 @@ using UnityEngine.InputSystem;
 public class ShowInformation : MonoBehaviour, IPointerEnterHandler,IPointerExitHandler
 {
     [SerializeField] private TMP_Text informationCanvas;
+    [SerializeField] private TMP_Text parameterCanvas;
+    [SerializeField] private TMP_Text descriptionCanvas;
     [SerializeField] private TMP_Text price;
     [SerializeField] private string itemName;
-    private string defoultName = "EMPTY";
+    [SerializeField] private string parameters;
+    [SerializeField] private string description;
+    private string defaultName = "Nothing";
+    private string defaultParameters = "To select an item";
+    private string defaultDescription = "Hover on it";
 
-    
+
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         informationCanvas.SetText(itemName);
-        if(this.GetComponent<Button>().enabled == false)
+        parameterCanvas.SetText(parameters);
+        descriptionCanvas.SetText(description);
+        if (this.GetComponent<Button>().enabled == false)
         {
             price.SetText("0");
         }
@@ -29,7 +37,9 @@ public class ShowInformation : MonoBehaviour, IPointerEnterHandler,IPointerExitH
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        informationCanvas.SetText(defoultName);
-        price.SetText("----------");
+        informationCanvas.SetText(defaultName);
+        parameterCanvas.SetText(defaultParameters);
+        descriptionCanvas.SetText(defaultDescription);
+        price.SetText("0");
     }
 }
