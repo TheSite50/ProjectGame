@@ -181,7 +181,7 @@ public class MovementScript : MonoBehaviour
     
     private bool IsGrounded()
     {
-        return _groundCheck.GetComponent<GroundCheck>().isGrounded;
+        return _groundCheck.GetComponent<GroundCheck>().IsGrounded;
     }
 
 

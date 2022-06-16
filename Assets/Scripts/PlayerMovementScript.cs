@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,13 +8,13 @@ public class PlayerMovementScript : MonoBehaviour
 {
     private InputScript _input;
     private PlayerInput _playerInput;
-
+    public bool _isPlayerBusy { get; set; }
 
     [SerializeField] private float _rotationSpeed = 6;
     [SerializeField] float MoveSpeed;
     //private Rigidbody _rb;
     private CharacterController player;
-    [SerializeField] private GroundCheck _groundCheck;
+    //[SerializeField] private GroundCheck _groundCheck;
 
     [Header("Camera")]
     private Transform cameraTransform;
@@ -31,6 +32,7 @@ public class PlayerMovementScript : MonoBehaviour
 
     [SerializeField] private weaponSystem _weaponRight;
     [SerializeField] private weaponSystem _weaponLeft;
+    [SerializeField]private float gravityStrength = 9.81f;
 
     #region Unity Functions
     private void Awake()
@@ -44,27 +46,64 @@ public class PlayerMovementScript : MonoBehaviour
     private void FixedUpdate()
     {
 
-        
-        AutoRotationControlInDesiredDirection();
+        if (player.isGrounded)
+        {
+            AutoRotationControlInDesiredDirection();
+        }
+        if (!player.isGrounded)
+        {
+            ApplyGravity();
+        }
+
     }
+
+    private void ApplyGravity()
+    {
+       
+        player.Move(-transform.up.normalized * gravityStrength*Time.deltaTime);
+    }
+
     private void LateUpdate()
     {   
-        Debug.Log(_input.shootLPM + " PMS");
+        //Debug.Log(_input.shootLPM + " PMS");
         Shooting();
         CameraRotation();
 
     }
     void Shooting()
     {
-        _weaponRight.TryToShootNextBullet(_input.shootLPM);
-        _weaponLeft.TryToShootNextBullet(_input.shootRPM);
+        if (!_isPlayerBusy)
+        {
+            _weaponRight.TryToShootNextBullet(_input.shootLPM);
+            _weaponLeft.TryToShootNextBullet(_input.shootRPM);
+        }
     }
     void Reloading()
     {
-        if (_weaponRight is IReloadable)
+        if (!_isPlayerBusy)
         {
-            //(IReloadable)_weapon.Reload(_input.reload);
-            
+            if (_weaponRight is IReloadable) 
+            {
+                if (_weaponRight.CurrentAmmoInMag != _weaponRight.MaxAmmo)
+                {
+                    //(IReloadable)_weapon.Reload(_input.reload);
+                    IReloadable myWeapon = _weaponRight as IReloadable;
+                    myWeapon.Reload();
+
+                }
+            }
+            if (_weaponLeft)
+            {
+                if (_weaponLeft is IReloadable)
+                {
+                    if (_weaponLeft.CurrentAmmoInMag != _weaponRight.MaxAmmo)
+                    {
+                        //(IReloadable)_weapon.Reload(_input.reload);
+                        IReloadable myWeapon = _weaponRight as IReloadable;
+                        myWeapon.Reload();
+                    }
+                }
+            }
         }
     }
 

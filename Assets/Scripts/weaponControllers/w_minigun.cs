@@ -5,14 +5,13 @@ using UnityEngine;
 //used not finished
 public class W_Minigun : weaponSystem, IReloadable
 {
-    
     private void Update()
     {
         RotateGun();
     }
     private void Start()
     {
-        secondsBetweenBullets = 60 / weapon.fireRate;
+        secondsBetweenBullets = 60 / weapon.fireRate;//trzeba przypisaæ bo ustawia siê na 0 nie wiem czmu
         AmmoInReserve = 500;
         CurrentAmmoInMag = 50;
     }
@@ -20,6 +19,7 @@ public class W_Minigun : weaponSystem, IReloadable
     {
         CurrentAmmoInMag = currentAmmoInMag;
         AmmoInReserve = ammoInReserve;
+        secondsBetweenBullets = 60/weapon.fireRate;
     }
 /*    private IEnumerator _shoot;
     public void TryToShootNextBullet(bool isShooting)
@@ -45,22 +45,22 @@ public class W_Minigun : weaponSystem, IReloadable
     }*/
     public override IEnumerator ShootWeapon()
     {
-        Debug.Log("ShootInputWorking w_MG");
+        //Debug.Log("ShootInputWorking w_MG");
         if (CurrentAmmoInMag > 0)
         {
-            //Debug.Log(CurrentAmmoInMag + " w_MG");
+            Debug.Log(CurrentAmmoInMag + " w_MG");
             //Debug.Log(lastBulletShootTime);
             lastBulletShootTime = Time.realtimeSinceStartup;
             base.Shooting();
             CurrentAmmoInMag--;
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(secondsBetweenBullets);
         }
         if (CurrentAmmoInMag == 0) 
         {
             Debug.Log("No Ammo w_MG");
         }
     }
-    public void Reload(bool isReloading) 
+    public void Reload() 
     {
         StartCoroutine(Reloading());
 

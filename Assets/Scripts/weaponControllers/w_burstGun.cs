@@ -26,7 +26,7 @@ public class W_BurstGun : weaponSystem, IReloadable
             }
         }
     }
-    public void Reload(bool isReloading)
+    public void Reload()
     {
         StartCoroutine(Reloading());
 

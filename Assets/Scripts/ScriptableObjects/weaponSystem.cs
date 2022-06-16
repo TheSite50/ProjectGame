@@ -17,7 +17,7 @@ public abstract class weaponSystem : MonoBehaviour, IWeapon
     protected Transform cameraTransform;
     [SerializeField] protected Transform bulletParent;
     protected bool raycast;
-
+    public int MaxAmmo => weapon.magSize;
     private void Awake()
     {
         cameraTransform = Camera.main.transform;
@@ -34,7 +34,7 @@ public abstract class weaponSystem : MonoBehaviour, IWeapon
         {
             if (Time.realtimeSinceStartup >= lastBulletShootTime + secondsBetweenBullets)
             {
-                Debug.Log(Time.realtimeSinceStartup + "//" + lastBulletShootTime + "//" + secondsBetweenBullets);
+                //Debug.Log(Time.realtimeSinceStartup + "//" + lastBulletShootTime + "//" + secondsBetweenBullets);
                 if (_shoot != null)
                 {
                     StopCoroutine(_shoot);
@@ -54,7 +54,7 @@ public abstract class weaponSystem : MonoBehaviour, IWeapon
     public abstract IEnumerator ShootWeapon();
     public void Shooting()
     {
-        Debug.Log("Shooting WS");
+        //Debug.Log("Shooting WS");
         GameObject bullet = Instantiate(weapon.bulletPrefab, barrelLocation.position, Quaternion.identity, bulletParent);
         BulletLogic bulletLogic = bullet.GetComponent<BulletLogic>();
         if (raycast)//strzela przed siebie dodac rotacje do minigunów by obraca³y siê w strone kursora,dodac kursor pokazujacy gdzie dokladnie teraz poleci pocisk

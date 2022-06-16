@@ -84,7 +84,7 @@ public class @MyInputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Reload"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""c6b509c9-1dca-45bd-9338-778e8a454ffa"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",

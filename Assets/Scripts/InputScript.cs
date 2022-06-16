@@ -47,6 +47,11 @@ public class InputScript : MonoBehaviour
 	{
 		SprintInput(value.isPressed);
 	}
+	public void OnReload(InputValue value)
+	{
+		ReloadInput(value.isPressed);
+		Debug.Log(value.isPressed);
+	}
 
 	public void MoveInput(Vector2 newMoveDirection)
 	{
