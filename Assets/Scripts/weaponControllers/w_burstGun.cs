@@ -26,32 +26,4 @@ public class W_BurstGun : weaponSystem, IReloadable
             }
         }
     }
-    public void Reload()
-    {
-        StartCoroutine(Reloading());
-
-    }
-    IEnumerator Reloading()
-    {
-        isReloading = true;
-        ReloadWeapon(CurrentAmmoInMag, AmmoInReserve, weapon.magSize);
-        yield return new WaitForSeconds(weapon.reloadSpeed);
-        isReloading = false;
-    }
-    public void ReloadWeapon(int currentAmmoInMag, int ammoInReserve, int MaxAmmoCount)
-    {
-        if (!isReloading)
-        {
-            if (ammoInReserve == 0)
-                return;
-            if (ammoInReserve <= MaxAmmoCount - currentAmmoInMag)
-            {
-                CurrentAmmoInMag += ammoInReserve;
-                AmmoInReserve = 0;
-                return;
-            }
-            AmmoInReserve -= (MaxAmmoCount - currentAmmoInMag);
-            CurrentAmmoInMag = MaxAmmoCount;
-        }
-    }
 }

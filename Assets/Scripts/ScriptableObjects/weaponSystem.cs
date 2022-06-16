@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //used
-public abstract class weaponSystem : MonoBehaviour, IWeapon
+public abstract class weaponSystem : MonoBehaviour, IWeapon , IReloadable
 {
 
     protected float lastBulletShootTime;
@@ -21,6 +21,7 @@ public abstract class weaponSystem : MonoBehaviour, IWeapon
     private void Awake()
     {
         cameraTransform = Camera.main.transform;
+        AmmoInReserve = 999999;
     }
     private void Update()
     {
@@ -85,6 +86,32 @@ public abstract class weaponSystem : MonoBehaviour, IWeapon
             return cameraLookAtPoint.point;
         }
         return barrelLocation.forward * 500;
+    }
+
+    public void Reload()
+    {
+        StartCoroutine(Reloading());
+    }
+    IEnumerator Reloading()
+    {
+        ReloadWeapon(CurrentAmmoInMag, AmmoInReserve, weapon.magSize);
+        yield return new WaitForSeconds(weapon.reloadSpeed);
+        Debug.Log("reloading");
+    }
+    public void ReloadWeapon(int currentAmmoInMag, int ammoInReserve, int MaxAmmoCount)
+    {
+        if (ammoInReserve == 0)
+            return;
+        if (ammoInReserve <= MaxAmmoCount - currentAmmoInMag)
+        {
+            CurrentAmmoInMag += ammoInReserve;
+            AmmoInReserve = 0;
+            Debug.Log("reloaded!");
+            return;
+        }
+        AmmoInReserve -= (MaxAmmoCount - currentAmmoInMag);
+        CurrentAmmoInMag = MaxAmmoCount;
+        Debug.Log("reloaded!");
     }
     #endregion
 }

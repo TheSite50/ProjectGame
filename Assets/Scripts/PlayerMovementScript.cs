@@ -68,6 +68,7 @@ public class PlayerMovementScript : MonoBehaviour
         //Debug.Log(_input.shootLPM + " PMS");
         Shooting();
         CameraRotation();
+        Reloading();
 
     }
     void Shooting()
@@ -82,26 +83,16 @@ public class PlayerMovementScript : MonoBehaviour
     {
         if (!_isPlayerBusy)
         {
-            if (_weaponRight is IReloadable) 
+            if (_input.reload) 
             {
                 if (_weaponRight.CurrentAmmoInMag != _weaponRight.MaxAmmo)
                 {
-                    //(IReloadable)_weapon.Reload(_input.reload);
-                    IReloadable myWeapon = _weaponRight as IReloadable;
-                    myWeapon.Reload();
+                    _weaponRight.Reload();
 
                 }
-            }
-            if (_weaponLeft)
-            {
-                if (_weaponLeft is IReloadable)
+                if (_weaponLeft.CurrentAmmoInMag != _weaponRight.MaxAmmo)
                 {
-                    if (_weaponLeft.CurrentAmmoInMag != _weaponRight.MaxAmmo)
-                    {
-                        //(IReloadable)_weapon.Reload(_input.reload);
-                        IReloadable myWeapon = _weaponRight as IReloadable;
-                        myWeapon.Reload();
-                    }
+                    _weaponLeft.Reload();
                 }
             }
         }

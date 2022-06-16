@@ -60,28 +60,4 @@ public class W_Minigun : weaponSystem, IReloadable
             Debug.Log("No Ammo w_MG");
         }
     }
-    public void Reload() 
-    {
-        StartCoroutine(Reloading());
-
-    }
-    IEnumerator Reloading() 
-    {
-        ReloadWeapon(CurrentAmmoInMag, AmmoInReserve, weapon.magSize);
-        yield return new WaitForSeconds(weapon.reloadSpeed);
-    }
-    public void ReloadWeapon(int currentAmmoInMag, int ammoInReserve, int MaxAmmoCount)
-    {
-        if (ammoInReserve == 0)
-            return;
-        if (ammoInReserve <= MaxAmmoCount - currentAmmoInMag)
-        {
-            CurrentAmmoInMag += ammoInReserve;
-            AmmoInReserve = 0;
-            return;
-        }
-        AmmoInReserve -= (MaxAmmoCount - currentAmmoInMag);
-        CurrentAmmoInMag = MaxAmmoCount;
-    }
-
 }
