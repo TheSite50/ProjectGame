@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class WaveCounter : MonoBehaviour
 {
-    [SerializeField] private List<int> numEnemyInWave;
-    [SerializeField] private List<GameObject> enamyTyp;
-    [SerializeField] private List<GameObject> spawnPoints;
+    [SerializeField] private List<int> numEnemyInWave = new List<int>();
+    [SerializeField] private List<GameObject> enamyTyp = new List<GameObject>();
+    [SerializeField] private List<GameObject> spawnPoints = new List<GameObject>();
     private int numWave=0;
     private GameObject spawnPoint;
     private int randomValue=0;
     private GameObject player;
+    private int value = 0;
     private void Awake()
     {
         player = PlayerStats.SendPlayer();
-        int value = 0;
+        
         foreach(int num in numEnemyInWave)
         {
             value += num;
@@ -40,8 +41,12 @@ public class WaveCounter : MonoBehaviour
     {
         randomValue = Random.Range(0, spawnPoints.Count);
         spawnPoint = spawnPoints[randomValue];
-        if (Vector3.Distance(player.gameObject.transform.position, spawnPoint.gameObject.transform.position) <= 1000)
+        if (Vector3.Distance(player.gameObject.transform.position, spawnPoint.gameObject.transform.position) <= 900)
         {
+            if((Vector3.Distance(player.gameObject.transform.position, spawnPoints[randomValue + 1].gameObject.transform.position) <= 900))
+            {
+                spawnPoint = randomValue + 2 > spawnPoints.Count ? spawnPoints[0] : spawnPoints[randomValue + 2];
+            }
             spawnPoint = randomValue + 1 > spawnPoints.Count ? spawnPoints[0] : spawnPoints[randomValue + 1];
         }
 

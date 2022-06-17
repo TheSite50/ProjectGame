@@ -116,6 +116,15 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Stomp"",
+                    ""type"": ""Value"",
+                    ""id"": ""87b787a9-eeee-421f-81e5-36e42aec431a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -265,7 +274,7 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""05f6913d-c316-48b2-a6bb-e225f14c7960"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
@@ -386,11 +395,22 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""8bb28b2d-c642-484b-b037-1d393e5ff4ff"",
-                    ""path"": ""<Mouse>/rightButton"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""ShootRPM"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1691628c-03ad-4916-8332-67cbbac568a5"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Stomp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -988,6 +1008,7 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Reload = m_Player.FindAction("Reload", throwIfNotFound: true);
         m_Player_ShootRPM = m_Player.FindAction("ShootRPM", throwIfNotFound: true);
+        m_Player_Stomp = m_Player.FindAction("Stomp", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1069,6 +1090,7 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Reload;
     private readonly InputAction m_Player_ShootRPM;
+    private readonly InputAction m_Player_Stomp;
     public struct PlayerActions
     {
         private @MyInputActions m_Wrapper;
@@ -1083,6 +1105,7 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Reload => m_Wrapper.m_Player_Reload;
         public InputAction @ShootRPM => m_Wrapper.m_Player_ShootRPM;
+        public InputAction @Stomp => m_Wrapper.m_Player_Stomp;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1122,6 +1145,9 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                 @ShootRPM.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShootRPM;
                 @ShootRPM.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShootRPM;
                 @ShootRPM.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShootRPM;
+                @Stomp.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStomp;
+                @Stomp.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStomp;
+                @Stomp.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStomp;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1156,6 +1182,9 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                 @ShootRPM.started += instance.OnShootRPM;
                 @ShootRPM.performed += instance.OnShootRPM;
                 @ShootRPM.canceled += instance.OnShootRPM;
+                @Stomp.started += instance.OnStomp;
+                @Stomp.performed += instance.OnStomp;
+                @Stomp.canceled += instance.OnStomp;
             }
         }
     }
@@ -1322,6 +1351,7 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
         void OnShootRPM(InputAction.CallbackContext context);
+        void OnStomp(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

@@ -10,6 +10,7 @@ public class InputScript : MonoBehaviour
 	[HideInInspector] public bool shootLPM;
 	[HideInInspector] public bool shootRPM;
 	[HideInInspector] public bool reload;
+	[HideInInspector] public bool stomp;
 
 	[HideInInspector] public bool analogMovement;
 
@@ -84,7 +85,10 @@ public class InputScript : MonoBehaviour
 	{
 		reload = newReloadState;
 	}
-
+	public void StompInput(bool newStompState)
+	{
+		stomp = newStompState;
+	}
 	/*
 	[SerializeField] PlayerInput controls;
 	[HideInInspector] public Vector2 whereIsMoving;

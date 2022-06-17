@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 1840332313331261405}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 10, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1840332313993681315}
   - {fileID: 1840332314506091331}
@@ -268,10 +268,7 @@ MonoBehaviour:
   BottomClamp: -30
   CinemachineCameraTarget: {fileID: 1840332313993681324}
   LockCameraPosition: 0
-  StompParticles: {fileID: 1840332314825877991}
-  stompCooldown: 5
-  stompRange: 100
-  stompDamage: 1000
+  gravityStrength: 9.81
 --- !u!114 &1840332313331261395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,8 +285,9 @@ MonoBehaviour:
   look: {x: 0, y: 0}
   jump: 0
   sprint: 0
-  shoot: 0
-  stomp: 0
+  shootLPM: 0
+  shootRPM: 0
+  reload: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
@@ -411,7 +409,8 @@ MonoBehaviour:
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  isGrounded: 0
+  rayLength: 10
+  boxBounds: {x: 0, y: 0, z: 0}
 --- !u!1 &1840332314825877991
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +438,7 @@ Transform:
   m_LocalPosition: {x: 5.04, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4877653462322645725}
+  - {fileID: 4586084089395367648}
   - {fileID: 6890712688465073363}
   - {fileID: 2193926486237592674}
   m_Father: {fileID: 1840332313331261404}
@@ -551,9 +550,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c079ac284605eb41ae74ca4b628a3a9, type: 3}
---- !u!4 &4877653462322645725 stripped
+--- !u!4 &4586084089395367648 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 6501732789480490178, guid: 5c079ac284605eb41ae74ca4b628a3a9, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2751461136799351039, guid: 5c079ac284605eb41ae74ca4b628a3a9, type: 3}
   m_PrefabInstance: {fileID: 1840332313558027807}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1840332313807026585

@@ -35,6 +35,13 @@ public class PlayerMovementScript : MonoBehaviour
     private weaponSystem _weaponLeft;
     [SerializeField]private float gravityStrength = 9.81f;
 
+    [Header("Stomp")]
+    [SerializeField] GameObject StompParticles;
+    [SerializeField] float stompCooldown = 5f;
+    private bool stompActive = false;
+    [SerializeField] float stompRange = 40f;
+    [SerializeField] float stompDamage = 1000f;
+    
     #region Unity Functions
     private void Awake()
     {
@@ -171,6 +178,49 @@ public class PlayerMovementScript : MonoBehaviour
     #endregion
     #region Special Moves
     void Dash() { }
-    void Stomp() { }
+    public void Stomp()
+    {
+        if (_input.stomp)
+        {
+            if (stompActive == false)
+            {
+                stompActive = true;
+                float startTime = Time.time;
+                Debug.Log(Time.time < startTime + stompCooldown);
+
+
+                if (Time.time < startTime + stompCooldown)
+                {
+                    CheckForEnemies();
+                    StompParticles.SetActive(true);
+                    Invoke("StopParticles", stompCooldown);
+                }
+
+            }
+        }
+
+
+
+    }
+
+    void StopParticles()
+    {
+        StompParticles.SetActive(false);
+        stompActive = false;
+    }
+
+    public void CheckForEnemies()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, stompRange);
+        foreach (Collider c in colliders)
+        {
+            if (c.GetComponent<EnemyProperties>())
+            {
+                c.GetComponent<EnemyProperties>().SetHp(c.GetComponent<EnemyProperties>().GetHp() - stompDamage);
+            }
+        }
+
+    }
+
     #endregion
 }

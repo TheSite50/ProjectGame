@@ -5463,7 +5463,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 566756152}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 536.9, y: 35, z: 732.07}
+  m_LocalPosition: {x: 536.9, y: 45, z: 732.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1601679010}
@@ -5824,7 +5824,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press Space To Back To MainMenu
+  m_text: Press Space To Back To Main Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6020,6 +6020,18 @@ PrefabInstance:
     - target: {fileID: 6950988022378167777, guid: d04ad22a813365046ae4b40dea62ea5b, type: 3}
       propertyPath: m_RootOrder
       value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950988022378167777, guid: d04ad22a813365046ae4b40dea62ea5b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950988022378167777, guid: d04ad22a813365046ae4b40dea62ea5b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950988022378167777, guid: d04ad22a813365046ae4b40dea62ea5b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6950988022378167777, guid: d04ad22a813365046ae4b40dea62ea5b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9372,7 +9384,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172180344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 536.9, y: 35, z: 732.07}
+  m_LocalPosition: {x: 536.9, y: 45, z: 732.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

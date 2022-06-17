@@ -9,6 +9,10 @@ public class StopGame : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     private bool activePause = false;
     // Update is called once per frame
+    private void Start()
+    {
+        Cursor.visible = false;
+    }
     void Update()
     {
         if(Keyboard.current.escapeKey.IsPressed())
@@ -17,11 +21,13 @@ public class StopGame : MonoBehaviour
             {                
                 StopGameElement();
                 activePause = false;
+                
             }
             else
             {
                 StartGameElement();
                 activePause = true;
+                
             }
         }
     }
@@ -32,6 +38,7 @@ public class StopGame : MonoBehaviour
         {
             element.SetActive(false);
         }
+        Cursor.visible = true;
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
     }
@@ -41,6 +48,7 @@ public class StopGame : MonoBehaviour
         {
             element.SetActive(true);
         }
+        Cursor.visible = false;
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
     }

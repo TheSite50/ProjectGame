@@ -139,7 +139,7 @@ Transform:
   m_GameObject: {fileID: 6950988022378167784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 53.7, z: 2034}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 6950988021789111160}
   - {fileID: 6950988022029698427}
@@ -342,6 +342,10 @@ MonoBehaviour:
   CinemachineCameraTarget: {fileID: 6950988021789111162}
   LockCameraPosition: 0
   gravityStrength: 15
+  StompParticles: {fileID: 0}
+  stompCooldown: 5
+  stompRange: 100
+  stompDamage: 100
 --- !u!114 &6950988022378167782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,6 +365,7 @@ MonoBehaviour:
   shootLPM: 0
   shootRPM: 0
   reload: 0
+  stomp: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1

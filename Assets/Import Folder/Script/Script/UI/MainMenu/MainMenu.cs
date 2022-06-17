@@ -8,9 +8,14 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject saveGame;
     [SerializeField] private GameObject options;
     [SerializeField] private GameObject credits;
-   
+
+    private void Start()
+    {
+        Cursor.visible = true;
+    }
     public void StartGame()
     {
+        
         mainMenu.SetActive(false);
         saveGame.SetActive(true);
     }
