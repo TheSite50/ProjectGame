@@ -6,7 +6,8 @@ using TMPro;
 
 public class GUIControll : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI ammunitionInWeapon;
+    [SerializeField] private TextMeshProUGUI ammunitionInRightWeapon;
+    [SerializeField] private TextMeshProUGUI ammunitionInLeftWeapon;
     [SerializeField] private TextMeshProUGUI blueEssence;
     [SerializeField] private TextMeshProUGUI greenEssence;
     [SerializeField] private Image playerHp;
@@ -22,13 +23,13 @@ public class GUIControll : MonoBehaviour
             leftWeapon = CreatePlayerInGame.GetWeaponLeft();
         else
         {
-            leftWeapon = CreatePlayerInGame.GetArm();
+            leftWeapon = CreatePlayerInGame.GetArm().GetComponent<LocationWeapons>().GetWeaponPosition().weaponLeft.gameObject;
         }
         if (CreatePlayerInGame.GetWeaponRight() != null)
             rightWeapon = CreatePlayerInGame.GetWeaponRight();
         else
         {
-            rightWeapon = CreatePlayerInGame.GetArm();
+            rightWeapon = CreatePlayerInGame.GetArm().GetComponent<LocationWeapons>().GetWeaponPosition().weaponRight.gameObject;
         }
         
     }
@@ -51,7 +52,8 @@ public class GUIControll : MonoBehaviour
             playerHp.color = Color.green;
         }
 
-        //ammunitionInWeapon.text = leftWeapon.GetComponent<WeaponParameter>().GetAmmunation().Item1 +"/"+ leftWeapon.GetComponent<WeaponParameter>().GetAmmunation().Item2;
+        ammunitionInLeftWeapon.text = leftWeapon.GetComponent<WeaponParameter>().GetAmmunation().Item1 +"/"+ leftWeapon.GetComponent<WeaponParameter>().GetAmmunation().Item2;
+        ammunitionInRightWeapon.text = rightWeapon.GetComponent<WeaponParameter>().GetAmmunation().Item1 + "/" + rightWeapon.GetComponent<WeaponParameter>().GetAmmunation().Item2;
         blueEssence.text = GameInformation.GetEssence().blueEssenceValue.ToString();
         greenEssence.text = GameInformation.GetEssence().greenEssenceValue.ToString();
     }

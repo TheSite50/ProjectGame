@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour,IDamage
     }
     void Update()
     {
-
+    
         if (destroyTime < 5)
         {
             destroyTime=destroyTime+Time.deltaTime;

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4072514059070162507}
   - component: {fileID: 2260963952181228161}
   - component: {fileID: 5072783250375051592}
+  - component: {fileID: 3673338770418942730}
   m_Layer: 8
   m_Name: mecha_weapon_right_1
   m_TagString: Untagged
@@ -96,7 +97,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: c324916eee01c6340b568f360028b9f0, type: 2}
+  hull: {fileID: 0}
   barrelLocation: {fileID: 7626347385692075741}
+  parameter: {fileID: 3673338770418942730}
+--- !u!114 &3673338770418942730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315378196379210580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990c409bf53f55b439b79328d263707f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammunationInMagazine: 0
+  magazineNumber: 0
 --- !u!1 &786090703439962977
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,6 +156,7 @@ GameObject:
   - component: {fileID: 1518575809002369722}
   - component: {fileID: 3672659034391348848}
   - component: {fileID: 5395871530614457441}
+  - component: {fileID: 6029958939615796694}
   m_Layer: 8
   m_Name: mecha_weapon_left_1
   m_TagString: Untagged
@@ -223,7 +241,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: c324916eee01c6340b568f360028b9f0, type: 2}
+  hull: {fileID: 0}
   barrelLocation: {fileID: 3884479918493052721}
+  parameter: {fileID: 6029958939615796694}
+--- !u!114 &6029958939615796694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3023916043722106789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990c409bf53f55b439b79328d263707f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammunationInMagazine: 0
+  magazineNumber: 0
 --- !u!1 &8079266138655883342
 GameObject:
   m_ObjectHideFlags: 0

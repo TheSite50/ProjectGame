@@ -54,7 +54,7 @@ public class Boss : BossProperties
     // Update is called once per frame
     void Update()
     {
-        sliderHp.value = this.GetHp() / 1000f;
+        sliderHp.value = this.GetHp() / 10000;
         if(this.GetHp()<=0f)
         {
             Death();
@@ -113,14 +113,14 @@ public class Boss : BossProperties
         this.GetComponent<BossAnimationMenage>().enabled = false;
         navMesh.enabled = false;
         portal.SetActive(true);
-        if(ballObject.gameObject.activeInHierarchy)
-        {
-            Destroy(ballObject.gameObject);
-        }
-        if (ballAttackObject.gameObject.activeInHierarchy)
-        {
-            Destroy(ballAttackObject.gameObject);
-        }
+        //if(ballObject.gameObject!=null)
+        //{
+        //    Destroy(ballObject.gameObject);
+        //}
+        //if (ballAttackObject.gameObject != null)
+        //{
+        //    Destroy(ballAttackObject.gameObject);
+        //}
         this.GetComponent<Boss>().enabled = false;
     }
 

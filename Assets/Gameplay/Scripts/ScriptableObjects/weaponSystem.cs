@@ -58,17 +58,17 @@ public abstract class weaponSystem : MonoBehaviour, IWeapon , IReloadable
     {
         //Debug.Log("Shooting WS");
         GameObject bullet = Instantiate(weapon.bulletPrefab, barrelLocation.position, barrelLocation.rotation);
-        BulletLogic bulletLogic = bullet.GetComponent<BulletLogic>();
-        if (raycast)//strzela przed siebie dodac rotacje do minigunów by obraca³y siê w strone kursora,dodac kursor pokazujacy gdzie dokladnie teraz poleci pocisk
-        {
-            bulletLogic.Target = WhereShootLocation();
-            //bulletLogic.Hit = true;
-        }
-        else
-        {
-            bulletLogic.Target = barrelLocation.position + barrelLocation.forward * weapon.range;
-            //bulletLogic.Hit = false;
-        }
+        //BulletLogic bulletLogic = bullet.GetComponent<BulletLogic>();
+        //if (raycast)//strzela przed siebie dodac rotacje do minigunów by obraca³y siê w strone kursora,dodac kursor pokazujacy gdzie dokladnie teraz poleci pocisk
+        //{
+        //    bulletLogic.Target = WhereShootLocation();
+        //    //bulletLogic.Hit = true;
+        //}
+        //else
+        //{
+        //    bulletLogic.Target = barrelLocation.position + barrelLocation.forward * weapon.range;
+        //    //bulletLogic.Hit = false;
+        //}
     }
     #endregion
     #region rotation

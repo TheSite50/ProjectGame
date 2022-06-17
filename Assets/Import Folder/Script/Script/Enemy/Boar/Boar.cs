@@ -120,7 +120,7 @@ public class Boar : EnemyProperties
     }
     private void FixedUpdate()
     {
-        isOnGround = Physics.CheckSphere(this.gameObject.transform.position, 18, 110, QueryTriggerInteraction.Ignore);//ground detect settings
+        isOnGround = Physics.CheckSphere(this.gameObject.transform.position, 30, 110, QueryTriggerInteraction.Ignore);//ground detect settings
         
     }
 

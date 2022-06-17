@@ -5,15 +5,18 @@ using UnityEngine;
 //used not finished
 public class W_Minigun : weaponSystem, IReloadable
 {
+    [SerializeField] private WeaponParameter parameter;
     private void Update()
     {
+        parameter.SetAmmunation(CurrentAmmoInMag, AmmoInReserve);
         RotateGun();
     }
     private void Start()
     {
         secondsBetweenBullets = 60 / weapon.fireRate;//trzeba przypisaæ bo ustawia siê na 0 nie wiem czmu
-        AmmoInReserve = 500;
+        AmmoInReserve = 1000;
         CurrentAmmoInMag = 50;
+        parameter.SetAmmunation(CurrentAmmoInMag, AmmoInReserve);
     }
     public W_Minigun(int currentAmmoInMag, int ammoInReserve) 
     {
@@ -48,7 +51,7 @@ public class W_Minigun : weaponSystem, IReloadable
         //Debug.Log("ShootInputWorking w_MG");
         if (CurrentAmmoInMag > 0)
         {
-            Debug.Log(CurrentAmmoInMag + " w_MG");
+            Debug.Log(parameter.GetAmmunation().Item1 + " w_MG");
             //Debug.Log(lastBulletShootTime);
             lastBulletShootTime = Time.realtimeSinceStartup;
             base.Shooting();

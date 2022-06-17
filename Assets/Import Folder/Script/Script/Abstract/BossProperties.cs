@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public abstract class BossProperties : BossAction,IHp,IDamage
 {
     [Header("Statistic")]
-    [SerializeField] private float valueHp = 0;
+    [SerializeField] protected float valueHp = 0;
     [SerializeField] private float damage = 0;
     public abstract (bool isInFly, int onGround, int inAir) NumberAction();
 

@@ -1201,7 +1201,7 @@ MonoBehaviour:
   distanceFarAttack: 500
   sliderHp: {fileID: 0}
   player: {fileID: 0}
-  valueHp: 1000
+  valueHp: 10000
   damage: 10
   ball: {fileID: 1020495648660525579, guid: 35909d5316a8b9949ab0897d6d472c22, type: 3}
   ballAttack: {fileID: 1020495648660525579, guid: 1e988009616c1ce4daa531a53caa0525, type: 3}

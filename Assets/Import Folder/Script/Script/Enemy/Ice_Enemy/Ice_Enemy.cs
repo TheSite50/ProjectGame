@@ -66,7 +66,7 @@ public class Ice_Enemy : EnemyProperties
     }
     private void FixedUpdate()
     {
-        isOnGround = Physics.CheckSphere(this.gameObject.transform.position, 9, 110, QueryTriggerInteraction.Ignore);//ground detect settings
+        isOnGround = Physics.CheckSphere(this.gameObject.transform.position, 30, 110, QueryTriggerInteraction.Ignore);//ground detect settings
 
     }
 
@@ -78,6 +78,7 @@ public class Ice_Enemy : EnemyProperties
         spawnBuff.SpawnBuff();
         this.GetComponent<Animator>().SetBool("Death", true);
         this.GetComponent<Ice_Enemy>().enabled = false;
+        Portal.KillEnemy();
     }
 
 

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Minigun
   damage: 25
-  fireRate: 450
+  fireRate: 1000
   burstCount: 0
   accuracy: 50
   recoil: 0.5
@@ -23,6 +23,6 @@ MonoBehaviour:
   magSize: 50
   reloadSpeed: 5
   shootSound: {fileID: 0}
-  bulletPrefab: {fileID: 8317034742612643490, guid: 947f87e96704a96499c697c8d06c3f62, type: 3}
+  bulletPrefab: {fileID: 7882833162188811267, guid: 6d4b6cc643c41c449bd2a7dd3b482611, type: 3}
   barrelLocation: {fileID: 0}
   model: {fileID: 0}

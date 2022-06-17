@@ -104,7 +104,7 @@ public class Mammoth : EnemyProperties
 
     private void FixedUpdate()
     {
-        isOnGround = Physics.CheckSphere(this.gameObject.transform.position, 20, 110, QueryTriggerInteraction.Ignore);//ground detect settings
+        isOnGround = Physics.CheckSphere(this.gameObject.transform.position, 40, 110, QueryTriggerInteraction.Ignore);//ground detect settings
     }
     public void FireAttack()
     {
