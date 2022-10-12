@@ -20,8 +20,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/New Terrain 13/Scene_Cave.unity
     guid: 41f9e98e2d40c854db2abef915d4ed51
+  - enabled: 0
+    path: Assets/Import Folder/Scene/FirstBossArena.unity
+    guid: 407ffd1bf62d2bd4b963715f2a888677
   - enabled: 1
     path: Assets/Import Folder/Scene/GameEnd.unity
     guid: c3edcf614d98b864da82157795465e54
   m_configObjects:
-    com.unity.input.settings: {fileID: 11400000, guid: e384e5482156eab4da593e5e54d97bb9, type: 2}
+    com.unity.input.settings: {fileID: 11400000, guid: 219f654c0a88daa49a0364ce5ce5e2cb, type: 2}

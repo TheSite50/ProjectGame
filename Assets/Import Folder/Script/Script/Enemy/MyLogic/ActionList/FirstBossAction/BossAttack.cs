@@ -20,6 +20,7 @@ public class BossAttack : IAction
         if (Vector3.Distance(player.transform.position, enemy.GetComponent<NavMeshAgent>().transform.position) <= distanceLowAttack && attack == true)
         {
             enemy.GetComponent<NavMeshAgent>().isStopped = true;
+            enemy.GetComponent<NavMeshAgent>().Stop();
             enemy.gameObject.transform.LookAt(new Vector3(player.transform.position.x, enemy.transform.position.y, player.transform.position.z));
             if(Random.Range(0, 10)<2&& attack == true)
             {
@@ -44,6 +45,7 @@ public class BossAttack : IAction
             {
                 enemy.GetComponent<Boss>().SetActionNumber(2);
             }
+            enemy.GetComponent<NavMeshAgent>().Stop();
             enemy.GetComponent<NavMeshAgent>().isStopped = true;
             StateAction(ActionState.actionFail, enemyAction);
             attack = true;

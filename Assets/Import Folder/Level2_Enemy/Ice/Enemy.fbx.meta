@@ -16,11 +16,17 @@ ModelImporter:
       74: -3219802184326365546
     second: AnotherAttack
   - first:
+      74: 4348485665485846014
+    second: Death
+  - first:
       74: 1695774498733727844
     second: Armature|AnotherAttack
   - first:
       74: 4723146814002874508
     second: Armature|Attack
+  - first:
+      74: -982115091633673366
+    second: Armature|Death
   - first:
       74: -8945691123924629249
     second: Armature|Idle

@@ -23,7 +23,11 @@ public abstract class weaponSystem : MonoBehaviour, IWeapon , IReloadable
     {
         cameraTransform = Camera.main.transform;
         AmmoInReserve = 999999;
+
+        
     }
+
+
     private void Update()
     {
         RotateGun();
@@ -50,6 +54,7 @@ public abstract class weaponSystem : MonoBehaviour, IWeapon , IReloadable
             if (_shoot != null)
             {
                 StopCoroutine(_shoot);
+                
             }
         }
     }

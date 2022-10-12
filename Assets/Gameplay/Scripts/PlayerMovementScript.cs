@@ -34,6 +34,11 @@ public class PlayerMovementScript : MonoBehaviour
     private weaponSystem _weaponRight;
     private weaponSystem _weaponLeft;
     [SerializeField]private float gravityStrength = 9.81f;
+    //animator
+    private Animator animatorLeg;
+    private bool soundStep = false;
+    private AudioSource mechStep;
+    
 
     [Header("Stomp")]
     [SerializeField] GameObject StompParticles;
@@ -54,7 +59,7 @@ public class PlayerMovementScript : MonoBehaviour
 
     private void Start()
     {
-
+        
         if (CreatePlayerInGame.GetWeaponRight() != null)
         {
             _weaponRight = CreatePlayerInGame.GetWeaponRight().GetComponent<weaponSystem>();
@@ -75,6 +80,16 @@ public class PlayerMovementScript : MonoBehaviour
             CreatePlayerInGame.GetArm().GetComponent<LocationWeapons>().GetWeaponPosition().weaponLeft.enabled = true;
             _weaponLeft = CreatePlayerInGame.GetArm().GetComponent<LocationWeapons>().GetWeaponPosition().weaponLeft;
         }
+
+        animatorLeg = CreatePlayerInGame.GetLegs().GetComponent<Animator>();
+        mechStep = CreatePlayerInGame.GetLegs().GetComponent<AudioSource>();
+        
+        CreatePlayerInGame.GetLegs().GetComponent<AudioSource>().enabled = true;
+        
+
+
+        //mechShoot;
+
     }
     private void FixedUpdate()
     {
@@ -102,6 +117,7 @@ public class PlayerMovementScript : MonoBehaviour
         Shooting();
         CameraRotation();
         Reloading();
+        Stomp();
 
     }
     void Shooting()
@@ -144,11 +160,26 @@ public class PlayerMovementScript : MonoBehaviour
         //_rb.MoveRotation(Quaternion.Euler(Vector3.up * Vector3.Lerp(Vector3, desiredDirection-transform.forward, _rotationSpeed * Time.deltaTime)));
         transform.forward = Vector3.Lerp(transform.forward, desiredDirection, _rotationSpeed * Time.deltaTime);
         //transform.forward = Vector3.Lerp(transform.forward, desiredDirection, _rotationSpeed * Time.deltaTime);
+        animatorLeg.SetFloat("Forward", Vector3.Dot(transform.forward, desiredDirection));
+
         if (Vector3.Dot(transform.forward, desiredDirection) > 0.7f)
         {
             player.Move(MoveSpeed * desiredDirection.normalized);
+            if(soundStep==false)
+            {
+                mechStep.Play();
+                soundStep = true;
+            }
+            
+
             //_rb.AddForce(500 * MoveSpeed * desiredDirection.normalized);
             //_rb.MovePosition(transform.position + desiredDirection.normalized * 25 * MoveSpeed * Time.deltaTime);
+        }
+        else
+        {
+            mechStep.Stop();
+            soundStep = false;
+
         }
 
     }
@@ -180,25 +211,26 @@ public class PlayerMovementScript : MonoBehaviour
     void Dash() { }
     public void Stomp()
     {
-        if (_input.stomp)
-        {
-            if (stompActive == false)
+            if (_input.stomp)
             {
-                stompActive = true;
-                float startTime = Time.time;
-                Debug.Log(Time.time < startTime + stompCooldown);
-
-
-                if (Time.time < startTime + stompCooldown)
+                
+                if (stompActive == false)
                 {
-                    CheckForEnemies();
-                    StompParticles.SetActive(true);
-                    Invoke("StopParticles", stompCooldown);
+                animatorLeg.SetBool("Stomp",true);
+                    stompActive = true;
+                    float startTime = Time.time;
+                    Debug.Log(Time.time < startTime + stompCooldown);
+
+
+                    if (Time.time < startTime + stompCooldown)
+                    {
+                        CheckForEnemies();
+                        StompParticles.SetActive(true);
+                        Invoke("StopParticles", stompCooldown);
+                    }
+
                 }
-
             }
-        }
-
 
 
     }
@@ -207,6 +239,7 @@ public class PlayerMovementScript : MonoBehaviour
     {
         StompParticles.SetActive(false);
         stompActive = false;
+        animatorLeg.SetBool("Stomp", false);
     }
 
     public void CheckForEnemies()

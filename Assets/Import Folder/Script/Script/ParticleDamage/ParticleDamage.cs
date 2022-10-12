@@ -15,6 +15,7 @@ public class ParticleDamage : MonoBehaviour
         if (other.gameObject.layer == 8)
         {
             player.GetComponent<PlayerStats>().SetHp(-damage);
+
         }
     }
 }

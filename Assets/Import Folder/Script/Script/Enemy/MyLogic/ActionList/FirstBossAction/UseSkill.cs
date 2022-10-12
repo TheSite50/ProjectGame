@@ -15,6 +15,7 @@ public class UseSkill : IAction
 
     public void Actions(GameObject player, GameObject enemy, EnemyControll enemyAction)
     {
+        enemy.GetComponent<NavMeshAgent>().Stop();
         if (useSkill==0 )
         {
             useSkill = 1;

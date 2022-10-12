@@ -22,8 +22,8 @@ public class testcamera : MonoBehaviour
 
         Cam.Render();
 
-        Texture2D Image = new Texture2D(1920, 1080);
-        Image.ReadPixels(new Rect(0, 0, 1920, 1080), 0, 0);
+        Texture2D Image = new Texture2D(4096, 4096);
+        Image.ReadPixels(new Rect(0, 0, 4096, 4096), 0, 0);
         Image.Apply();
         RenderTexture.active = currentRT;
 

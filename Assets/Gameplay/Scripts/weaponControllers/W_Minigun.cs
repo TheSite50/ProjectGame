@@ -5,6 +5,9 @@ using UnityEngine;
 //used not finished
 public class W_Minigun : weaponSystem, IReloadable
 {
+    private AudioSource mechShoot;
+
+
     [SerializeField] private WeaponParameter parameter;
     private void Update()
     {
@@ -17,6 +20,9 @@ public class W_Minigun : weaponSystem, IReloadable
         AmmoInReserve = 1000;
         CurrentAmmoInMag = 50;
         parameter.SetAmmunation(CurrentAmmoInMag, AmmoInReserve);
+
+
+        mechShoot = GetComponent<AudioSource>();
     }
     public W_Minigun(int currentAmmoInMag, int ammoInReserve) 
     {
@@ -55,6 +61,7 @@ public class W_Minigun : weaponSystem, IReloadable
             //Debug.Log(lastBulletShootTime);
             lastBulletShootTime = Time.realtimeSinceStartup;
             base.Shooting();
+            mechShoot.Play();
             CurrentAmmoInMag--;
             yield return new WaitForSeconds(secondsBetweenBullets);
         }

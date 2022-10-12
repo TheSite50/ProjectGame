@@ -53,6 +53,11 @@ public class InputScript : MonoBehaviour
 		ReloadInput(value.isPressed);
 		Debug.Log(value.isPressed);
 	}
+	public void OnStomp(InputValue value)
+	{
+		StompInput(value.isPressed);
+		
+	}
 
 	public void MoveInput(Vector2 newMoveDirection)
 	{

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossWeaponDamage : MonoBehaviour
 {
-    private float damage = 30f;
+    [SerializeField] private float damage = 30f;
     private GameObject player;
     private void Start()
     {

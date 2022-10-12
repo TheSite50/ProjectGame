@@ -19,6 +19,7 @@ public class AttackLongDistance : IAction
         {
             //Daleki Atak
             enemy.GetComponent<NavMeshAgent>().isStopped = true;
+            enemy.GetComponent<NavMeshAgent>().Stop();
             enemy.transform.LookAt(new Vector3(player.transform.position.x, enemy.transform.position.y, player.transform.position.z));
             StateAction(ActionState.actionRunning, enemyAction);
             attack = false;

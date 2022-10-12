@@ -59,10 +59,6 @@ public class Boar : EnemyProperties
         {
             navMesh.enabled = false;
         }
-        //idŸ do gracza
-        //atakuj gracza
-        //u¿yj umiejêtnoœci
-        //zmieñ rodzej ataku
         
         
         if(this.GetHp()<=70f&& this.GetHp() >= 50f)
@@ -81,7 +77,7 @@ public class Boar : EnemyProperties
         {
             Death();
         }
-        if (player != null && isOnGround == true && iFly==false)
+        if (player != null && isOnGround == true && iFly==false&&ILive==true)
         {
             listEnemyActionOnGround[numberActionOnGround].Actions(player, this.gameObject, this);
             if (actionState == ActionState.actionComplete)
@@ -126,6 +122,7 @@ public class Boar : EnemyProperties
 
     private void Death()
     {
+        ILive = false;
         this.GetComponent<NavMeshAgent>().enabled = false;
         Instantiate<ParticleSystem>(explosionProjectile, this.transform.position, this.transform.rotation);
         spawnBuff.SpawnBuff();

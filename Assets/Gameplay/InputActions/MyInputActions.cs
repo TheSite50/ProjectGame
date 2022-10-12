@@ -125,6 +125,15 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""NewButtom"",
+                    ""type"": ""Value"",
+                    ""id"": ""e3b461d9-9d87-41ba-847e-d0f3a7b3e5f8"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -411,6 +420,17 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Stomp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fba20290-7559-451e-94d8-1f850119867e"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NewButtom"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1009,6 +1029,7 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
         m_Player_Reload = m_Player.FindAction("Reload", throwIfNotFound: true);
         m_Player_ShootRPM = m_Player.FindAction("ShootRPM", throwIfNotFound: true);
         m_Player_Stomp = m_Player.FindAction("Stomp", throwIfNotFound: true);
+        m_Player_NewButtom = m_Player.FindAction("NewButtom", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1091,6 +1112,7 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Reload;
     private readonly InputAction m_Player_ShootRPM;
     private readonly InputAction m_Player_Stomp;
+    private readonly InputAction m_Player_NewButtom;
     public struct PlayerActions
     {
         private @MyInputActions m_Wrapper;
@@ -1106,6 +1128,7 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
         public InputAction @Reload => m_Wrapper.m_Player_Reload;
         public InputAction @ShootRPM => m_Wrapper.m_Player_ShootRPM;
         public InputAction @Stomp => m_Wrapper.m_Player_Stomp;
+        public InputAction @NewButtom => m_Wrapper.m_Player_NewButtom;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1148,6 +1171,9 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                 @Stomp.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStomp;
                 @Stomp.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStomp;
                 @Stomp.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStomp;
+                @NewButtom.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNewButtom;
+                @NewButtom.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNewButtom;
+                @NewButtom.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNewButtom;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1185,6 +1211,9 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                 @Stomp.started += instance.OnStomp;
                 @Stomp.performed += instance.OnStomp;
                 @Stomp.canceled += instance.OnStomp;
+                @NewButtom.started += instance.OnNewButtom;
+                @NewButtom.performed += instance.OnNewButtom;
+                @NewButtom.canceled += instance.OnNewButtom;
             }
         }
     }
@@ -1352,6 +1381,7 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
         void OnReload(InputAction.CallbackContext context);
         void OnShootRPM(InputAction.CallbackContext context);
         void OnStomp(InputAction.CallbackContext context);
+        void OnNewButtom(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

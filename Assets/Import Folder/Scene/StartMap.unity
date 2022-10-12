@@ -3187,6 +3187,10 @@ PrefabInstance:
       propertyPath: objectPrefab
       value: 
       objectReference: {fileID: 7421477442387494907, guid: 4ca22006006fd6240a18d047bb3d6863, type: 3}
+    - target: {fileID: 214009610848214566, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dafad427d61113e4b908897243317d7c, type: 3}
     - target: {fileID: 898787415069290288, guid: 19e63d01de3d6444984c366cf45d8f44, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4054,6 +4058,10 @@ PrefabInstance:
       propertyPath: objectPrefab
       value: 
       objectReference: {fileID: 3648241794361544585, guid: 80fa8eec50fd4f640bb3052c38ad2e7b, type: 3}
+    - target: {fileID: 214009610848214566, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a072e802ee3cafe458a89984e4f2f111, type: 3}
     - target: {fileID: 1054275038763480976, guid: 82b9b5b5c77c7624bb59a98ef1be4d29, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -4631,6 +4639,10 @@ PrefabInstance:
       propertyPath: objectPrefab
       value: 
       objectReference: {fileID: 5935241630103818631, guid: 0e8e4f1a419869b4caf3141d39e2ce98, type: 3}
+    - target: {fileID: 214009610848214566, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 71cfe2cc30478204abd7afe0487d9877, type: 3}
     - target: {fileID: 712560084653627892, guid: 5df3cb9a5c4a2cc40980dac18cf30598, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -8047,6 +8059,10 @@ PrefabInstance:
       propertyPath: objectPrefab
       value: 
       objectReference: {fileID: 6210024577157643513, guid: 4bd8b0683f3642b43a3cdeafa6a4e54a, type: 3}
+    - target: {fileID: 214009610848214566, guid: 909bb2295c03691409de84478507d13d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a3c101ce575c7214cb67a74cb4ac0244, type: 3}
     - target: {fileID: 3629864282750095069, guid: 909bb2295c03691409de84478507d13d, type: 3}
       propertyPath: price
       value: 0

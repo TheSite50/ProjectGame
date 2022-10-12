@@ -8,7 +8,7 @@ public class CameraSelectionScript : MonoBehaviour
     private PlayerInput playerInput;
     private InputAction aimAction;
     private CinemachineVirtualCamera virtualCamera;
-    private void Awake()
+    private void Start()
     {
         virtualCamera = GetComponent<CinemachineVirtualCamera>();
         aimAction = playerInput.actions["Aim"];

@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class Mammoth : EnemyProperties
 {
     [SerializeField] private ParticleSystem fireProjectile;
+    [SerializeField] private ParticleSystem nearProjectile;
     private RandomEnemySpawnBuff spawnBuff;
     private List<IAction> listEnemyAction;
     private bool isOnGround = false;
@@ -109,6 +110,10 @@ public class Mammoth : EnemyProperties
     public void FireAttack()
     {
         Instantiate<ParticleSystem>(fireProjectile, muzzle.transform.position,muzzle.transform.rotation);
+    }
+    public void NearAttack()
+    {
+        Instantiate<ParticleSystem>(nearProjectile, this.transform.position, this.transform.rotation);
     }
     public override void SetPlayer(GameObject player)
     {

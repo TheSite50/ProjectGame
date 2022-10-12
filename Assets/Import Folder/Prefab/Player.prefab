@@ -335,13 +335,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationSpeed: 10
-  MoveSpeed: 10
+  MoveSpeed: 2
   _cameraSensitivity: 300
   TopClamp: 70
   BottomClamp: -30
   CinemachineCameraTarget: {fileID: 6950988021789111162}
   LockCameraPosition: 0
-  gravityStrength: 15
+  gravityStrength: 100
   StompParticles: {fileID: 0}
   stompCooldown: 5
   stompRange: 100

@@ -14,17 +14,20 @@ public class WaveCounter : MonoBehaviour
     private int value = 0;
     private void Awake()
     {
-        player = PlayerStats.SendPlayer();
         
-        foreach(int num in numEnemyInWave)
+        
+       
+        
+    }
+    private void Start()
+    {
+        player = PlayerStats.SendPlayer();
+        SpawnNewEnemy();
+        foreach (int num in numEnemyInWave)
         {
             value += num;
         }
         Portal.numberEnemySpawn(value);
-    }
-    private void Start()
-    {
-        SpawnNewEnemy();
     }
     
     // Update is called once per frame
