@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93cec06ae49d886489dcfd5aff6d0e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numEnemyInWave: 050000000a0000000f00000014000000190000001e00000023000000280000002d00000032000000
+  numEnemyInWave: 0a0000000a0000000a000000
   enamyTyp:
   - {fileID: 3116720714761248753, guid: 50c017e8b32b6484eae8d455df814406, type: 3}
   - {fileID: 2281438496515653633, guid: 43b222151e898a04195edd0c4f0d3e48, type: 3}

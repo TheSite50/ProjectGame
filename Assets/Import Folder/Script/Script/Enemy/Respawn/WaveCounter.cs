@@ -50,7 +50,7 @@ public class WaveCounter : MonoBehaviour
             {
                 spawnPoint = randomValue + 2 > spawnPoints.Count ? spawnPoints[0] : spawnPoints[randomValue + 2];
             }
-            spawnPoint = randomValue + 1 > spawnPoints.Count ? spawnPoints[0] : spawnPoints[randomValue + 1];
+            spawnPoint = randomValue + 1 >= spawnPoints.Count ? spawnPoints[0] : spawnPoints[randomValue + 1];
         }
 
         StartCoroutine(SpawnEnemy(numEnemyInWave[numWave], enamyTyp, spawnPoint.transform.position));

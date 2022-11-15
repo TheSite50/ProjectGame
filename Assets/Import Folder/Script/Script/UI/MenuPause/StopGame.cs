@@ -15,22 +15,29 @@ public class StopGame : MonoBehaviour
     }
     void Update()
     {
-        if(Keyboard.current.escapeKey.IsPressed())
+        if(Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             if (activePause == true)
             {                
                 StopGameElement();
-                activePause = false;
+                
                 
             }
             else
             {
                 StartGameElement();
-                activePause = true;
                 
+               
             }
+            activePause = activePause == true ? false : true;
+            //StartCoroutine(WaitTime());
         }
     }
+    //IEnumerator WaitTime()
+    //{
+    //    yield return new WaitForSeconds(10);
+    //    activePause = activePause==true?false:true;
+    //}
 
     public void StopGameElement()
     {

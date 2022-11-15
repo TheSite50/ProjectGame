@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class MenuPause : MonoBehaviour
 {
     [SerializeField] private StopGame stop;
+    [SerializeField] private Canvas options;
+
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
@@ -19,7 +21,8 @@ public class MenuPause : MonoBehaviour
     }
     public void Options()
     {
-        
+        options.gameObject.SetActive(true);
+        this.gameObject.SetActive(false);
     }
     public void Continue()
     {

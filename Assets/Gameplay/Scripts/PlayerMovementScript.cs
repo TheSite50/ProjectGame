@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 //used
 public class PlayerMovementScript : MonoBehaviour
@@ -42,6 +43,10 @@ public class PlayerMovementScript : MonoBehaviour
 
     [Header("Stomp")]
     [SerializeField] GameObject StompParticles;
+    [SerializeField] Image StompSlider;
+    [SerializeField] Text StompText;
+    float stompTime = 0f;
+
     [SerializeField] float stompCooldown = 5f;
     private bool stompActive = false;
     [SerializeField] float stompRange = 40f;
@@ -110,6 +115,20 @@ public class PlayerMovementScript : MonoBehaviour
        
         player.Move(-transform.up.normalized * gravityStrength*Time.deltaTime);
     }
+    private void Update()
+    {
+        StompSlider.fillAmount = stompTime / stompCooldown;
+        StompText.text = (stompTime / stompCooldown).ToString();
+        if(stompActive == false)
+        {
+            stompTime = stompCooldown;
+        }
+        if (stompActive == true)
+        {
+            stompTime += Time.deltaTime;
+        }
+
+    }
 
     private void LateUpdate()
     {   
@@ -118,6 +137,7 @@ public class PlayerMovementScript : MonoBehaviour
         CameraRotation();
         Reloading();
         Stomp();
+
 
     }
     void Shooting()
@@ -211,18 +231,19 @@ public class PlayerMovementScript : MonoBehaviour
     void Dash() { }
     public void Stomp()
     {
-            if (_input.stomp)
+        
+        if (_input.stomp)
             {
-                
+                    
                 if (stompActive == false)
                 {
-                animatorLeg.SetBool("Stomp",true);
+                    animatorLeg.SetBool("Stomp",true);
                     stompActive = true;
                     float startTime = Time.time;
                     Debug.Log(Time.time < startTime + stompCooldown);
+                    stompTime = 0;
 
-
-                    if (Time.time < startTime + stompCooldown)
+                if (Time.time < startTime + stompCooldown)
                     {
                         CheckForEnemies();
                         StompParticles.SetActive(true);

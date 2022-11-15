@@ -57,9 +57,6 @@ public class RespawnSlotItem : MonoBehaviour
                 spawnObject = Instantiate(slotItem.ObjectPrefab(), buildField.transform);
                 PlayerBuild.AddLegs(slotItem.ObjectPrefab());
                 Legs = spawnObject;
-                //SaveBuildField[0] = spawnObject.GetComponent<MechElement>().GetFieldConect(0);
-
-                //SaveBuildField = SpawnObject.transform.GetChild(0).gameObject;
                 spawnObject.transform.localPosition = new Vector3(0f, 0f, 0f);
                 break;
            default:
