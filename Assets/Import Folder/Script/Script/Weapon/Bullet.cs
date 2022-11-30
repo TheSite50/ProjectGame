@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Bullet : MonoBehaviour,IDamage
 {
-    private float damage = 100f;
+    private float damage = 10f;
     private float destroyTime=0;
     private void Start()
     {

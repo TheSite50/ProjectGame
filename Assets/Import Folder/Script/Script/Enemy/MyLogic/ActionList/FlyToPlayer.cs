@@ -7,8 +7,7 @@ public class FlyToPlayer : IAction
     private float distanceDetection;    
     private float distanceLowAttack;
     private float distanceFarAttack;
-    private float flyDistance = 200f;
-    private bool attack = true;
+
     public FlyToPlayer(float distanceDetection,  float distanceFarAttack,float distanceLowAttack)
     { 
         this.distanceDetection = distanceDetection;
@@ -25,11 +24,13 @@ public class FlyToPlayer : IAction
         if(Vector3.Distance(player.transform.position, enemy.transform.position)>distanceFarAttack)
         {
             enemy.transform.position = Vector3.Lerp(enemy.transform.position, player.transform.position, Time.deltaTime);
+            enemy.transform.LookAt(new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z));
             StateAction(ActionState.actionRunning, enemyAction);
         }
         else if(Vector3.Distance(player.transform.position, enemy.transform.position)<distanceFarAttack|| Vector3.Distance(player.transform.position, enemy.transform.position) > distanceLowAttack)
         {
-            enemy.transform.position = Vector3.Lerp(enemy.transform.position, enemy.transform.position + DistanceKeep(player.transform.position,enemy.transform.position),Time.deltaTime);
+            enemy.transform.position = Vector3.Lerp(enemy.transform.position, enemy.transform.position + DistanceKeep(player.transform.position,enemy.transform.position),Time.deltaTime/10f);
+            enemy.transform.LookAt(new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z));
             StateAction(ActionState.actionComplete, enemyAction);
         }
         else if(Vector3.Distance(player.transform.position, enemy.transform.position) <= distanceFarAttack|| Vector3.Distance(player.transform.position, enemy.transform.position) >= distanceLowAttack)
@@ -55,11 +56,11 @@ public class FlyToPlayer : IAction
 
     private Vector3 DistanceKeep(Vector3 firstVector, Vector3 secondVector)
     { 
-        if(Vector3.Distance(firstVector,secondVector)<100f)
+        if(Vector3.Distance(firstVector,secondVector)<200f)
         {
             return new Vector3((secondVector.x - firstVector.x ) * Random.Range(1,10), secondVector.y * 20f, ( secondVector.z - firstVector.z ) * Random.Range(1, 10));
         }
 
-        return Vector3.up*10f;
+        return Vector3.up*30f;
     }
 }

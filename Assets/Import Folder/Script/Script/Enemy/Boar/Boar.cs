@@ -19,9 +19,11 @@ public class Boar : EnemyProperties
     private ActionState actionState;
     private NavMeshAgent navMesh;
     private bool ILive = true;
-    private bool iFly = false; 
+    private bool iFly = false;
+    private Rigidbody rigidbody;
     private void Awake()
     {
+        rigidbody = this.GetComponent<Rigidbody>();
         spawnBuff = this.GetComponent<RandomEnemySpawnBuff>();
         navMesh = GetComponent<NavMeshAgent>();
         listEnemyActionOnGround = new List<IAction>();
@@ -53,10 +55,12 @@ public class Boar : EnemyProperties
         {
             
             iFly = false;
+            
             navMesh.enabled = true; 
         }
         else
         {
+            
             navMesh.enabled = false;
         }
         
@@ -64,13 +68,14 @@ public class Boar : EnemyProperties
         if(this.GetHp()<=70f&& this.GetHp() >= 50f)
         {
             
-            iFly = false;
-            
+            iFly = true;
+            rigidbody.useGravity = false;
             navMesh.enabled = false;
         }
         else if(this.GetHp() <= 50f)
         {
             numberActionInAir = 2;
+            rigidbody.useGravity = true;
             
         }
         if(this.GetHp()<=0f&&ILive)
@@ -116,7 +121,7 @@ public class Boar : EnemyProperties
     }
     private void FixedUpdate()
     {
-        isOnGround = Physics.CheckSphere(this.gameObject.transform.position, 30, 110, QueryTriggerInteraction.Ignore);//ground detect settings
+        isOnGround = Physics.CheckSphere(this.gameObject.transform.position, 60, 110, QueryTriggerInteraction.Ignore);//ground detect settings
         
     }
 

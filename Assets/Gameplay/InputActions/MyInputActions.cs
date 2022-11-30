@@ -91,15 +91,6 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Jump"",
-                    ""type"": ""Button"",
-                    ""id"": ""8922c5dc-bbb3-47fe-bcff-8ee1dfc583ff"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Reload"",
                     ""type"": ""Value"",
                     ""id"": ""c6b509c9-1dca-45bd-9338-778e8a454ffa"",
@@ -107,6 +98,15 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""8922c5dc-bbb3-47fe-bcff-8ee1dfc583ff"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 },
                 {
                     ""name"": ""ShootRPM"",
@@ -120,17 +120,8 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Stomp"",
                     ""type"": ""Value"",
-                    ""id"": ""87b787a9-eeee-421f-81e5-36e42aec431a"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""NewButtom"",
-                    ""type"": ""Value"",
-                    ""id"": ""e3b461d9-9d87-41ba-847e-d0f3a7b3e5f8"",
-                    ""expectedControlType"": """",
+                    ""id"": ""e3476578-ec8e-4bbf-bce7-b28d99943851"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -271,22 +262,22 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""143bb1cd-cc10-4eca-a2f0-a3664166fe91"",
+                    ""id"": ""05f6913d-c316-48b2-a6bb-e225f14c7960"",
                     ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Gamepad"",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""05f6913d-c316-48b2-a6bb-e225f14c7960"",
+                    ""id"": ""143bb1cd-cc10-4eca-a2f0-a3664166fe91"",
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -392,17 +383,6 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""5d4378e8-ee65-40f4-b0f2-9e8059a4b822"",
-                    ""path"": ""<Keyboard>/r"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Reload"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""8bb28b2d-c642-484b-b037-1d393e5ff4ff"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
@@ -414,23 +394,23 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""1691628c-03ad-4916-8332-67cbbac568a5"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""id"": ""5d4378e8-ee65-40f4-b0f2-9e8059a4b822"",
+                    ""path"": ""<Keyboard>/r"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Stomp"",
+                    ""action"": ""Reload"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""fba20290-7559-451e-94d8-1f850119867e"",
-                    ""path"": ""<Keyboard>/x"",
+                    ""id"": ""e2774382-5ad2-4e34-a3c0-a2d16e3b3f1b"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""NewButtom"",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Stomp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1025,11 +1005,10 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
         m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
-        m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Reload = m_Player.FindAction("Reload", throwIfNotFound: true);
+        m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_ShootRPM = m_Player.FindAction("ShootRPM", throwIfNotFound: true);
         m_Player_Stomp = m_Player.FindAction("Stomp", throwIfNotFound: true);
-        m_Player_NewButtom = m_Player.FindAction("NewButtom", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1108,11 +1087,10 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Aim;
     private readonly InputAction m_Player_Sprint;
     private readonly InputAction m_Player_Dash;
-    private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Reload;
+    private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_ShootRPM;
     private readonly InputAction m_Player_Stomp;
-    private readonly InputAction m_Player_NewButtom;
     public struct PlayerActions
     {
         private @MyInputActions m_Wrapper;
@@ -1124,11 +1102,10 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
         public InputAction @Aim => m_Wrapper.m_Player_Aim;
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
-        public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Reload => m_Wrapper.m_Player_Reload;
+        public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @ShootRPM => m_Wrapper.m_Player_ShootRPM;
         public InputAction @Stomp => m_Wrapper.m_Player_Stomp;
-        public InputAction @NewButtom => m_Wrapper.m_Player_NewButtom;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1159,21 +1136,18 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                 @Dash.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
                 @Dash.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
                 @Dash.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
-                @Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
-                @Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
-                @Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @Reload.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
                 @Reload.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
                 @Reload.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
+                @Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @ShootRPM.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShootRPM;
                 @ShootRPM.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShootRPM;
                 @ShootRPM.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShootRPM;
                 @Stomp.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStomp;
                 @Stomp.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStomp;
                 @Stomp.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStomp;
-                @NewButtom.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNewButtom;
-                @NewButtom.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNewButtom;
-                @NewButtom.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNewButtom;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1199,21 +1173,18 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
                 @Dash.started += instance.OnDash;
                 @Dash.performed += instance.OnDash;
                 @Dash.canceled += instance.OnDash;
-                @Jump.started += instance.OnJump;
-                @Jump.performed += instance.OnJump;
-                @Jump.canceled += instance.OnJump;
                 @Reload.started += instance.OnReload;
                 @Reload.performed += instance.OnReload;
                 @Reload.canceled += instance.OnReload;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
                 @ShootRPM.started += instance.OnShootRPM;
                 @ShootRPM.performed += instance.OnShootRPM;
                 @ShootRPM.canceled += instance.OnShootRPM;
                 @Stomp.started += instance.OnStomp;
                 @Stomp.performed += instance.OnStomp;
                 @Stomp.canceled += instance.OnStomp;
-                @NewButtom.started += instance.OnNewButtom;
-                @NewButtom.performed += instance.OnNewButtom;
-                @NewButtom.canceled += instance.OnNewButtom;
             }
         }
     }
@@ -1377,11 +1348,10 @@ public partial class @MyInputActions : IInputActionCollection2, IDisposable
         void OnAim(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
-        void OnJump(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
         void OnShootRPM(InputAction.CallbackContext context);
         void OnStomp(InputAction.CallbackContext context);
-        void OnNewButtom(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

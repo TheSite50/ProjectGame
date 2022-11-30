@@ -14,10 +14,8 @@ public class Landing : IAction
     }
     public void Actions(GameObject player, GameObject enemy, EnemyControll enemyAction)
     {
-        enemy.GetComponent<Animator>().SetBool("FlyAttack", false);
-        enemy.GetComponent<Animator>().SetBool("Fly", true);
+       
         enemy.GetComponent<Rigidbody>().useGravity = true;
-        enemy.GetComponent<Rigidbody>().isKinematic = false;
 
         StateAction(ActionState.actionRunning, enemyAction);
         

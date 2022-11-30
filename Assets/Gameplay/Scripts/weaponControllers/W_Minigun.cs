@@ -28,7 +28,7 @@ public class W_Minigun : weaponSystem, IReloadable
     {
         CurrentAmmoInMag = currentAmmoInMag;
         AmmoInReserve = ammoInReserve;
-        secondsBetweenBullets = 60/weapon.fireRate;
+        secondsBetweenBullets = 360/weapon.fireRate;
     }
 /*    private IEnumerator _shoot;
     public void TryToShootNextBullet(bool isShooting)

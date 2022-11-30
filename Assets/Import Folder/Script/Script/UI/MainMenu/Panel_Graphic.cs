@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ public class Panel_Graphic : MonoBehaviour
 {
     [SerializeField]private Dropdown resolutionDropdown;
     private Resolution[] resolutions;
-    private void Start()
+    private void Awake()
     {
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
@@ -18,7 +19,8 @@ public class Panel_Graphic : MonoBehaviour
         for(int i=0; i<resolutions.Length; i++)
         {
             string option = resolutions[i].width + " x " + resolutions[i].height;
-            options.Add(option);
+
+            options.Add(option); 
 
             if(resolutions[i].width == Screen.currentResolution.width&&resolutions[i].height==Screen.currentResolution.height)
             {

@@ -17,6 +17,7 @@ public class ReturnBase : MonoBehaviour
             if(Keyboard.current.eKey.IsPressed())
             {
                 BuyTicketReturn();
+                
                 LoadLevel.SetNextLevel(1);
                 SceneManager.LoadScene(2);
             }

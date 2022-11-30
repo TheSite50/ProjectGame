@@ -23,12 +23,15 @@ public class BoarAnimationMenage : MonoBehaviour
 
         dictionaryAnimation.Add((-1, 0), "Fly");
         dictionaryAnimation.Add((-1, 1), "FlyAttack");
+        dictionaryAnimation.Add((-1, 2), "Fly");
     }
 
     private void Update()
     {
         if (enemy.NumberAction().isInFly == false)
         {
+            enemy.GetComponent<Animator>().SetBool("FlyAttack", false);
+            enemy.GetComponent<Animator>().SetBool("Fly", false);
             if (NumberActionOnGround != enemy.NumberAction().onGround)
             {
                 if(NumberActionOnGround != -1)
@@ -44,7 +47,11 @@ public class BoarAnimationMenage : MonoBehaviour
         {
             if (NumberActionInAir != enemy.NumberAction().inAir)
             {
-                if(NumberActionInAir != -1)
+                enemy.GetComponent<Animator>().SetBool("Walk", false);
+                enemy.GetComponent<Animator>().SetBool("FarAttack", false);
+                enemy.GetComponent<Animator>().SetBool("Run", false);
+                enemy.GetComponent<Animator>().SetBool("Attack", false);
+                if (NumberActionInAir != -1)
                 {
                     animatorBoar.SetBool(dictionaryAnimation[(-1,NumberActionInAir )], false);
                 }

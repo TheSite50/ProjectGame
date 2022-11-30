@@ -69,15 +69,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Jump",
-                    "type": "Button",
-                    "id": "8922c5dc-bbb3-47fe-bcff-8ee1dfc583ff",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Reload",
                     "type": "Value",
                     "id": "c6b509c9-1dca-45bd-9338-778e8a454ffa",
@@ -85,6 +76,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "8922c5dc-bbb3-47fe-bcff-8ee1dfc583ff",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "ShootRPM",
@@ -98,17 +98,8 @@
                 {
                     "name": "Stomp",
                     "type": "Value",
-                    "id": "87b787a9-eeee-421f-81e5-36e42aec431a",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "NewButtom",
-                    "type": "Value",
-                    "id": "e3b461d9-9d87-41ba-847e-d0f3a7b3e5f8",
-                    "expectedControlType": "",
+                    "id": "e3476578-ec8e-4bbf-bce7-b28d99943851",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -249,22 +240,22 @@
                 },
                 {
                     "name": "",
-                    "id": "143bb1cd-cc10-4eca-a2f0-a3664166fe91",
+                    "id": "05f6913d-c316-48b2-a6bb-e225f14c7960",
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Gamepad",
+                    "groups": "Gamepad",
                     "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "05f6913d-c316-48b2-a6bb-e225f14c7960",
+                    "id": "143bb1cd-cc10-4eca-a2f0-a3664166fe91",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard&Mouse",
+                    "groups": "Keyboard&Mouse",
                     "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -370,17 +361,6 @@
                 },
                 {
                     "name": "",
-                    "id": "5d4378e8-ee65-40f4-b0f2-9e8059a4b822",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Reload",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "8bb28b2d-c642-484b-b037-1d393e5ff4ff",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
@@ -392,23 +372,23 @@
                 },
                 {
                     "name": "",
-                    "id": "1691628c-03ad-4916-8332-67cbbac568a5",
-                    "path": "<Keyboard>/e",
+                    "id": "5d4378e8-ee65-40f4-b0f2-9e8059a4b822",
+                    "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Stomp",
+                    "action": "Reload",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "fba20290-7559-451e-94d8-1f850119867e",
-                    "path": "<Keyboard>/x",
+                    "id": "e2774382-5ad2-4e34-a3c0-a2d16e3b3f1b",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "NewButtom",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Stomp",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
