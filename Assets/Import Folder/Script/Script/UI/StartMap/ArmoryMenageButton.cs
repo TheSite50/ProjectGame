@@ -7,6 +7,7 @@ using TMPro;
 public class ArmoryMenageButton : MonoBehaviour
 {
     [SerializeField] private GameObject[] slots;
+    private int value = 0;
 
     [SerializeField] private TextMeshProUGUI blueEssenceValue;
     [SerializeField] private TextMeshProUGUI greenEssenceValue;
@@ -19,8 +20,7 @@ public class ArmoryMenageButton : MonoBehaviour
         {
             if (slot.transform.childCount > 0)
             {
-                LoadLevel.SetNextLevel(3);
-                SceneManager.LoadScene(2);
+                
             }
             else
             {
@@ -29,6 +29,9 @@ public class ArmoryMenageButton : MonoBehaviour
             }
 
         }
+        LoadLevel.SetNextLevel(3);
+        SceneManager.LoadScene(2);
+        
     }
 
     public void GoToMainMenu()

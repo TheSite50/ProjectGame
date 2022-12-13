@@ -57,9 +57,9 @@ public class SaveOptions : MonoBehaviour
     {
         ParemeterSaveOptions data = new ParemeterSaveOptions();
 
-        if (File.Exists(Application.persistentDataPath + "/MySaveOptions.JSON"))
+        if (File.Exists(Application.persistentDataPath + "/DefaultSaveOptions.JSON"))
         {
-            string jsonS = File.ReadAllText(Application.persistentDataPath + "/MySaveOptions.JSON");
+            string jsonS = File.ReadAllText(Application.persistentDataPath + "/DefaultSaveOptions.JSON");
             data = JsonUtility.FromJson<ParemeterSaveOptions>(jsonS);
         }
         else
@@ -76,14 +76,14 @@ public class SaveOptions : MonoBehaviour
     public static void SaveParameterOptions(ParemeterSaveOptions paremeterSaveOptions)
     {
         ParemeterSaveOptions data = new ParemeterSaveOptions();
-        if (File.Exists(Application.persistentDataPath + "/DefaultSaveOptions.JSON"))
+        if (File.Exists(Application.persistentDataPath + "/MySaveOptions.JSON"))
         {
             //string jsonS = File.ReadAllText(Application.persistentDataPath + "/MySaveOptions.JSON");
             //data = JsonUtility.FromJson<ParemeterSaveOptions>(jsonS);
             data = paremeterSaveOptions;
             string jsonFille =JsonUtility.ToJson(data);
            // string jsonFille = JsonUtility.ToJson(data);
-            File.WriteAllText(Application.persistentDataPath + "/DefaultSaveOptions.JSON", jsonFille);
+            File.WriteAllText(Application.persistentDataPath + "/MySaveOptions.JSON", jsonFille);
         }
         else
         {

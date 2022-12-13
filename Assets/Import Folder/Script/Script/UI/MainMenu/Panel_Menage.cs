@@ -119,6 +119,12 @@ public class Panel_Menage : MonoBehaviour
         myInputActionAsset.FindAction("ShootRPM").ApplyBindingOverride(0, SaveOptions.LoadOptions().shotLeftWeapon);
         myInputActionAsset.FindAction("Reload").ApplyBindingOverride(0, SaveOptions.LoadOptions().reload);
 
+
+        resolution.RefreshShownValue();
+        resolution.RefreshShownValue();
+        frameRate.RefreshShownValue();
+        graphicQuality.RefreshShownValue();
+
         //SaveOptions.LoadOptions().resolution
         // myInputActionAsset.FindAction("Move").ChangeBinding(1)
         // .WithPath("<Keyboard>/upArrow")

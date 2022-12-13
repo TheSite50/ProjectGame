@@ -17,19 +17,20 @@ public class StopGame : MonoBehaviour
     {
         if(Keyboard.current.escapeKey.wasPressedThisFrame)
         {
-            if (activePause == true)
+            if (activePause == false)
             {                
                 StopGameElement();
-                
-                
+                activePause = true;
+
+
             }
-            else
+            else if(pauseMenu.activeInHierarchy)
             {
                 StartGameElement();
                 
                
             }
-            activePause = activePause == true ? false : true;
+            //activePause = activePause == true ? false : true;
             //StartCoroutine(WaitTime());
         }
     }
@@ -58,5 +59,6 @@ public class StopGame : MonoBehaviour
         Cursor.visible = false;
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
+        activePause = false;
     }
 }
