@@ -92,7 +92,6 @@ public class Panel_Menage : MonoBehaviour
 
 
         SaveOptions.SaveParameterOptions(saveOptions);
-        //SaveOptions.LoadOptions().resolution
         
     }
 
@@ -125,49 +124,7 @@ public class Panel_Menage : MonoBehaviour
         frameRate.RefreshShownValue();
         graphicQuality.RefreshShownValue();
 
-        //SaveOptions.LoadOptions().resolution
-        // myInputActionAsset.FindAction("Move").ChangeBinding(1)
-        // .WithPath("<Keyboard>/upArrow")
-        // .WithPath("<Keyboard>/w")//+ SaveOptions.LoadOptions().forward)
-        // .WithPath("<Keyboard>/downArrow")
-        // .WithPath("<Keyboard>/s")//+ SaveOptions.LoadOptions().backwards)
-        // .WithPath("<Keyboard>/leftArrow")
-        // .WithPath("<Keyboard>/a")//+ SaveOptions.LoadOptions().left)
-        // .WithPath("<Keyboard>/rightArrow")
-        // .WithPath("<Keyboard>/d")//+ SaveOptions.LoadOptions().right);
-        // //myInputActionAsset.FindAction("Move").Enable();
-        // ;
-        // myInputActionAsset.FindAction("Move").Enable();
+
     }
-    //public void ExperimentalCode3(int index)
-    //{
-
-    //var accelerateAction = new InputAction("2DVector");
-    //accelerateAction.
-
-
-    //.With("Up", "<Keyboard>/" + SaveOptions.LoadOptions().forward)
-    //.With("Down", "<Keyboard>/" + SaveOptions.LoadOptions().backwards)
-    //.With("Left", "<Keyboard>/" + SaveOptions.LoadOptions().left)
-    //.With("Right", "<Keyboard>/" + SaveOptions.LoadOptions().right);
-
-
-    //    myAction.AddCompositeBinding("2DVector") // Or "Dpad"
-    //.With("Up", "<Keyboard>/w")
-    //.With("Down", "<Keyboard>/s")
-    //.With("Left", "<Keyboard>/a")
-    //.With("Right", "<Keyboard>/d");
-    //rebindingOperation = accelerateAction.PerformInteractiveRebinding()
-    //         .WithTargetBinding(index)
-    //         .OnMatchWaitForAnother(0.1f)
-    //         .OnComplete(operation =>
-    //         {
-    //             changeKey.SetActive(false);
-    //             rebindingOperation.Dispose();
-    //             myInputActionAsset.FindAction(actionName).Enable();
-    //         })
-    //         .Start();
-    //}
-
 
 }

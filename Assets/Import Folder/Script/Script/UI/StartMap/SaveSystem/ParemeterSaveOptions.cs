@@ -19,14 +19,14 @@ public class ParemeterSaveOptions
     public float effect = 1;
 
     //Controls
-    public string forward = "w";
-    public string backwards = "s";
-    public string left = "a";
-    public string right = "d";
-    public string skill = "q";
-    public string reload = "e";
-    public string shotLeftWeapon = "leftButton";
-    public string shotRightWeapon = "rightButton";
+    public string forward = "W";
+    public string backwards = "S";
+    public string left = "A";
+    public string right = "D";
+    public string skill = "Q";
+    public string reload = "E";
+    public string shotLeftWeapon = "LeftButton";
+    public string shotRightWeapon = "RightButton";
 
 }
 

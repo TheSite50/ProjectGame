@@ -25,7 +25,7 @@ public class GUIControll : MonoBehaviour
         {
             leftWeapon = CreatePlayerInGame.GetArm().GetComponent<LocationWeapons>().GetWeaponPosition().weaponLeft.gameObject;
         }
-        if (CreatePlayerInGame.GetWeaponRight() != null)
+        if (CreatePlayerInGame.GetWeaponRight())
             rightWeapon = CreatePlayerInGame.GetWeaponRight();
         else
         {

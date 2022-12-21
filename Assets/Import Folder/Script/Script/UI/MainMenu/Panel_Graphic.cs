@@ -50,18 +50,11 @@ public class Panel_Graphic : MonoBehaviour
     {
         options.Add(resolutionWidth+" x "+ resolutionHeight);
         resolutionValueList.Add((resolutionWidth, resolutionHeight));
-        
-        //if (resolutionWidth == Screen.currentResolution.width && resolutionHeight == Screen.currentResolution.height)
-        //{
-        //
-        //    
-        //}
+
     }
 
     public void SetResolution(int resolutionValue)
     {
-        //Resolution resolution = resolutions[resolutionValue];
-        
         Screen.SetResolution(resolutionValueList[resolutionValue].width, resolutionValueList[resolutionValue].height, Screen.fullScreen);
     }
     public void SetWindowMode(bool windowMode)

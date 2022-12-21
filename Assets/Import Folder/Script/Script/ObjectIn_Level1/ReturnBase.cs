@@ -18,8 +18,7 @@ public class ReturnBase : MonoBehaviour
             {
                 BuyTicketReturn();
                 
-                LoadLevel.SetNextLevel(1);
-                SceneManager.LoadScene(2);
+                
             }
         }
     }
@@ -38,6 +37,8 @@ public class ReturnBase : MonoBehaviour
         {
             GameInformation.AddEssence(-price, 0);
             this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            LoadLevel.SetNextLevel(1);
+            SceneManager.LoadScene(2);
         }
             
     }

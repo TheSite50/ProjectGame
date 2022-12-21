@@ -18,6 +18,12 @@ public class SlotGetObject : MonoBehaviour, IDropHandler
                 Destroy(spawnObject);
                 SetEmptySlot(itemType,isRightWeapon);
             }
+            else if(spawnObject==null)
+            {
+                SetEmptySlot(itemType, isRightWeapon);
+            }
+            
+
         }
     }
     

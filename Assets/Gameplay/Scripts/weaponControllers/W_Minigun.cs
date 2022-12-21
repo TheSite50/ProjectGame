@@ -11,7 +11,8 @@ public class W_Minigun : weaponSystem, IReloadable
     [SerializeField] private WeaponParameter parameter;
     private void Update()
     {
-        parameter.SetAmmunation(CurrentAmmoInMag, AmmoInReserve);
+        
+        parameter.SetAmmunation( CurrentAmmoInMag, AmmoInReserve);
         RotateGun();
     }
     private void Start()

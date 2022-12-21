@@ -6,7 +6,7 @@ public class AmmoBuff : MonoBehaviour
 {
     [SerializeField] private int buffValue = 2;
     private GameObject player;
-    private void Awake()
+    private void Start()
     {
         player = PlayerStats.SendPlayer();
     }
@@ -14,7 +14,7 @@ public class AmmoBuff : MonoBehaviour
     {
         if (other.gameObject.layer == 8)
         {
-            player.GetComponent<PlayerStats>().AddAmunation(buffValue);
+            player.gameObject.GetComponent<PlayerStats>().AddAmunation(buffValue);
             Destroy(this.gameObject);
         }
     }
